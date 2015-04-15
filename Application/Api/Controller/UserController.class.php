@@ -32,35 +32,43 @@ class UserController extends RestController {
 
         );
         $user = D('users');
-        if($user->create()) {
-            $user_id = $user->add();
-        } else {
+        if(get_user('mobile',$user_data['mobile'])){
             $result['error'] = '该手机号码已经注册';
+        } else {
+            $user_id = $user->add($user_data);
+            $driver_data = array(
+                'user_id' => $user_id,
+                'market_id' => I('post.market_id'),
+                'icId' => I('post.icId'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'latestFreeTime' => date('Y-m-d H:i:s'),
+
+            );
+            $driver_id = D('drivers')->add($driver_data);
+
+            $truck_data = array(
+                'driver_id' => $driver_id,
+                'plateId' => I('post.truck_plateId'),
+                'cate_id' => I('post.truck_cate_id'),
+                'avatar' => I('post.truck_avatar'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+
+            );
+            $truck_id = D('trucks')->add($truck_data);
+            //生成token并写入
+            $token_data = generate_token();
+            $result['token'] = $token_data;
+            $token_data = array(
+                'token' => $token_data,
+                'user_type' => 'driver',
+                'user_id' => $user_id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            );
+            D('tokens')->add($token_data);
         }
-
-        $driver_data = array(
-            'user_id' => $user_id,
-            'market_id' => I('post.market_id'),
-            'icId' => I('post.icId'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-            'latestFreeTime' => date('Y-m-d H:i:s'),
-
-        );
-        $driver_id = D('drivers')->add($driver_data);
-
-        $truck_data = array(
-            'driver_id' => $driver_id,
-            'plateId' => I('post.truck_plateId'),
-            'cate_id' => I('post.truck_cate_id'),
-            'avatar' => I('post.truck_avatar'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-
-        );
-        $truck_id = D('trucks')->add($truck_data);
-
-        $result['token'] = generate_token();
         $this->response($result,'json');
 
     }
