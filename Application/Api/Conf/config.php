@@ -240,6 +240,17 @@ return array(
              *  }
              */
             array('driver/getDriversByCateId',),
+
+            /**
+             * 判断车主是否在地理围栏的位置当中
+             * $_POST:
+             *  [token, pointX, pointY]
+             * return:
+             * {
+             *      isIn
+             * }
+             */
+            array('driver/driverIsInMarket', 'User/driverIsInMarket', array('method' => 'POST')),
         ),
 
      // 默认数据库配置,本地

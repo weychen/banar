@@ -97,4 +97,16 @@ class UserController extends RestController {
     {
 
     }
+
+    /**
+     * 判断司机是否在地理围栏里面
+     */
+    public function driverIsInMarket()
+    {
+        $token = I('token');
+        $pointX = I('pointX');
+        $pointY = I('pointY');
+
+
+    }
 }
