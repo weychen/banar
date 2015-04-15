@@ -38,8 +38,8 @@
       <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Api/Controller/UserController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57575756" vertical-offset="670" max-vertical-offset="1980">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.57575756" vertical-offset="1110" max-vertical-offset="1980">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="32" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
                 <element signature="e#111#136#0#PHP" expanded="true" />
@@ -591,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Api/Controller/UserController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57575756" vertical-offset="670" max-vertical-offset="1980">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.57575756" vertical-offset="1110" max-vertical-offset="1980">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="32" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
             <element signature="e#111#136#0#PHP" expanded="true" />
