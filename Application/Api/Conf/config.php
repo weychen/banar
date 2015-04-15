@@ -260,6 +260,8 @@ return array(
 
             /**
              * 判断车主是否在地理围栏的位置当中
+             * 状态:
+             *  完成 牛威
              * $_POST:
              *  [token, pointX, pointY]
              * return:

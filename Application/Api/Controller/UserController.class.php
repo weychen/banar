@@ -130,9 +130,58 @@ class UserController extends RestController {
     public function driverIsInMarket()
     {
         $token = I('token');
-        $pointX = I('pointX');
-        $pointY = I('pointY');
+        $pointX = I('pointX');//X坐标
+        $pointY = I('pointY');//Y坐标
 
+        $condition['token'] = $token;
+        $tokenData = M('tokens')->field('userType,user_id')
+            ->where($condition)->select()[0];
+        $user_id = $tokenData['user_id'];//用户id
+        //获取到用户的id之后 需要知道车主是在哪一个市场
+        $driversData = M('drivers')->field('market_id')->where(array('user_id' => $user_id))->select()[0];
+        $market_id = $driversData['market_id'];//市场的id
+        $marketData = M('markets')->where(array('id' => $market_id))->select()[0];
+        //获取到市场的经度和纬度
+        $marketX = $marketData['lat'];//经度
+        $marketY = $marketData['lon'];//纬度
+        $radius = $marketData['radius'];
 
+        $data['marketX'] = $marketX;
+        $data['marketY'] = $marketY;
+        $data['marketRadius'] = $radius;
+        $data['marketDistance'] = $this->getDistance($pointY, $pointX, $marketY, $marketX);
+        $data['isIn'] = $radius > $data['marketDistance'];
+
+        $this->response($data,'json');
+    }
+
+    /**
+     * 返回圆周率
+     * @param $d
+     * @return string
+     */
+    private function rad($d)
+    {
+        return floatval(floatval($d) * pi());
+    }
+
+    /**
+     * @param $lat1
+     * @param $lng1
+     * @param $lat2
+     * @param $lng2
+     * @return mixed
+     */
+    private function getDistance($lat1, $lng1, $lat2, $lng2)
+    {
+        $radLat1 = $this->rad($lat1);
+        //echo $lat1."  ".$radLat1;
+        $radLat2 = $this->rad($lat2);
+        $a = $radLat1 - $radLat2;
+        $b = $this->rad($lng1) - $this->rad($lng2);
+        $s = 2 * asin(sqrt(pow(sin($a / 2), 2) + cos($radLat1) * cos($radLat2) * pow(sin($b / 2), 2)));
+        $s = $s * 6378.137;
+        $s = round($s * 10000) / 10000;
+        return $s;
     }
 }
