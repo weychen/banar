@@ -12,6 +12,9 @@ use Think\Controller\RestController;
 
 class CommunalController extends RestController{
 
+    /**
+     * 获取车型
+     */
     public function getAllCates()
     {
         $Cates = M('cates');
@@ -19,6 +22,9 @@ class CommunalController extends RestController{
         $this->response($data,'json');
     }
 
+    /**
+     * 获取所有的市场
+     */
     public function getAllMarkets()
     {
         $Market = M('markets');

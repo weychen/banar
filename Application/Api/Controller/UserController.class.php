@@ -13,6 +13,10 @@ use Think\Controller\RestController;
 class UserController extends RestController {
 
     protected $driverFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
+
+    /**
+     * 司机注册
+     */
     public function driverRegister()
     {
         $data = array();
@@ -62,7 +66,9 @@ class UserController extends RestController {
         $this->response($response,'json');
     }
 
-
+    /**
+     * 获取个人的消息
+     */
     public function getMyProfile()
     {
         // 获得token 相对应的usertpye, user_id

@@ -184,7 +184,7 @@ return array(
              *      mobile
              *  }
              */
-            array('favorite/getMyFavorites', ),
+            array('favorite/getMyFavorites', 'Favorite/getFavorites', array('method' => 'POST')),
 
             /**
              * 商户接口
@@ -197,7 +197,7 @@ return array(
              *
              *  }
              */
-            array('favorite/addFavorite', ),
+            array('favorite/addFavorite', 'Favorite/addFavorite', array('method' => 'POST')),
 
             /**
              * 商户接口
@@ -206,7 +206,7 @@ return array(
              *  [token, id]
              *
              */
-            array('favorite/deleteFavoriteById',),
+            array('favorite/deleteFavoriteById', 'Favorite/deleteFavoriteById', array('method' => 'POST')),
 
             /**
              * 商户接口
