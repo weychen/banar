@@ -12,28 +12,51 @@ use Think\Controller\RestController;
 
 class UserController extends RestController {
 
-    protected $driverFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
+    protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
     public function driverRegister()
     {
-        $data = array();
-        $data['mobile'] = I('post.mobile');
-        $data['password'] = I('post.password');
-        $data['name'] = I('post.name');
-        $data['avatar'] = I('post.avatar');
-
-        $data['Trucks'] = array(
-            'platedId' => I('post.truck_plateId'),
-            'cate_id' => I('post.truck_cate_id'),
-            'avatar' => I('post.truck_avatar')
+        $result = array();
+        $result['status'] = false;
+        $user_data = array(
+            'mobile' => I('post.mobile'),
+            'password' => I('post.password'),
+            'name' => I('post.name'),
+            'avatar' => I('post.avatar'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
 
         );
-//        $user = new UsersModel();
-//        $data = $user->relation(true)->find(1);
-        $User = D('Users');
-        print_r($data);
-        $id = $User->relation(true)->add($data);
-        echo $id;
-        print_r($data);
+        $user = D('users');
+        if($user->create()) {
+            $user_id = $user->add();
+        } else {
+            $result['error'] = '该手机号码已经注册';
+        }
+
+        $driver_data = array(
+            'user_id' => $user_id,
+            'market_id' => I('post.market_id'),
+            'icId' => I('post.icId'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            'latestFreeTime' => date('Y-m-d H:i:s'),
+
+        );
+        $driver_id = D('drivers')->add($driver_data);
+
+        $truck_data = array(
+            'driver_id' => $driver_id,
+            'plateId' => I('post.truck_plateId'),
+            'cate_id' => I('post.truck_cate_id'),
+            'avatar' => I('post.truck_avatar'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+
+        );
+        $truck_id = D('trucks')->add($truck_data);
+
+        $result['token'] = generate_token();
+        $this->response($result,'json');
 
     }
 
@@ -48,8 +71,8 @@ class UserController extends RestController {
         if(!empty($account) && !empty($password)){
 
             $User = M('Users');
-            $user = $User->field($this->driverFields)
-                ->where("mobile = '%s' AND password = '%s'",array($account,md5($password)))
+            $user = $User->field($this->userFields)
+                ->where("mobile = '%s' AND password = '%s'",array($account,$password))
                 ->limit(1)
                 ->select()[0];
             if($user){
@@ -57,12 +80,15 @@ class UserController extends RestController {
                 ////
                 $response['status'] = true;
                 $response['user'] = $user;
+                $response['token'] = generate_token();
             }
         }
         $this->response($response,'json');
     }
 
-
+    /**
+     * 获取个人信息
+     */
     public function getMyProfile()
     {
         // 获得token 相对应的usertpye, user_id

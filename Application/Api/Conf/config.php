@@ -8,6 +8,8 @@ return array(
             /**
              * 公用接口
              *      1.获取车型
+             * 状态:
+             *  已完成 weychen
              * $_GET:
              *  [ { id, name }]
              */
@@ -15,6 +17,8 @@ return array(
             /**
              * 公用接口
              *      2.获取市场
+             * 状态:
+             *  已完成 weychen
              * $_GET:
              *  [ {id, name, address}]
              */
@@ -24,6 +28,9 @@ return array(
             /**
              * 司机接口接口
              *      1.司机注册
+             * 状态
+             *  基本已完成，需要重构 weychen
+             *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
              *
@@ -40,6 +47,9 @@ return array(
              *      2.司机登录
              * $_POST:
              *  [mobile, password]
+             *
+             * 状态:
+             *  基本已完成，需要重构 weychen
              *
              * return:
              *  {
@@ -67,6 +77,8 @@ return array(
             /**
              *  司机接口
              *      4.获取个人信息
+             *  状态:
+             *      已完成 weychen
              * $_POST:
              *  [token]
              *
@@ -110,6 +122,9 @@ return array(
             /**
              *  商户接口
              *      1.商户注册
+             *  状态:
+             *      基本已完成,需要重构  weychen
+             *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, address, telephone]
              *
@@ -118,11 +133,13 @@ return array(
              *      token: __HASH__
              *  }
              */
-            array('user/merchantRegister', ),
+            array('user/merchantRegister', 'Merchant/merchantRegister', array('method => POST')),
 
             /**
              * 商户接口
              *      2.商户登录
+             * 状态:
+             *      基本已完成，需要重构  weychen
              * $_POST:
              *  [mobile, password]
              *
@@ -131,7 +148,7 @@ return array(
              *      token: __HASH__
              *  }
              */
-            array('user/merchantLogin', ),
+            array('user/merchantLogin', 'Merchant/merchantLogin', array('method => POST')),
 
             /**
              * 商户接口
