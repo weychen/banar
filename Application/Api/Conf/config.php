@@ -248,8 +248,6 @@ return array(
     'DB_NAME'       =>  'banar',
     'DB_USER'       =>  'root',
     'DB_PWD'        =>  'root',
-    'DB_PORT'       =>  '8889',
+    'DB_PORT'       =>  '3306',
     'DB_PREFIX'     =>  'lb_',    // 数据库表前缀
-
-
 );

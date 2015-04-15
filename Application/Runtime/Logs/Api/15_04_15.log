@@ -1,0 +1,42 @@
+[ 2015-04-15T15:41:50+08:00 ] ::1 /banar/Api/cate/getAllCates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002455s ]
+SQL: SHOW COLUMNS FROM `lb_cates` [ RunTime:0.0112s ]
+SQL: SELECT `id`,`name` FROM `lb_cates` ORDER BY id asc  [ RunTime:0.0003s ]
+
+[ 2015-04-15T15:44:08+08:00 ] ::1 /banar/Api/transportOrder/getAllMyTransportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001675s ]
+
+[ 2015-04-15T15:44:09+08:00 ] ::1 /banar/Api/transportOrder/getAllMyTransportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2015-04-15T15:48:55+08:00 ] ::1 /banar/Api/cate/getAllCates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000890s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001361s ]
+SQL: SHOW COLUMNS FROM `lb_cates` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name` FROM `lb_cates` ORDER BY id asc  [ RunTime:0.0003s ]
+
