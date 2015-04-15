@@ -246,6 +246,9 @@ return array(
             /**
              * 商户接口
              *      10.获取司机
+             * 状态:
+             *      完成  weychen
+             *
              * $_POST:
              *  [token, cate_id]
              * return:
@@ -256,7 +259,7 @@ return array(
              *      isFree
              *  }
              */
-            array('driver/getDriversByCateId',),
+            array('driver/getDriversByCateId', 'Merchant/getDriversByCateId', array('method' => 'POST')),
 
             /**
              * 判断车主是否在地理围栏的位置当中

@@ -83,4 +83,41 @@ class MerchantController extends RestController {
         }
         $this->response($response,'json');
     }
+
+    /**
+     * 获取司机
+     */
+    public function getDriversByCateId()
+    {
+        // 获得token 相对应的usertpye, user_id
+        $token = I('post.token');
+        $condition['token'] = $token;
+        $tokenData = M('tokens')->field('userType,user_id')
+            ->where($condition)->select()[0];
+
+
+        $cate_id = I('post.cate_id');
+
+        $data = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
+            ->join('lb_trucks on lb_drivers.id = lb_trucks.driver_id')
+            ->join('lb_users on lb_drivers.user_id = lb_users.id')
+            ->where('lb_trucks.cate_id = 1')
+            ->limit(10)->select();
+        $this->response($data,'json');
+
+
+    }
+
+    /**
+     * @param $token
+     * @return mixed
+     * 用于验证token 是否正确
+     */
+    public function validate_token($token)
+    {
+        $condition['token'] = $token;
+        $token_data = M('tokens')->field('userType,user_id')
+            ->where($condition)->select()[0];
+        return $token_data;
+    }
 }
