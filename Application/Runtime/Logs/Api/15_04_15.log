@@ -1,596 +1,180 @@
-[ 2015-04-15T08:59:13+08:00 ] ::1 /banar/api/user/driverRegister
+[ 2015-04-15T16:38:13+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+NOTIC: [2] mkdir(): File exists /Applications/MAMP/htdocs/banar/ThinkPHP/Library/Think/Build.class.php 第 110 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+ERR: 无法加载控制器:Favorite
+
+[ 2015-04-15T16:39:16+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+ERR: 无法加载控制器:Favorite
+
+[ 2015-04-15T16:41:44+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Applications/MAMP/htdocs/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'
+
+[ 2015-04-15T16:42:39+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
-INFO: [ app_init ] --END-- [ RunTime:0.003569s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000833s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001968s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002185s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001682s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001902s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Applications/MAMP/htdocs/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'
 
-[ 2015-04-15T09:00:59+08:00 ] ::1 /banar/api/user/driverRegister
+[ 2015-04-15T16:43:21+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000856s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001679s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001981s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001517s ]
-
-[ 2015-04-15T09:30:35+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001014s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001875s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002151s ]
-ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'banar.lb_user' doesn't exist
-
-[ 2015-04-15T09:31:35+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
-ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'banar.lb_user' doesn't exist
-
-[ 2015-04-15T09:32:23+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
-ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'banar.lb_user' doesn't exist
-
-[ 2015-04-15T09:35:42+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
-ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'banar.lb_user' doesn't exist
-
-[ 2015-04-15T09:36:06+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001053s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001566s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001797s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001569s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001756s ]
-
-[ 2015-04-15T09:36:15+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001446s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001245s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001552s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0027s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
-
-[ 2015-04-15T09:37:16+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000944s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
-ERR: Think\Model:relation方法不存在！
-
-[ 2015-04-15T09:38:02+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
-
-[ 2015-04-15T09:39:29+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
-NOTIC: [8] Use of undefined constant HAS_MANY - assumed 'HAS_MANY' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 19 行.
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0031s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0011s ]
-NOTIC: [8] Undefined variable: relationData /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 227 行.
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001045s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001210s ]
-
-[ 2015-04-15T09:41:19+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0046s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0010s ]
-SQL: SELECT * FROM `lb_trucks` WHERE ( 1=1 AND driver_id='1' )  [ RunTime:0.0017s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
-
-[ 2015-04-15T09:43:22+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0019s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0014s ]
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0009s ]
-SQL: SELECT * FROM `lb_trucks` WHERE ( 1=1 AND driver_id='1' )  [ RunTime:0.0004s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001033s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001163s ]
-
-[ 2015-04-15T10:03:41+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001669s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0010s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0009s ]
-SQL: SELECT * FROM `lb_trucks` WHERE ( 1=1 AND driver_id='1' )  [ RunTime:0.0002s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001123s ]
-
-[ 2015-04-15T10:04:22+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001723s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001977s ]
-
-[ 2015-04-15T10:05:39+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0023s ]
-SQL: SELECT * FROM `lb_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0008s ]
-SQL: SELECT * FROM `lb_trucks` WHERE ( 1=1 AND driver_id='1' )  [ RunTime:0.0002s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
-
-[ 2015-04-15T10:21:09+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001523s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001107s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001261s ]
-
-[ 2015-04-15T10:21:46+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
-
-[ 2015-04-15T10:22:14+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
-
-[ 2015-04-15T10:31:31+08:00 ] ::1 /banar/api/user/driverLogin
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0015s ]
-SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = '18663706730' AND password = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.0016s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 45 行.
-
-[ 2015-04-15T10:31:57+08:00 ] ::1 /banar/api/user/driverLogin
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0051s ]
-SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = '18663706730' AND password = '123456' ) LIMIT 1   [ RunTime:0.0004s ]
-
-[ 2015-04-15T10:44:16+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001101s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
-ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I' in 'where clause'
-
-[ 2015-04-15T10:44:42+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
-ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I' in 'where clause'
-
-[ 2015-04-15T10:46:02+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000987s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001484s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
-SQL: SELECT * FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0003s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001210s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001367s ]
-
-[ 2015-04-15T10:47:40+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0003s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
-
-[ 2015-04-15T10:50:35+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
 SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0006s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
-NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 68 行.
-NOTIC: [2] Illegal string offset 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 68 行.
-SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 7  [ RunTime:0.0004s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Applications/MAMP/htdocs/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
+SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0003s ]
+
+[ 2015-04-15T16:48:58+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001214s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001363s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000878s ]
 
-[ 2015-04-15T10:51:40+08:00 ] ::1 /banar/api/user/getMyProfile
+[ 2015-04-15T16:49:48+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0018s ]
-NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 69 行.
-SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 2  [ RunTime:0.0002s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000797s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000914s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
 
-[ 2015-04-15T10:52:55+08:00 ] ::1 /banar/api/user/getMyProfile
+[ 2015-04-15T16:49:50+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0022s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0019s ]
-NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 70 行.
-SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 2  [ RunTime:0.0002s ]
-
-[ 2015-04-15T11:03:07+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001107s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001073s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001701s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001876s ]
-
-[ 2015-04-15T11:04:48+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0010s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000728s ]
-
-[ 2015-04-15T11:05:44+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0019s ]
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0033s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001460s ]
-
-[ 2015-04-15T11:06:44+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0034s ]
-ERR: Think\Model:relation方法不存在！
-NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:32) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
-NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:32) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
-
-[ 2015-04-15T11:07:22+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0016s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0009s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0018s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0002s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0005s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('12') [ RunTime:0.0002s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001118s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001507s ]
-
-[ 2015-04-15T11:11:51+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0021s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0004s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0010s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0004s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0004s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('13') [ RunTime:0.0002s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001087s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001229s ]
-
-[ 2015-04-15T11:13:43+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000966s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0014s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0008s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0011s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0002s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0002s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('14') [ RunTime:0.0001s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000645s ]
-
-[ 2015-04-15T11:19:52+08:00 ] ::1 /banar/api/user/driverLogin
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0031s ]
-SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = '18663706730' AND password = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.0008s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 54 行.
-
-[ 2015-04-15T11:19:56+08:00 ] ::1 /banar/api/user/driverLogin
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0022s ]
-SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = '18663706730' AND password = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.0006s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 54 行.
-
-[ 2015-04-15T11:20:00+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
-SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0009s ]
-NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 75 行.
-SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 2  [ RunTime:0.0002s ]
-
-[ 2015-04-15T11:20:05+08:00 ] ::1 /banar/api/user/getMyProfile
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0011s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2015-04-15T16:50:04+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
 SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
-SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0009s ]
-NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 75 行.
-SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 2  [ RunTime:0.0004s ]
-
-[ 2015-04-15T11:20:20+08:00 ] ::1 /banar/api/user/driverRegister
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0019s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0030s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0022s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0002s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0001s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('15') [ RunTime:0.0001s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0015s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001137s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001012s ]
 
-[ 2015-04-15T11:21:51+08:00 ] ::1 /banar/api/user/driverRegister
+[ 2015-04-15T16:50:05+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000890s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0008s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0013s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0004s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0002s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('16') [ RunTime:0.0001s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
 
-[ 2015-04-15T14:35:35+08:00 ] ::1 /banar/api/user/driverRegister
+[ 2015-04-15T16:50:47+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001129s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001244s ]
-SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0024s ]
-NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 792 行.
-SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146259540','123','weychen','') [ RunTime:0.0046s ]
-NOTIC: [8] Undefined index: mapping_name /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 259 行.
-SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0071s ]
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0004s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-NOTIC: [2] Illegal string offset 'driver_id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model/RelationModel.class.php 第 305 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 267 行.
-NOTIC: [2] Invalid argument supplied for foreach() /Users/joy/www/banar/ThinkPHP/Library/Think/Db/Driver.class.php 第 791 行.
-SQL: INSERT INTO `lb_trucks` () VALUES () [ RunTime:0.0008s ]
-NOTIC: [2] Illegal string offset 'id' /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 328 行.
-SQL: INSERT INTO `lb_trucks` (`driver_id`) VALUES ('17') [ RunTime:0.0004s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003698s ]
-INFO: [ app_end ] --END-- [ RunTime:0.004449s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000868s ]
+
+[ 2015-04-15T16:51:25+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `driver_id` = 0 [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000772s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000960s ]
+
+[ 2015-04-15T16:52:53+08:00 ] ::1 /banar/Api/favorite/deleteFavoriteById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0014s ]
+SQL: DELETE FROM `lb_merchant_favorites` WHERE `merchant_id` = 1 AND `id` = 1 [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
 
 [ 2015-04-15T15:38:30+08:00 ] ::1 /banar/api/user/driverRegister
 INFO: [ app_init ] --START--

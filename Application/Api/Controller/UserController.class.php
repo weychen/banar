@@ -13,6 +13,11 @@ use Think\Controller\RestController;
 class UserController extends RestController {
 
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
+
+
+    /**
+     * 司机注册
+     */
     public function driverRegister()
     {
         $result = array();
@@ -88,6 +93,7 @@ class UserController extends RestController {
 
     /**
      * 获取个人信息
+     *
      */
     public function getMyProfile()
     {
