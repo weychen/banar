@@ -19,3 +19,15 @@ function get_user($key,$value){
     }
     return empty($user) ? $user : $user[0];
 }
+
+function put_token_into_sql($token, $user_type, $user_id)
+{
+    $token_data = array(
+        'token' => $token,
+        'userType' => $user_type,
+        'user_id' => $user_id,
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+    );
+    D('tokens')->add($token_data);
+}

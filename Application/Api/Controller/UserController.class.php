@@ -33,7 +33,7 @@ class UserController extends RestController {
         );
         $user = D('users');
         if(get_user('mobile',$user_data['mobile'])){
-            $result['error'] = '该手机号码已经注册';
+            $result['content']['error'] = '该手机号码已经注册';
         } else {
             $user_id = $user->add($user_data);
             $driver_data = array(
@@ -59,15 +59,10 @@ class UserController extends RestController {
             $truck_id = D('trucks')->add($truck_data);
             //生成token并写入
             $token_data = generate_token();
-            $result['token'] = $token_data;
-            $token_data = array(
-                'token' => $token_data,
-                'user_type' => 'driver',
-                'user_id' => $user_id,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            );
-            D('tokens')->add($token_data);
+            put_token_into_sql($token_data, 'driver', $user_id);
+            $data['token'] = $token_data;
+            $result['status'] = 'OK';
+            $result['content'] = $data;
         }
         $this->response($result,'json');
 
@@ -80,7 +75,7 @@ class UserController extends RestController {
     {
         $account = I('post.mobile');
         $password = I('post.password');
-        $response['status'] = false;
+        $result['status'] = false;
         if(!empty($account) && !empty($password)){
 
             $User = M('Users');
@@ -89,14 +84,18 @@ class UserController extends RestController {
                 ->limit(1)
                 ->select()[0];
             if($user){
-                session('user_id',$user['id']);
-                ////
-                $response['status'] = true;
-                $response['user'] = $user;
-                $response['token'] = generate_token();
+                $user_id = $user['id'];
+                $token_data = generate_token();
+                put_token_into_sql($token_data, 'driver',$user_id);
+                $data['token'] = $token_data;
+                $result['status'] = 'OK';
+                $result['content'] = $data;
+
+            }else {
+                $reuslt['content']['error'] = "用户名或密码错误";
             }
         }
-        $this->response($response,'json');
+        $this->response($result,'json');
     }
 
     /**
