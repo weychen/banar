@@ -62,6 +62,9 @@ return array(
             /**
              *  司机接口
              *      3.获取历史订单
+             *  状态：
+             *        已完成
+             *        魏星
              * $_POST:
              *  [token]
              *
@@ -94,6 +97,9 @@ return array(
             /**
              *  司机接口
              *      5.绑定极光推送
+             *   状态：
+             *         已完成
+             *         魏星
              * $_POST:
              *  [token,registrationID]
              *
@@ -107,6 +113,9 @@ return array(
             /**
              *  司机接口
              *      6.接单
+             *   状态：
+             *         已完成
+             *         魏星
              * $_POST:
              *  [token,transportDemandId]
              *
@@ -189,6 +198,7 @@ return array(
             /**
              * 商户接口
              *      6.获取收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token]
              *
@@ -206,6 +216,7 @@ return array(
             /**
              * 商户接口
              *      7.添加收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token,driver_id]
              *
@@ -219,6 +230,7 @@ return array(
             /**
              * 商户接口
              *      8.删除收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token, id]
              *
@@ -276,6 +288,7 @@ return array(
         ),
 
      // 默认数据库配置,本地
+    
     'DB_TYPE'       =>  'mysql',
     'DB_HOST'       =>  'localhost',
     'DB_NAME'       =>  'banar',
