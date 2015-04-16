@@ -29,7 +29,7 @@ return array(
              * 司机接口接口
              *      1.司机注册
              * 状态
-             *  基本已完成，需要重构 weychen
+             *  基本已完成 weychen
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
@@ -49,7 +49,7 @@ return array(
              *  [mobile, password]
              *
              * 状态:
-             *  基本已完成，需要重构 weychen
+             *  基本已完成， weychen
              *
              * return:
              *  {
@@ -123,7 +123,7 @@ return array(
              *  商户接口
              *      1.商户注册
              *  状态:
-             *      基本已完成,需要重构  weychen
+             *      已完成  weychen
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, address, telephone]
@@ -139,7 +139,7 @@ return array(
              * 商户接口
              *      2.商户登录
              * 状态:
-             *      基本已完成，需要重构  weychen
+             *      已完成  weychen
              * $_POST:
              *  [mobile, password]
              *
