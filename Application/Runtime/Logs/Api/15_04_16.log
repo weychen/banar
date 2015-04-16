@@ -2448,3 +2448,56 @@ SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `
 NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
 SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0009s ]
 
+[ 2015-04-16T23:21:15+08:00 ] ::1 /banar/Api/driver/driverIsInMarket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2015-04-16T23:21:46+08:00 ] ::1 /banar/Api/driver/driverIsInMarket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0025s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0314s ]
+SQL: SELECT `market_id` FROM `lb_drivers` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/banar/Application/Api/Controller/UserController.class.php 第 271 行.
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_markets` WHERE `id` = null  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/banar/Application/Api/Controller/UserController.class.php 第 273 行.
+
+[ 2015-04-16T23:22:20+08:00 ] ::1 /banar/Api/driver/driverIsInMarket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001342s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0011s ]
+SQL: SELECT `market_id` FROM `lb_drivers` WHERE `user_id` = 2  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `lb_markets` WHERE `id` = 1  [ RunTime:0.0004s ]
+
+[ 2015-04-16T23:22:51+08:00 ] ::1 /banar/Api/driver/driverIsInMarket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0025s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: SELECT `market_id` FROM `lb_drivers` WHERE `user_id` = 2  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_markets` WHERE `id` = 1  [ RunTime:0.0003s ]
+
