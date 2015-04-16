@@ -198,6 +198,7 @@ return array(
             /**
              * 商户接口
              *      6.获取收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token]
              *
@@ -215,6 +216,7 @@ return array(
             /**
              * 商户接口
              *      7.添加收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token,driver_id]
              *
@@ -228,6 +230,7 @@ return array(
             /**
              * 商户接口
              *      8.删除收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token, id]
              *

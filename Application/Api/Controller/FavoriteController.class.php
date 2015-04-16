@@ -29,7 +29,7 @@ class FavoriteController extends RestController{
     }
 
     /**
-     * 添加收藏夹 可以使用
+     * 商户添加收藏夹 可以使用
      */
     public function addFavorite()
     {
@@ -46,14 +46,21 @@ class FavoriteController extends RestController{
         $data['driver_id'] = $driver_id;
 
         $MerchantFavorite = D('Merchant_favorites');
-        print_r($data);
-        $id = $MerchantFavorite->relation(true)->add($data);
-        echo $id;
-        print_r($data);
+        $id = $MerchantFavorite->add($data);
+        //返回数据
+        if(intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = '添加成功';
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '添加失败,车主已经被添加';
+        }
+        $this->response($result,'json');
     }
 
     /**
-     * 删除收藏夹 可以使用
+     * 商户删除收藏夹 可以使用
      */
     public function deleteFavoriteById()
     {
@@ -66,6 +73,16 @@ class FavoriteController extends RestController{
         $id = I('post.id');
 
         $MerchantFavorite = D('Merchant_favorites');
-        $MerchantFavorite->where(array('merchant_id' => $merchant_id, 'id' => $id))->delete();
+        $id = $MerchantFavorite->where(array('merchant_id' => $merchant_id, 'id' => $id))->delete();
+        //返回数据
+        if (intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = '删除成功';
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '删除失败,车主已经被删除';
+        }
+        $this->response($result,'json');
     }
 }
