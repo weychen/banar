@@ -133,7 +133,20 @@ return array(
              */
             array('transportOrder/takeoverByTransportDemandId', 'User/takeoverByTransportDemandId', array('method => POST')),
 
-
+            /**
+             *  司机接口
+             *      7.司机完成订单
+             *  状态:
+             *      weychen
+             *  $_POST:
+             *  [token, order_id]
+             *
+             * return :
+             * {
+             *      status: true | false
+             * }
+             */
+            array('transportOrder/completeOrder_driver', 'User/completeOrder_driver', array('method' => 'POST')),
 
             /**
              *  商户接口
@@ -292,6 +305,22 @@ return array(
              *  }
              */
             array('driver/getDriversByCateId', 'Merchant/getDriversByCateId', array('method' => 'POST')),
+
+            /**
+             *  商户接口
+             *      11.确认已完成订单
+             *  状态:
+             *      weychen
+             *  $_POST:
+             *  [token, order_id]
+             *
+             * return :
+             * {
+             *      status: true | false
+             * }
+             */
+            array('transportOrder/completeOrder_merchant', 'Merchant/completeOrder_merchant', array('method' => 'POST')),
+
 
             /**
              * 判断车主是否在地理围栏的位置当中
