@@ -163,8 +163,8 @@ class MerchantController extends RestController {
         $this->response($result,'json');
     }
     /*
- *取消订单（如何保证操作安全）
- */
+    *取消订单（如何保证操作安全）
+    */
     public function cancelTransportDemandById()
     {
         $response = array();
@@ -201,13 +201,13 @@ class MerchantController extends RestController {
         $isPointed = 0;
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
         $status = '未确认';
-        //获取空闲司机列表
-        $restDrivers = '';
-        //随机生成一个数字
-        $index = rand(0, 100);
+        #获取空闲司机列表
+        $restDrivers = M('drivers')->field('id')->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
+        #随机生成一个数字
+        $count = count($restDrivers);
+        $index = rand(0,$count-1);
         //选取司机的driver_id
         $driver_id = $restDrivers[$index]['driver_id'];
-
 
         $data['cate_id'] = $cate_id;
         $data['driver_id'] = $driver_id;
