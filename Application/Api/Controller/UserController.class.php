@@ -256,6 +256,8 @@ class UserController extends RestController {
 
     /**
      * 判断司机是否在地理围栏里面
+     *
+     * 还需要将token 的验证模块加进来
      */
     public function driverIsInMarket()
     {
@@ -314,83 +316,4 @@ class UserController extends RestController {
         $s = round($s * 10000) / 10000;
         return $s;
     }
-
-    /*
-     * 插入请求 by yellow
-     * */
-    public function addTransportDemand()
-    {
-        $demand = array();
-        $token = I('token');
-        $demand['cate_id'] = I('cate_id');
-        $demand['driver_id'] = I('driver_id');
-        $condition['token'] = $token;
-
-        $tokenData = M('tokens')->field('userType,user_id')
-            ->where($condition)->select();
-        if(!empty($tokenData))
-        {
-            $demand['merchant_id'] = $tokenData[0]['user_id'];
-            $demand['status'] = "未确认";
-            $demand['created_at'] =  date('y-m-d h:i:s',time());
-            $model = M('transport_demands');
-
-            $result = $model->add($demand);
-            $response = array();
-            if($result)
-            {
-                $response['status'] = 'OK';
-                $response['content'] = '添加请求成功';
-            }else{
-                $response['status'] = 'ERROR';
-            }
-        }else{
-            $response['status'] = 'NOT_LOGIN_IN';
-        }
-
-        $this->response($response,'json');
-    }
-    /*
-     *取消订单（如何保证操作安全）
-     */
-    public function cancelTransportDemandById()
-    {
-        $response = array();
-        $token = I('token');
-        $id = I('id');
-        $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
-        if($demand[0]['user_id']!='')
-        {
-            $result = M('transport_demands')->where("id = {$id}")->setField('status','已取消');
-            if($result)
-            {
-                $response['status'] = 'OK';
-                $response['content'] = '取消订单成功';
-            }else
-            {
-                $response['status'] = 'ERROR';
-            }
-        }else
-        {
-            $response['status'] = 'NOT_LOGED_IN';
-        }
-        $this->response($response,'json');
-    }
-    public function getAllTransportDemand()
-    {
-        $response = array();
-        $token = I('token');
-        $userdata = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
-        $user_id = $userdata[0]['user_id'];
-        $demands = M('transport_demands')->field('id,cate_id,driver_id')->where(array('user_id'=>$user_id,'status'=>'未确认'))->select();
-        foreach($demands as $demand)
-        {
-            $data = array();
-            $data['id'] = $demand['id'];
-            $data['cate_id'] = $demand['cate_id'];
-            $data['driver_name'] = M('users')->field('user_name')->where(array('user_id'=>$demand['driver_id']))->seleclt();
-            array_push($response['content'],$data);
-        }
-    }
-
 }

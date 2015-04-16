@@ -172,9 +172,6 @@ return array(
              *
              *  }
              */
-
-            array('transportDemand/addTransportDemand','User/addTransportDemand',array('method'=>'POST')),
-
             array('transportDemand/addTransportDemand','Merchant/postATransportDemand', array('method => POST')),
 
             /**
@@ -187,7 +184,7 @@ return array(
              *  {
              *  }
              */
-            array('transportDemand/cancelTransportDemandById','User/cancelTransportDemandById',array('method'=>'POST')),
+            array('transportDemand/cancelTransportDemandById','Merchant/cancelTransportDemandById',array('method'=>'POST')),
 
             /*
              *商户接口
@@ -269,7 +266,7 @@ return array(
              *      driver_name,
              *  }
              */
-            array('transportOrder/getAllMyTransportOrder',),
+            array('transportOrder/getAllMyTransportOrder', 'User/getAllMyTransportOrder', array('method' => 'POST')),
 
             /**
              * 商户接口
