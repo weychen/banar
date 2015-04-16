@@ -1370,3 +1370,116 @@ SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`) VALUES ('13146
 SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0021s ]
 SQL: INSERT INTO `lb_merchants` (`user_id`,`market_id`,`address`,`telephone`,`created_at`,`updated_at`) VALUES ('36','2','beihang','1111','2015-04-15 22:24:34','2015-04-15 22:24:34') [ RunTime:0.0011s ]
 
+[ 2015-04-15T23:43:57+08:00 ] ::1 /banar/index.php/Api/cate/getAllCates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `lb_cates` [ RunTime:0.1491s ]
+SQL: SELECT `id`,`name` FROM `lb_cates` ORDER BY id asc  [ RunTime:0.0014s ]
+
+[ 2015-04-15T23:46:08+08:00 ] ::1 /banar/index.php/Api/cate/getAllCates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `lb_cates` [ RunTime:0.0076s ]
+SQL: SELECT `id`,`name` FROM `lb_cates` ORDER BY id asc  [ RunTime:0.0005s ]
+
+[ 2015-04-15T23:46:30+08:00 ] ::1 /banar/index.php/Api/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+ERR: 无法加载控制器:AddTransportDemand
+
+[ 2015-04-15T23:46:48+08:00 ] ::1 /banar/index.php/Api/user/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-04-15T23:48:37+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+
+[ 2015-04-15T23:49:00+08:00 ] ::1 /banar/index.php/Api/user/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+
+[ 2015-04-15T23:49:26+08:00 ] ::1 /banar/index.php/Api/user/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+
+[ 2015-04-15T23:49:45+08:00 ] ::1 /banar/index.php/Api/user/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0777s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001156s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001313s ]
+
+[ 2015-04-15T23:50:24+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0082s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001171s ]
+
+[ 2015-04-15T23:50:51+08:00 ] ::1 /banar/index.php/Api/user/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0099s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2015-04-15T23:50:54+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0085s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000971s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001127s ]
+

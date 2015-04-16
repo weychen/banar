@@ -162,7 +162,7 @@ return array(
              *
              *  }
              */
-            array('transportDemand/addTransportDemand'),
+            array('transportDemand/addTransportDemand','User/addTransportDemand',array('method'=>'POST')),
 
             /**
              * 商户接口
@@ -174,8 +174,20 @@ return array(
              *  {
              *  }
              */
-            array('transportDemand/cancelTransportDemandById'),
+            array('transportDemand/cancelTransportDemandById','User/cancelTransportDemandById',array('method'=>'POST')),
 
+            /*
+             *商户接口
+             *      5.获取所有请求
+             * $_POST:
+             * [token]
+             *
+             * return:
+             * {
+             *     请求id，cate_id，driver_name(请求详情)
+             * }
+             * */
+            array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
             /**
              * 商户接口
              *      5.完成订单
@@ -264,7 +276,7 @@ return array(
     'DB_HOST'       =>  'localhost',
     'DB_NAME'       =>  'banar',
     'DB_USER'       =>  'root',
-    'DB_PWD'        =>  'root',
+    'DB_PWD'        =>  '',
     'DB_PORT'       =>  '3306',
     'DB_PREFIX'     =>  'lb_',    // 数据库表前缀
 );
