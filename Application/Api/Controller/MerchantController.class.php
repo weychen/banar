@@ -97,8 +97,6 @@ class MerchantController extends RestController {
         $cate_id = I('post.cate_id');
         $merchant = $token_data['user_id'];
         // 用join 查询来查找出所需要的信息
-        echo $token_data[user_id];
-        echo "<br />";
         //收藏的司机的id
         $favorites_id = M('merchant_favorites')
             ->where(array('merchant_id' => $token_data[user_id]))->getField('driver_id',true);
@@ -110,6 +108,11 @@ class MerchantController extends RestController {
             ->join('lb_users on lb_drivers.user_id = lb_users.id')
             ->where('lb_trucks.cate_id = 1')->where($map1)->order()
             ->select();
+        foreach($data2 as $key => $value)
+        {
+            $data2[$key]['isFavorite'] = 1;
+        }
+
         //查询非收藏的结果集
         $map2['lb_drivers.id']  = array('not in',$favorites_id);
         $data3 = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
@@ -117,6 +120,10 @@ class MerchantController extends RestController {
             ->join('lb_users on lb_drivers.user_id = lb_users.id')
             ->where('lb_trucks.cate_id = 1')->where($map2)->order()
             ->select();
+        foreach($data3 as $key => $value)
+        {
+            $data3[$key]['isFavorite'] = 0;
+        }
         $data = array_merge($data2,$data3);
 
         $result['status'] = "OK";
