@@ -121,7 +121,8 @@ class UserController extends RestController {
     {
         $token = I('token');
         $registrationID = I('registrationID');
-        $response['status'] = false;
+        $response['status'] = ERROR;
+        $response['content'];
         if (!empty($token) && !empty($registrationID)) {
             
             $Token = M('tokens');
@@ -139,7 +140,8 @@ class UserController extends RestController {
             
             if ($j_push_user->add()) {
                
-                $response['status'] = true;
+                $response['status'] = OK;
+                $response['content'] = '绑定成功';
             }  
         }
         $this->response($response,'json');
@@ -147,6 +149,9 @@ class UserController extends RestController {
 
     public function getAllMyTransportOrder()
     {
+        $response['status'] = false;
+        $response['content'];
+
         $TransportOrder = M('transport_orders');
         $TransportDemand = M('transport_demands');
         $Users = M('users');
@@ -156,97 +161,279 @@ class UserController extends RestController {
         //用户传入token
         // $token = "AovMsrjlvQnV0SqYNdKiDFLKfFt0horf";
         // $token = "WN6uZTE3KJgbMDawa5QhmoqRrig9Qe80";
-        $map['token'] = $token;//使用数组的where
-        $user_data = $Token->field('user_id,usertype')->where($map)->limit(1)->select();
-        $user_id = $user_data['0']['user_id'];//user_id
-        $user_type = $user_data['0']['usertype'];//userType
-        
-        if ($user_type == 'driver') {
+        if(!empty($token))    //如果token不为空
+        {
+            $map['token'] = $token;//使用数组的where
+            $user_data = $Token->field('user_id,usertype')->where($map)->limit(1)->select();
+            $user_id = $user_data['0']['user_id'];//user_id
+            $user_type = $user_data['0']['usertype'];//userType
+            if (!empty($user_id)) {    #如果user_id不为空，说明用户处在登陆状态
+                # code...
+                if ($user_type == 'driver') {    #如果为司机
 
-            $Driver = M('drivers');
-            $driver_id = (int)$Driver->field('id')->where('user_id=%d',$user_id)->select()['0']['id'];
-            $Model = M('transport_orders')
-            ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
-            ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
-            ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
-            ->join('lb_users ON lb_merchants.user_id = lb_users.id')
-            ->field(array('lb_users.name'=>'merchant_name',
-                'lb_users.avatar'=>'merchant_avatar',
-                'lb_cates.name'=>'cate_name',
-                'lb_transport_orders.created_at'=>'time'))
-            ->where('lb_transport_orders.driver_id=%s',$driver_id)
-            ->select();
-            $this->response($Model,'json');
-        }
-        elseif($user_type == 'merchant'){
+                $Driver = M('drivers');
+                $driver_id = (int)$Driver->field('id')->where('user_id=%d',$user_id)->select()['0']['id'];
+                $response['content'] = M('transport_orders')
+                ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
+                ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
+                ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
+                ->join('lb_users ON lb_merchants.user_id = lb_users.id')
+                ->field(array('lb_users.name'=>'merchant_name',
+                    'lb_users.avatar'=>'merchant_avatar',
+                    'lb_cates.name'=>'cate_name',
+                    'lb_transport_orders.created_at'=>'time'))
+                ->where('lb_transport_orders.driver_id=%s',$driver_id)
+                ->select();
+                $response['status'] = OK;
+                
+                }
+                elseif($user_type == 'merchant'){
 
-            $Merchant = M('merchants');
-            $merchant_id = (int)$Merchant->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
-            $Model = M("transport_demands")
-            ->join('lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id')
-            ->join('lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id')
-            ->join('lb_users ON lb_drivers.user_id = lb_users.id')
-            ->field(array('lb_transport_demands.id'=>'demand_id',
-                'lb_transport_demands.status'=>'demand_status',
-                'lb_transport_orders.id'=>'order_id',
-                'lb_transport_orders.status'=>'order_status',
-                'lb_users.mobile'=>'driver_mobile'))
-            ->where('lb_transport_demands.merchant_id=%s',$merchant_id)
-            ->select();
-            $this->response($Model,'json');
+                    $Merchant = M('merchants');
+                    $merchant_id = (int)$Merchant->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
+                    $response['content'] = M("transport_demands")
+                    ->join('lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id')
+                    ->join('lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id')
+                    ->join('lb_users ON lb_drivers.user_id = lb_users.id')
+                    ->field(array('lb_transport_demands.id'=>'demand_id',
+                        'lb_transport_demands.status'=>'demand_status',
+                        'lb_transport_orders.id'=>'order_id',
+                        'lb_transport_orders.status'=>'order_status',
+                        'lb_users.mobile'=>'driver_mobile',
+                        'lb_users.name'=>'driver_name'))
+                    ->where('lb_transport_demands.merchant_id=%s',$merchant_id)
+                    ->select();
+                    $response['status'] = OK;
+                    
+                }
+                
+            }
+            else{
+                $response['status'] = NOT_LOGGED_IN;
+            }
         }
         else{
-            echo "token is wrong";
-        }
-        
-        
-        
+            $response['status'] = ERROR;
+            $response['content'] = '空token';
+        }  
+        $this->response($response,'json');
     }
 
+    /*
+        接单
+     */
     public function takeoverByTransportDemandId()
     {
-        $response['status'] = false;
+        $response['status'] = ERROR;
+        $response['content'];
         $token = I('token');
         $transportDemand_id = I('transportDemandId');
+        $isAccept = I('isAccept');
+        dump($isAccept);
+        if (!empty($token) && !empty($transportDemand_id) && !empty($isAccept)) {   //如果三个值都不为空
 
-        if (!empty($token) && !empty($transportDemand_id)) {
+            $Token = M('tokens');          //查找driver_id
+            $map['token'] = $token;
+            $user_data = $Token->field('user_id,usertype')->where($map)->select();
+            $user_id = $user_data['0']['user_id'];
+            if (!empty($user_id)) {     //如果user_id不为空，说明用户已登陆
+                # code...
+                $user_type = $user_data['0']['usertype'];
+                if ($user_type == 'driver') {      #如果类型为司机
+                    $driver = M('drivers');
+                    $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
+                    dump($driver_id);
+                        # code...
+                        if ($isAccept=='true'){    #如果司机接收订单
+                        # code...
+                            echo "right";
+                            $demand = M('transport_demands');
+                            $maps['id'] = $transportDemand_id;
+                            $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
+                            dump($demand_status);
+                            
+                            $orders = M('transport_orders');
+                            
+                            $orders->transportDemand_id = $transportDemand_id;
+                            $orders->driver_id = $driver_id;
+                            $orders->status = '未完成';
+                            $orders->created_at = date('Y-m-d H:i:s');
+                            $orders->updated_at = date('Y-m-d H:i:s');
+                            if ($demand_status == '未确认') {
+                                $mapper['id'] = $transportDemand_id;
+                                $result = $demand->where($mapper)->setField('status','已确认');
+                                if ($orders->add() && $result) {
+                                $response['status'] = OK;
+                                $response['content'] ='添加成功';
 
+                                }
+                            }
+                            elseif ($demand_status == '已取消') {
+                                $response['content'] = '订单已取消';
+                            }
+                            elseif ($demand_status == '已确认') {
+                                $response['content'] = '订单已存在';
+                            }   
+                        }
+                    else
+                    {
+                        $demand = M('transport_demands');
+                        $mapper['id'] = $transportDemand_id;
+                        $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
+                        if ($demand_ispoint == 1) {  #如果是指定的
+                            $mapper['id'] = $transportDemand_id;
+                            $result = $demand->where($mapper)->setField('status','已取消');
+                            if (intval($result)!=0) {
+                                # 更新成功
+                                $response['status'] = OK;
+                                $response['content'] = '拒绝成功';
+                            }
+                            else{
+                                $response['status'] = ERROR;
+                                $response['content'] = '更新失败';
+                            }
+                        }
+                        else{
+                            $mapper['id'] = $transportDemand_id;
+                            $driver = M('drivers');
+                            #获取
+                            #获取空闲司机列表
+                            $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
+                            #随机生成一个数字
+                            $count = count($restDrivers);
+                            $index = rand(0,$count-1);
+                            dump($index);
+                            #选取司机id
+                            $driver_id = $restDrivers[$index]['id'];
+                            dump($driver_id);
+                            $data['driver_id'] = $driver_id;
+                            $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
+                            dump($result);
+                            if (intval($result)!=0) {
+                                # 更新成功
+                                $response['status'] = OK;
+                                $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
+                            }
+                            else{
+                                $response['status'] = ERROR;
+                                $response['content'] = '失败';
+                            }
+                        }
+                        
+                    }
+                    
+                    
+                }
+
+            }
+            else
+                {
+                    $response['status'] = NOT_LOGGED_IN;
+            }
+        }
+        else{
+            $response['status'] = ERROR;
+            $response['content'] = '存在空值';
+        }
+        $this->response($response,'json');
+    }
+
+    /*
+    查询当前需要处理的请求
+     */
+    public function getAllTransportDemand()
+    {
+        $response['status'] = ERROR;
+        $response['content'];
+        $token = I('token');
+        if (!empty($token)) {   //检查token是否为空
             $Token = M('tokens');
             $map['token'] = $token;
             $user_data = $Token->field('user_id,usertype')->where($map)->select();
             $user_id = $user_data['0']['user_id'];
             $user_type = $user_data['0']['usertype'];
-            $driver = M('drivers');
-            $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
-            dump($driver_id);
-                # code...
-            $demand = M('transport_demands');
-            $maps['id'] = $transportDemand_id;
-            $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-            dump($demand_status);
-            if ($user_type == 'driver') {
-                $orders = M('transport_orders');
-                
-                $orders->transportDemand_id = $transportDemand_id;
-                $orders->driver_id = $driver_id;
-                $orders->status = '未完成';
-                $orders->created_at = date('Y-m-d H:i:s');
-                $orders->updated_at = date('Y-m-d H:i:s');
-                if ($demand_status == '未确认') {
-                    if ($orders->add()) {
-                    $response['status'] = true;
-                    }
+            if (!empty($user_id)) {     //检查token是否正确，以此判断是否登陆
+                if ($user_type == "driver") {
+                    $driver = M('drivers');
+                    $maps['user_id'] = $user_id;
+                    $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
+                    $demand = M('transport_demands');    //实例化demand表
+                    $response['content'] = $demand
+                    ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
+                    ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
+                    ->join('lb_users ON lb_merchants.user_id = lb_users.id')
+                    ->field(array('lb_merchants.id'=>'merchant_id',
+                        'lb_users.name'=>'merchant_name',
+                        'lb_users.mobile'=>'merchant_mobile',
+                        'lb_cates.id'=>'cate_id',
+                        'lb_cates.name'=>'cate_name',
+                        'lb_transport_demands.ispoint'=>'ispoint',
+                        'lb_transport_demands.id'=>'demand_id'))
+                    ->where('lb_transport_demands.driver_id=%s',$driver_id)
+                    ->select();
+                    $response['status'] = OK;
                 }
-                elseif ($demand_status == '已取消') {
-                    echo "订单已取消";
-                }
-                elseif ($demand_status == '已确认') {
-                    echo "订单已存在";
-                }
-                
+            }
+            else{
+                $response['status'] = NOT_LOGGED_IN;
             }
         }
+        else{
+            $response['content'] = '空token';
+        }
         $this->response($response,'json');
+    }
+    /*
+    查询当前需要处理的订单
+     */
+    public function getAllTransportOrder()
+    {
+        $response['status'] = ERROR;
+        $response['content'];
+        $token = I('token');
+        if (!empty($token)) {   //检查token是否为空
+            $Token = M('tokens');
+            $map['token'] = $token;
+            $user_data = $Token->field('user_id,usertype')->where($map)->select();
+            $user_id = $user_data['0']['user_id'];
+            $user_type = $user_data['0']['usertype'];
+            if (!empty($user_id)) {     //检查token是否正确，以此判断是否登陆
+                if ($user_type == "driver") {
+                    $driver = M('drivers');
+                    $maps['user_id'] = $user_id;
+                    $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
+                    // dump($driver_id);
+                    $Order = M('transport_orders');
+                    // $status = "未完成";
+                    $mapper['lb_transport_orders.driver_id'] = $driver_id;    //查找该driver_id的未完成订单
+                    $mapper['lb_transport_orders.status'] = '未完成';
+                    $response['content'] = $Order
+                    ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
+                    ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
+                    ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
+                    ->join('lb_users ON lb_merchants.user_id = lb_users.id')
+                    ->field(array('lb_transport_demands.merchant_id'=>'merchant_id',
+                        'lb_users.name'=>'merchant_name',
+                        'lb_users.mobile'=>'merchant_mobile',
+                        'lb_transport_demands.cate_id'=>'cate_id',
+                        'lb_cates.name'=>'cate_name',
+                        'lb_transport_demands.id'=>'demand_id',
+                        'lb_transport_orders.id'))
+                    ->where($mapper)
+                    ->select();
+                    // dump($response);
+                    $response['status'] = OK;
+                }
+            }
+            else{
+                $response['status'] = NOT_LOGGED_IN;
+            }
+        }
+        else{
+            $response['content'] = '空token';
+        }
+
+            $this->response($response,'json');
     }
 
 

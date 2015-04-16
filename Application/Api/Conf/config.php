@@ -282,6 +282,52 @@ return array(
              * }
              */
             array('driver/driverIsInMarket', 'User/driverIsInMarket', array('method' => 'POST')),
+
+             /**
+             * 司机接口
+             * 返回当前司机需要处理的订单
+             * 状态:
+             *      未完成
+             *      魏星
+             * $_POST:
+             *  [token]
+             * return:
+             * {
+             *      status,
+             *      content:'{
+             *                  merchant_id,
+             *                  merchant_name,
+             *                  merchant_number,
+             *                  cate_id,
+             *                  cate_name,
+             *                  demand_id 
+             *                  }'
+             * }
+             */
+            array('transportOrder/getAllTransportOrder','User/getAllTransportOrder',array('method' => 'POST')),
+
+             /**
+             * 司机接口
+             * 返回当前司机需要处理的请求，同时处理包括拒绝和接受
+             * 状态:
+             *      未完成
+             *      魏星
+             * $_POST:
+             *  [token]
+             * return:
+             * {
+             *      status,
+             *      content:'{
+             *                  merchant_id,
+             *                  merchant_name,
+             *                  merchant_mobile,
+             *                  cate_id,
+             *                  cate_mobile,
+             *                  ispoint 
+             *                  }'
+             * }
+             */
+            array('transportOrder/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
         ),
 
      // 默认数据库配置,本地
