@@ -162,6 +162,34 @@ class MerchantController extends RestController {
         }
         $this->response($result,'json');
     }
+    /*
+ *取消订单（如何保证操作安全）
+ */
+    public function cancelTransportDemandById()
+    {
+        $response = array();
+        $token = I('token');
+        $id = I('id');
+        $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
+        if($demand[0]['user_id']!='')
+        {
+            $result = M('transport_demands')->where("id = {$id}")->setField('status','已取消');
+            if($result)
+            {
+                $response['status'] = 'OK';
+                $response['content'] = '取消订单成功';
+            }else
+            {
+                $response['status'] = 'ERROR';
+            }
+        }else
+        {
+            $response['status'] = 'NOT_LOGED_IN';
+        }
+        $this->response($response,'json');
+    }
+
+
 
     /**
      * 商户发起用车请求,商户自动选取
@@ -198,6 +226,7 @@ class MerchantController extends RestController {
         }
         $this->response($result,'json');
     }
+
 
 
 }

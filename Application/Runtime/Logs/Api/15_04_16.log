@@ -2448,3 +2448,36 @@ SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `
 NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
 SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0009s ]
 
+[ 2015-04-16T22:53:20+08:00 ] ::1 /banar/api/transportOrder/getAllMyTransportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2015-04-16T22:53:54+08:00 ] ::1 /banar/api/transportOrder/getAllMyTransportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0027s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE ( user_id=10 )  [ RunTime:0.0002s ]
+SQL: SELECT lb_transport_demands.id AS `demand_id`,lb_transport_demands.status AS `demand_status`,lb_transport_orders.id AS `order_id`,lb_transport_orders.status AS `order_status`,lb_users.mobile AS `driver_mobile` FROM `lb_transport_demands` INNER JOIN lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id INNER JOIN lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id INNER JOIN lb_users ON lb_drivers.user_id = lb_users.id  WHERE ( lb_transport_demands.merchant_id=3 )  [ RunTime:0.0004s ]
+
+[ 2015-04-16T22:55:10+08:00 ] ::1 /banar/api/transportOrder/getAllMyTransportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001712s ]
+
