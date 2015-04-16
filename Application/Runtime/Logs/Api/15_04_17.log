@@ -1,0 +1,1139 @@
+[ 2015-04-17T00:00:04+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001289s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0026s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0707s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:01:38+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001230s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 335 行.
+
+[ 2015-04-17T00:01:46+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001579s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 335 行.
+
+[ 2015-04-17T00:01:49+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001078s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 335 行.
+
+[ 2015-04-17T00:03:25+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 10 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0602s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:03:30+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 191  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 9 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 191 [ RunTime:0.0950s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 317 行.
+
+[ 2015-04-17T00:03:44+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0067s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0065s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 8 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0721s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 317 行.
+
+[ 2015-04-17T00:03:50+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001521s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0032s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0029s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0028s ]
+
+[ 2015-04-17T00:03:56+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001668s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0732s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:03:59+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 6 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0726s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:04:01+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001727s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0034s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0034s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0038s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 10 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0651s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 317 行.
+
+[ 2015-04-17T00:04:04+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001517s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0030s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0028s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 9 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0700s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 317 行.
+
+[ 2015-04-17T00:04:06+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0030s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0028s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.2713s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:04:14+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001262s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0034s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0034s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0036s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 5 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 306 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.1519s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:04:16+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001526s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0062s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0068s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0072s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0680s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 313 行.
+
+[ 2015-04-17T00:05:34+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001636s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0035s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0035s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0656s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:05:37+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0067s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0062s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0061s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0669s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:39+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001639s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0069s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0064s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0052s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0675s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:42+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0031s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0034s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0826s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:05:50+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001231s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0033s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0883s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:52+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0062s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0062s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0049s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0683s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:53+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002069s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0063s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0061s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0062s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0007s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0571s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:55+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001489s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0032s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0030s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0028s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0646s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:57+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0041s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0039s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0039s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0709s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:05:58+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000989s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001561s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0048s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0046s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0041s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0004s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0570s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:06:00+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001240s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0031s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0030s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.1012s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:06:02+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001768s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0688s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:07:58+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000127s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001498s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0065s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0058s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0738s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:08:03+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001567s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0066s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0060s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0650s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:09+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001294s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0075s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0049s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0050s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0702s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:13+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0068s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0067s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0063s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0665s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:15+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0051s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0031s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0033s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0733s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:16+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001423s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0076s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0064s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0007s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0583s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:08:24+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0072s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0063s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0068s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0700s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:27+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001639s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0036s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0031s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0031s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0667s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:29+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001405s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0661s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:08:48+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001872s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0075s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0082s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0043s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0004s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.1031s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:08:54+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002017s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 5 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 307 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0720s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:00+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001466s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0062s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0064s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0061s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0722s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:03+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0062s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0079s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0081s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0745s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:05+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0681s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:08+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001344s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0032s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0030s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0031s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0912s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:09+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001228s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0030s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0027s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0027s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 5 X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 307 行.
+SQL: UPDATE `lb_transport_demands` SET `driver_id`=NULL WHERE `id` = 194 [ RunTime:0.0700s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:37+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001442s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0059s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0063s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0669s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:39+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0040s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0036s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0034s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.1151s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:09:41+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001455s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0063s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0064s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0605s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:13:12+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0040s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0035s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0031s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0693s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:13:16+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001365s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0026s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0029s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0639s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 318 行.
+
+[ 2015-04-17T00:13:19+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001706s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0058s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0059s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0004s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0685s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:13:27+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0069s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0059s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0826s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:13:31+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001340s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0030s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0659s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:13:57+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000958s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0065s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0682s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:01+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0094s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0038s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0037s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.1154s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:04+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0062s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0061s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.0648s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:06+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0031s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0033s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0028s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='2' WHERE `id` = 194 [ RunTime:0.0717s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:08+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001729s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0037s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0038s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0035s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='3' WHERE `id` = 194 [ RunTime:0.0887s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:10+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001283s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0063s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0089s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0008s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0007s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='1' WHERE `id` = 194 [ RunTime:0.0646s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:13+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0067s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0006s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='6' WHERE `id` = 194 [ RunTime:0.0701s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:15+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0074s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0063s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0066s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE `isFree` = 1  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_transport_demands` SET `driver_id`='5' WHERE `id` = 194 [ RunTime:0.1038s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 314 行.
+
+[ 2015-04-17T00:14:43+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001824s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0063s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0069s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0059s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0063s ]
+
+[ 2015-04-17T00:15:23+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001688s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 227 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 228 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0072s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = '7IaJoaTUnDtNsjIW7AgDkYypZ3UYuN9I'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0076s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0070s ]
+SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.0007s ]
+SQL: UPDATE `lb_transport_demands` SET `status`='已取消' WHERE `id` = 194 [ RunTime:0.0556s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 288 行.
+
