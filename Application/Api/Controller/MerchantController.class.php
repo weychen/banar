@@ -93,14 +93,32 @@ class MerchantController extends RestController {
     {
         // 获得token 相对应的usertpye, user_id
         $token = I('post.token');
-        $this->validate_token($token);
+        $token_data = $this->validate_token($token);
         $cate_id = I('post.cate_id');
+        $merchant = $token_data['user_id'];
+        // 用join 查询来查找出所需要的信息
+        echo $token_data[user_id];
+        echo "<br />";
+        //收藏的司机的id
+        $favorites_id = M('merchant_favorites')
+            ->where(array('merchant_id' => $token_data[user_id]))->getField('driver_id',true);
+        //查询收藏的结果集
+        $map1['lb_drivers.id']  = array('in',$favorites_id);
 
-        $data = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
+        $data2 = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
             ->join('lb_trucks on lb_drivers.id = lb_trucks.driver_id')
             ->join('lb_users on lb_drivers.user_id = lb_users.id')
-            ->where('lb_trucks.cate_id = 1')
-            ->limit(10)->select();
+            ->where('lb_trucks.cate_id = 1')->where($map1)->order()
+            ->select();
+        //查询非收藏的结果集
+        $map2['lb_drivers.id']  = array('not in',$favorites_id);
+        $data3 = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
+            ->join('lb_trucks on lb_drivers.id = lb_trucks.driver_id')
+            ->join('lb_users on lb_drivers.user_id = lb_users.id')
+            ->where('lb_trucks.cate_id = 1')->where($map2)->order()
+            ->select();
+        $data = array_merge($data2,$data3);
+
         $result['status'] = "OK";
         $result['content'] = $data;
         $this->response($result,'json');
@@ -188,8 +206,8 @@ class MerchantController extends RestController {
 
         if(!$token_data) {
             //如果token 错误，则返回错误信息
-            $result['status'] = false;
-            $result['content']['error'] = 'token is error';
+            $result['status'] = 'error';
+            $result['content'] = 'token is error';
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
@@ -197,8 +215,8 @@ class MerchantController extends RestController {
             {
                 //token 已经过期,销毁token
                 M('tokens')->where($condition)->delete();
-                $result['status'] = false;
-                $result['content']['error'] = 'token is out_of_time';
+                $result['status'] = 'error';
+                $result['content'] = 'token is out_of_time';
                 $this->response($result,'json');
             } else {
                 //token 未过期，进行相应的操作
