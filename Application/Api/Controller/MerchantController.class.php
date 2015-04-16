@@ -47,7 +47,7 @@ class MerchantController extends RestController {
             $result['token'] = $token_data;
             $token_data = array(
                 'token' => $token_data,
-                'user_type' => 'merchant',
+                'userType' => 'merchant',
                 'user_id' => $user_id,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -65,7 +65,7 @@ class MerchantController extends RestController {
     {
         $account = I('post.mobile');
         $password = I('post.password');
-        $response['status'] = false;
+        $result['status'] = false;
         if(!empty($account) && !empty($password)){
 
             $User = M('Users');
@@ -74,14 +74,16 @@ class MerchantController extends RestController {
                 ->limit(1)
                 ->select()[0];
             if($user){
-                session('user_id',$user['id']);
-                ////
-                $response['status'] = true;
-                //$response['user'] = $user;
-                $response['token'] = generate_token();
+                $user_id = $user['id'];
+                $token_data = generate_token();
+                put_token_into_sql($token_data, 'merchant',$user_id);
+                $result['token'] = $token_data;
+                $result['status'] = true;
             }
         }
-        $this->response($response,'json');
+        $this->response($result,'json');
+
+
     }
 
     /**
@@ -91,33 +93,140 @@ class MerchantController extends RestController {
     {
         // 获得token 相对应的usertpye, user_id
         $token = I('post.token');
-        $condition['token'] = $token;
-        $tokenData = M('tokens')->field('userType,user_id')
-            ->where($condition)->select()[0];
-
-
+        $token_data = validate_token($token);
         $cate_id = I('post.cate_id');
+        $merchant = $token_data['user_id'];
+        // 用join 查询来查找出所需要的信息
+        //收藏的司机的id
+        $favorites_id = M('merchant_favorites')
+            ->where(array('merchant_id' => $token_data[user_id]))->getField('driver_id',true);
+        //查询收藏的结果集
+        $map1['lb_drivers.id']  = array('in',$favorites_id);
 
-        $data = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
+        $data1 = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
             ->join('lb_trucks on lb_drivers.id = lb_trucks.driver_id')
             ->join('lb_users on lb_drivers.user_id = lb_users.id')
-            ->where('lb_trucks.cate_id = 1')
-            ->limit(10)->select();
-        $this->response($data,'json');
+            ->where("lb_trucks.cate_id = $cate_id")->where($map1)->order()
+            ->select();
+        foreach($data1 as $key => $value)
+        {
+            $data1[$key]['isFavorite'] = 1;
+        }
 
+        //查询非收藏的结果集
+        $map2['lb_drivers.id']  = array('not in',$favorites_id);
+        $data2 = M('drivers')->field('lb_drivers.id, lb_users.name, lb_users.mobile, lb_drivers.isFree')
+            ->join('lb_trucks on lb_drivers.id = lb_trucks.driver_id')
+            ->join('lb_users on lb_drivers.user_id = lb_users.id')
+            ->where("lb_trucks.cate_id = $cate_id")->where($map2)->order()
+            ->select();
+        foreach($data2 as $key => $value)
+        {
+            $data2[$key]['isFavorite'] = 0;
+        }
+        $data = array_merge($data1,$data2);
 
+        $result['status'] = "OK";
+        $result['content'] = $data;
+        $this->response($result,'json');
     }
 
     /**
-     * @param $token
-     * @return mixed
-     * 用于验证token 是否正确
+     * 商户发起用车请求,商户指定
      */
-    public function validate_token($token)
+    public function postATransportDemand()
     {
-        $condition['token'] = $token;
-        $token_data = M('tokens')->field('userType,user_id')
-            ->where($condition)->select()[0];
-        return $token_data;
+        //获得参数
+        $token = I('post.token');//商户信息
+        $cate_id = I('post.cate_id');//车型id
+        $driver_id = I('driver_id');//司机id
+        $isPointed = 1;
+        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $status = '未确认';
+
+        $data['cate_id'] = $cate_id;
+        $data['driver_id'] = $driver_id;
+        $data['isPointed'] = $isPointed;
+        $data['merchant_id'] = $merchant_id;
+        $data['status'] = $status;
+
+        $id = M('transport_demands')->add($data);
+        //返回数据
+        if(intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = $data;
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '添加失败';
+        }
+        $this->response($result,'json');
     }
+    /*
+ *取消订单（如何保证操作安全）
+ */
+    public function cancelTransportDemandById()
+    {
+        $response = array();
+        $token = I('token');
+        $id = I('id');
+        $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
+        if($demand[0]['user_id']!='')
+        {
+            $result = M('transport_demands')->where("id = {$id}")->setField('status','已取消');
+            if($result)
+            {
+                $response['status'] = 'OK';
+                $response['content'] = '取消订单成功';
+            }else
+            {
+                $response['status'] = 'ERROR';
+            }
+        }else
+        {
+            $response['status'] = 'NOT_LOGED_IN';
+        }
+        $this->response($response,'json');
+    }
+
+
+
+    /**
+     * 商户发起用车请求,商户自动选取
+     */
+    public function postATransportDemandByAuto()
+    {
+        $token = I('post.token');//商户信息
+        $cate_id = I('post.cate_id');//车型id
+        $isPointed = 0;
+        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $status = '未确认';
+        //获取空闲司机列表
+        $restDrivers = '';
+        //随机生成一个数字
+        $index = rand(0, 100);
+        //选取司机的driver_id
+        $driver_id = $restDrivers[$index]['driver_id'];
+
+
+        $data['cate_id'] = $cate_id;
+        $data['driver_id'] = $driver_id;
+        $data['isPointed'] = $isPointed;
+        $data['merchant_id'] = $merchant_id;
+        $data['status'] = $status;
+        $id = M('transport_demands')->add($data);
+        //返回数据
+        if(intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = $data;
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '添加失败';
+        }
+        $this->response($result,'json');
+    }
+
+
+
 }

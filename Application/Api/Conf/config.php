@@ -29,7 +29,7 @@ return array(
              * 司机接口接口
              *      1.司机注册
              * 状态
-             *  基本已完成，需要重构 weychen
+             *  基本已完成 weychen
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
@@ -49,7 +49,7 @@ return array(
              *  [mobile, password]
              *
              * 状态:
-             *  基本已完成，需要重构 weychen
+             *  基本已完成， weychen
              *
              * return:
              *  {
@@ -132,7 +132,7 @@ return array(
              *  商户接口
              *      1.商户注册
              *  状态:
-             *      基本已完成,需要重构  weychen
+             *      已完成  weychen
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, address, telephone]
@@ -148,7 +148,7 @@ return array(
              * 商户接口
              *      2.商户登录
              * 状态:
-             *      基本已完成，需要重构  weychen
+             *      已完成  weychen
              * $_POST:
              *  [mobile, password]
              *
@@ -161,8 +161,9 @@ return array(
 
             /**
              * 商户接口
-             *      3.发起用车请求
-             *
+             *      3.商户发起用车请求
+             * 状态:
+             *      正在完成 牛威
              * $_POST:
              *  [token, cate_id, driver_id]
              *
@@ -171,7 +172,7 @@ return array(
              *
              *  }
              */
-            array('transportDemand/addTransportDemand'),
+            array('transportDemand/addTransportDemand','Merchant/postATransportDemand', array('method => POST')),
 
             /**
              * 商户接口
@@ -183,8 +184,20 @@ return array(
              *  {
              *  }
              */
-            array('transportDemand/cancelTransportDemandById'),
+            array('transportDemand/cancelTransportDemandById','Merchant/cancelTransportDemandById',array('method'=>'POST')),
 
+            /*
+             *商户接口
+             *      5.获取所有请求
+             * $_POST:
+             * [token]
+             *
+             * return:
+             * {
+             *     请求id，cate_id，driver_name(请求详情)
+             * }
+             * */
+            array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
             /**
              * 商户接口
              *      5.完成订单
@@ -198,6 +211,7 @@ return array(
             /**
              * 商户接口
              *      6.获取收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token]
              *
@@ -215,6 +229,7 @@ return array(
             /**
              * 商户接口
              *      7.添加收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token,driver_id]
              *
@@ -228,6 +243,7 @@ return array(
             /**
              * 商户接口
              *      8.删除收藏夹
+             * 完成 牛威
              * $_POST:
              *  [token, id]
              *
@@ -250,7 +266,7 @@ return array(
              *      driver_name,
              *  }
              */
-            array('transportOrder/getAllMyTransportOrder',),
+            array('transportOrder/getAllMyTransportOrder', 'User/getAllMyTransportOrder', array('method' => 'POST')),
 
             /**
              * 商户接口

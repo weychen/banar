@@ -33,7 +33,7 @@ class UserController extends RestController {
         );
         $user = D('users');
         if(get_user('mobile',$user_data['mobile'])){
-            $result['error'] = '该手机号码已经注册';
+            $result['content']['error'] = '该手机号码已经注册';
         } else {
             $user_id = $user->add($user_data);
             $driver_data = array(
@@ -59,15 +59,10 @@ class UserController extends RestController {
             $truck_id = D('trucks')->add($truck_data);
             //生成token并写入
             $token_data = generate_token();
-            $result['token'] = $token_data;
-            $token_data = array(
-                'token' => $token_data,
-                'user_type' => 'driver',
-                'user_id' => $user_id,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            );
-            D('tokens')->add($token_data);
+            put_token_into_sql($token_data, 'driver', $user_id);
+            $data['token'] = $token_data;
+            $result['status'] = 'OK';
+            $result['content'] = $data;
         }
         $this->response($result,'json');
 
@@ -80,23 +75,26 @@ class UserController extends RestController {
     {
         $account = I('post.mobile');
         $password = I('post.password');
-        $response['status'] = false;
+        $result['status'] = false;
         if(!empty($account) && !empty($password)){
 
             $User = M('Users');
             $user = $User->field($this->userFields)
                 ->where("mobile = '%s' AND password = '%s'",array($account,$password))
                 ->limit(1)
-                ->select()[0];
+                ->select();
             if($user){
-                session('user_id',$user['id']);
-                ////
-                $response['status'] = true;
-                $response['user'] = $user;
-                $response['token'] = generate_token();
+                $user_id = $user['id'];
+                $token_data = generate_token();
+                put_token_into_sql($token_data, 'driver',$user_id);
+                $data['token'] = $token_data;
+                $result['status'] = 'OK';
+                $result['content'] = $data;
+            }else {
+                $reuslt['content']['error'] = "用户名或密码错误";
             }
         }
-        $this->response($response,'json');
+        $this->response($result,'json');
     }
 
     /**
@@ -109,7 +107,7 @@ class UserController extends RestController {
         $token = I('post.token');
         $condition['token'] = $token;
         $tokenData = M('tokens')->field('userType,user_id')
-            ->where($condition)->select()[0];
+            ->where($condition)->select();
 
         $data = M('users')->field('id,name,avatar')
             ->where(array('id' => $tokenData[user_id]))->select();
@@ -147,6 +145,9 @@ class UserController extends RestController {
         $this->response($response,'json');
     }
 
+    /**
+     * 获得历史订单
+     */
     public function getAllMyTransportOrder()
     {
         $response['status'] = false;
@@ -219,8 +220,10 @@ class UserController extends RestController {
         $this->response($response,'json');
     }
 
+
     /*
         接单
+
      */
     public function takeoverByTransportDemandId()
     {
@@ -439,6 +442,8 @@ class UserController extends RestController {
 
     /**
      * 判断司机是否在地理围栏里面
+     *
+     * 还需要将token 的验证模块加进来
      */
     public function driverIsInMarket()
     {
@@ -455,8 +460,8 @@ class UserController extends RestController {
         $market_id = $driversData['market_id'];//市场的id
         $marketData = M('markets')->where(array('id' => $market_id))->select()[0];
         //获取到市场的经度和纬度
-        $marketX = $marketData['lat'];//经度
-        $marketY = $marketData['lon'];//纬度
+        $marketX = $marketData['lon'];//经度
+        $marketY = $marketData['lat'];//纬度
         $radius = $marketData['radius'];
 
         $data['marketX'] = $marketX;
@@ -475,7 +480,7 @@ class UserController extends RestController {
      */
     private function rad($d)
     {
-        return floatval(floatval($d) * pi());
+        return floatval(floatval($d) * pi() / 180.0);
     }
 
     /**
@@ -497,5 +502,4 @@ class UserController extends RestController {
         $s = round($s * 10000) / 10000;
         return $s;
     }
-
 }
