@@ -8,6 +8,8 @@ return array(
             /**
              * 公用接口
              *      1.获取车型
+             * 状态:
+             *  已完成 weychen
              * $_GET:
              *  [ { id, name }]
              */
@@ -15,6 +17,8 @@ return array(
             /**
              * 公用接口
              *      2.获取市场
+             * 状态:
+             *  已完成 weychen
              * $_GET:
              *  [ {id, name, address}]
              */
@@ -24,6 +28,9 @@ return array(
             /**
              * 司机接口接口
              *      1.司机注册
+             * 状态
+             *  基本已完成，需要重构 weychen
+             *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
              *
@@ -40,6 +47,9 @@ return array(
              *      2.司机登录
              * $_POST:
              *  [mobile, password]
+             *
+             * 状态:
+             *  基本已完成，需要重构 weychen
              *
              * return:
              *  {
@@ -70,6 +80,8 @@ return array(
             /**
              *  司机接口
              *      4.获取个人信息
+             *  状态:
+             *      已完成 weychen
              * $_POST:
              *  [token]
              *
@@ -119,6 +131,9 @@ return array(
             /**
              *  商户接口
              *      1.商户注册
+             *  状态:
+             *      基本已完成,需要重构  weychen
+             *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, address, telephone]
              *
@@ -127,11 +142,13 @@ return array(
              *      token: __HASH__
              *  }
              */
-            array('user/merchantRegister', ),
+            array('user/merchantRegister', 'Merchant/merchantRegister', array('method => POST')),
 
             /**
              * 商户接口
              *      2.商户登录
+             * 状态:
+             *      基本已完成，需要重构  weychen
              * $_POST:
              *  [mobile, password]
              *
@@ -140,7 +157,7 @@ return array(
              *      token: __HASH__
              *  }
              */
-            array('user/merchantLogin', ),
+            array('user/merchantLogin', 'Merchant/merchantLogin', array('method => POST')),
 
             /**
              * 商户接口
@@ -193,7 +210,7 @@ return array(
              *      mobile
              *  }
              */
-            array('favorite/getMyFavorites', ),
+            array('favorite/getMyFavorites', 'Favorite/getFavorites', array('method' => 'POST')),
 
             /**
              * 商户接口
@@ -206,7 +223,7 @@ return array(
              *
              *  }
              */
-            array('favorite/addFavorite', ),
+            array('favorite/addFavorite', 'Favorite/addFavorite', array('method' => 'POST')),
 
             /**
              * 商户接口
@@ -215,7 +232,7 @@ return array(
              *  [token, id]
              *
              */
-            array('favorite/deleteFavoriteById',),
+            array('favorite/deleteFavoriteById', 'Favorite/deleteFavoriteById', array('method' => 'POST')),
 
             /**
              * 商户接口
@@ -238,6 +255,9 @@ return array(
             /**
              * 商户接口
              *      10.获取司机
+             * 状态:
+             *      完成  weychen
+             *
              * $_POST:
              *  [token, cate_id]
              * return:
@@ -248,7 +268,20 @@ return array(
              *      isFree
              *  }
              */
-            array('driver/getDriversByCateId',),
+            array('driver/getDriversByCateId', 'Merchant/getDriversByCateId', array('method' => 'POST')),
+
+            /**
+             * 判断车主是否在地理围栏的位置当中
+             * 状态:
+             *  完成 牛威
+             * $_POST:
+             *  [token, pointX, pointY]
+             * return:
+             * {
+             *      isIn
+             * }
+             */
+            array('driver/driverIsInMarket', 'User/driverIsInMarket', array('method' => 'POST')),
         ),
 
      // 默认数据库配置,本地
@@ -260,6 +293,4 @@ return array(
     'DB_PWD'        =>  'root',
     'DB_PORT'       =>  '3306',
     'DB_PREFIX'     =>  'lb_',    // 数据库表前缀
-
-
 );
