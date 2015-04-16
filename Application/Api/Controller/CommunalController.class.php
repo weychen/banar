@@ -18,8 +18,14 @@ class CommunalController extends RestController{
     public function getAllCates()
     {
         $Cates = M('cates');
+        $result = array();
         $data = $Cates->field('id,name')->order('id asc')->select();
-        $this->response($data,'json');
+        if($data)
+        {
+            $result['status'] = 'OK';
+            $result['content'] = $data;
+        }
+        $this->response($result,'json');
     }
 
     /**
@@ -29,6 +35,8 @@ class CommunalController extends RestController{
     {
         $Market = M('markets');
         $data = $Market->field('id,name,address')->order('id asc')->select();
+        $result['status'] = 'OK';
+        $result['content'] = $data;
         $this->response($data, 'json');
     }
 }
