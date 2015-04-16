@@ -13,7 +13,7 @@ use Think\Controller\RestController;
 class FavoriteController extends RestController{
 
     /**
-     * 获取收藏夹信息 现在不能使用,因为三张表的问题还没有解决
+     * 商户获取收藏夹信息
      */
     public function getFavorites()
     {
