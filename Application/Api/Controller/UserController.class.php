@@ -90,7 +90,6 @@ class UserController extends RestController {
                 $data['token'] = $token_data;
                 $result['status'] = 'OK';
                 $result['content'] = $data;
-
             }else {
                 $reuslt['content']['error'] = "用户名或密码错误";
             }

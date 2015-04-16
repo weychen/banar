@@ -161,8 +161,9 @@ return array(
 
             /**
              * 商户接口
-             *      3.发起用车请求
-             *
+             *      3.商户发起用车请求
+             * 状态:
+             *      正在完成 牛威
              * $_POST:
              *  [token, cate_id, driver_id]
              *
@@ -171,7 +172,7 @@ return array(
              *
              *  }
              */
-            array('transportDemand/addTransportDemand'),
+            array('transportDemand/addTransportDemand','Merchant/postATransportDemand', array('method => POST')),
 
             /**
              * 商户接口
