@@ -2481,3 +2481,50 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001438s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001712s ]
 
+[ 2015-04-16T23:10:03+08:00 ] ::1 /banar/api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='123456789' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('123456789','123456','weychen','','2015-04-16 23:10:03','2015-04-16 23:10:03') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0017s ]
+SQL: INSERT INTO `lb_drivers` (`user_id`,`market_id`,`icId`,`created_at`,`updated_at`,`latestFreeTime`) VALUES ('40','1','1','2015-04-16 23:10:03','2015-04-16 23:10:03','2015-04-16 23:10:03') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0059s ]
+SQL: INSERT INTO `lb_trucks` (`driver_id`,`plateId`,`cate_id`,`avatar`,`created_at`,`updated_at`) VALUES ('18','','1','','2015-04-16 23:10:03','2015-04-16 23:10:03') [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('7b87a047c17578c04f14146f36fb5bf7','driver','40','2015-04-16 23:10:03','2015-04-16 23:10:03') [ RunTime:0.0006s ]
+
+[ 2015-04-16T23:11:32+08:00 ] ::1 /banar/api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001584s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='123456789' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-16T23:11:38+08:00 ] ::1 /banar/api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='1234567892' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('1234567892','123456','weychen','','2015-04-16 23:11:38','2015-04-16 23:11:38') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_drivers` (`user_id`,`market_id`,`icId`,`created_at`,`updated_at`,`latestFreeTime`) VALUES ('41','1','1','2015-04-16 23:11:38','2015-04-16 23:11:38','2015-04-16 23:11:38') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0024s ]
+SQL: INSERT INTO `lb_trucks` (`driver_id`,`plateId`,`cate_id`,`avatar`,`created_at`,`updated_at`) VALUES ('19','1231','1','','2015-04-16 23:11:38','2015-04-16 23:11:38') [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('40ea5a65f07027c6cb3cf70829346b91','driver','41','2015-04-16 23:11:38','2015-04-16 23:11:38') [ RunTime:0.0011s ]
+

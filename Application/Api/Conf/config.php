@@ -10,6 +10,8 @@ return array(
              *      1.获取车型
              * 状态:
              *  已完成 weychen
+             * 测试状态
+             *      已通过 weychen
              * $_GET:
              *  [ { id, name }]
              */
@@ -19,6 +21,8 @@ return array(
              *      2.获取市场
              * 状态:
              *  已完成 weychen
+             * 测试状态
+             *      已通过 weychen
              * $_GET:
              *  [ {id, name, address}]
              */
@@ -29,7 +33,10 @@ return array(
              * 司机接口接口
              *      1.司机注册
              * 状态
-             *  基本已完成 weychen
+             *      基本已完成 weychen
+             * 测试状态
+             *      已通过     weychen
+             *
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
