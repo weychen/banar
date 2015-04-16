@@ -44,6 +44,8 @@ class FavoriteController extends RestController{
         $data = array();
         $data['merchant_id'] = $merchant_id;
         $data['driver_id'] = $driver_id;
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $data['updated_at'] = date('Y-m-d H:i:s');
 
         $MerchantFavorite = D('Merchant_favorites');
         $id = $MerchantFavorite->add($data);
