@@ -18,7 +18,7 @@ class CommunalController extends RestController{
     public function getAllCates()
     {
         $Cates = M('cates');
-        $result['status'] = false;
+        $result = array();
         $data = $Cates->field('id,name')->order('id asc')->select();
         if($data)
         {

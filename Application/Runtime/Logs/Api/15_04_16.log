@@ -1,0 +1,858 @@
+[ 2015-04-16T19:09:19+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001012s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0037s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 121 行.
+
+[ 2015-04-16T19:10:16+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001855s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0006s ]
+
+[ 2015-04-16T19:35:56+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001135s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0006s ]
+
+[ 2015-04-16T19:36:07+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002093s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) ORDER BY id desc  [ RunTime:0.0006s ]
+
+[ 2015-04-16T19:36:37+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0039s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0019s ]
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous
+
+[ 2015-04-16T19:36:48+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0020s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous
+
+[ 2015-04-16T19:41:01+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
+SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+
+[ 2015-04-16T19:41:22+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000232s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001171s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001451s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0009s ]
+
+[ 2015-04-16T19:41:35+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0020s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0021s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0007s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0025s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
+SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+
+[ 2015-04-16T19:42:54+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id = 1 )  [ RunTime:0.0005s ]
+
+[ 2015-04-16T19:43:04+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001337s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 )' at line 1
+
+[ 2015-04-16T19:43:10+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001881s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id in (1,2) )  [ RunTime:0.0014s ]
+
+[ 2015-04-16T19:43:18+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001657s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0007s ]
+
+[ 2015-04-16T19:44:43+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0011s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:45:09+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000148s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0004s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:45:13+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0019s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0004s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 115 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:45:19+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:115) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:46:48+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001443s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0049s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:47:02+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001261s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0023s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0017s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:47:35+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001543s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0013s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+ERR: Think\Model:findField方法不存在！
+
+[ 2015-04-16T19:48:17+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0025s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0009s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:48:39+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0011s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0017s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 AND lb_drivers.id not in (1,2) )  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:51:38+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0013s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-16T19:52:55+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001536s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-16T19:53:45+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003348s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0016s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_drivers.id = 1 )  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:53:58+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0014s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_drivers.id in (1,2) )  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:54:12+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0017s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2')  [ RunTime:0.0010s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:54:21+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 101 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0016s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:102) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:55:27+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:55:50+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0016s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0004s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 104 行.
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:56:37+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002960s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0023s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0023s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:58:06+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001790s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0027s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0025s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:59:39+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001260s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0034s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0051s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T19:59:58+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0025s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:00:03+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2')  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:00:24+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:02:30+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000982s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0026s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0016s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:02:41+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0071s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0111s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+SQL: SELECT * FROM `lb_drivers`  [ RunTime:0.0002s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:04:01+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0034s ]
+ERR: Think\Model:M方法不存在！
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-16T20:04:22+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001165s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0015s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:05:04+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0014s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:06:31+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000164s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001316s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0022s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:07:57+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0031s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0025s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0006s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+SQL: SELECT * FROM `lb_drivers` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:08:43+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0026s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0013s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0005s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:08:51+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001796s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0005s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 118 行.
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:09:03+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001648s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0032s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0018s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: union /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1682 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:11:04+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0020s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0041s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-16T20:11:14+08:00 ] ::1 /banar/api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0017s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 103 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 10  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id IN ('1','2','7')  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) AND lb_drivers.id NOT IN ('1','2','7')  [ RunTime:0.0011s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:100) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+

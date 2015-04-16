@@ -144,6 +144,9 @@ class UserController extends RestController {
         $this->response($response,'json');
     }
 
+    /**
+     * 获得历史订单
+     */
     public function getAllMyTransportOrder()
     {
         $TransportOrder = M('transport_orders');
