@@ -104,8 +104,74 @@ class MerchantController extends RestController {
         $result['status'] = "OK";
         $result['content'] = $data;
         $this->response($result,'json');
+    }
+
+    /**
+     * 商户发起用车请求,商户指定
+     */
+    public function postATransportDemand()
+    {
+        //获得参数
+        $token = I('post.token');//商户信息
+        $cate_id = I('post.cate_id');//车型id
+        $driver_id = I('driver_id');//司机id
+        $isPointed = 1;
+        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $status = '未确认';
+
+        $data['cate_id'] = $cate_id;
+        $data['driver_id'] = $driver_id;
+        $data['isPointed'] = $isPointed;
+        $data['merchant_id'] = $merchant_id;
+        $data['status'] = $status;
+
+        $id = M('transport_demands')->add($data);
+        //返回数据
+        if(intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = $data;
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '添加失败';
+        }
+        $this->response($result,'json');
+    }
+
+    /**
+     * 商户发起用车请求,商户自动选取
+     */
+    public function postATransportDemandByAuto()
+    {
+        $token = I('post.token');//商户信息
+        $cate_id = I('post.cate_id');//车型id
+        $isPointed = 0;
+        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $status = '未确认';
+        //获取空闲司机列表
+        $restDrivers = '';
+        //随机生成一个数字
+        $index = rand(0, 100);
+        //选取司机的driver_id
+        $driver_id = $restDrivers[$index]['driver_id'];
 
 
+        $data['cate_id'] = $cate_id;
+        $data['driver_id'] = $driver_id;
+        $data['isPointed'] = $isPointed;
+        $data['merchant_id'] = $merchant_id;
+        $data['status'] = $status;
+        $id = M('transport_demands')->add($data);
+        //返回数据
+        if(intval($id) != 0)
+        {
+            $result['status'] = 'ok';
+            $result['content'] = $data;
+        }else{
+            $result['status'] = 'error';
+            $result['content'] = '添加失败';
+        }
+        $this->response($result,'json');
     }
 
     /**
@@ -140,6 +206,5 @@ class MerchantController extends RestController {
                 return $token_data;
             }
         }
-
     }
 }

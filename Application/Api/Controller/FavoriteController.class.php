@@ -23,7 +23,7 @@ class FavoriteController extends RestController{
             ->where($condition)->select()[0];
 
         $data = M('merchant_favorites')->field('id,merchant_id,driver_id')
-            ->where(array('merchant_id' => $tokenData[user_id]))->select();
+            ->where(array('merchant_id' => $tokenData['user_id']))->select();
 
         $this->response($data,'json');
     }

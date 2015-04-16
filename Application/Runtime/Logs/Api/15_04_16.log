@@ -2064,3 +2064,97 @@ SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0016s ]
 NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' /Applications/MAMP/htdocs/banar/Application/Api/Controller/FavoriteController.class.php 第 26 行.
 SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0007s ]
 
+[ 2015-04-16T18:56:39+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0005s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi' [ RunTime:0.0006s ]
+
+[ 2015-04-16T18:56:57+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0003s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh' [ RunTime:0.0006s ]
+
+[ 2015-04-16T18:57:02+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/banar/Application/Api/Controller/MerchantController.class.php 第 121 行.
+
+[ 2015-04-16T18:57:05+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/banar/Application/Api/Controller/MerchantController.class.php 第 121 行.
+
+[ 2015-04-16T18:58:50+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 ) LIMIT 10   [ RunTime:0.0006s ]
+
+[ 2015-04-16T19:47:21+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = 'AovMsrjlvQnV0SqYNdKiDFLKfFt0horf'  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001709s ]
+
+[ 2015-04-16T19:49:30+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = 'AovMsrjlvQnV0SqYNdKiDFLKfFt0horf'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`isPointed`,`merchant_id`,`status`) VALUES ('1','0','1','未确认') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2015-04-16T19:50:05+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = 'AovMsrjlvQnV0SqYNdKiDFLKfFt0horf'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`isPointed`,`merchant_id`,`status`) VALUES ('1','1','1','未确认') [ RunTime:0.0006s ]
+
