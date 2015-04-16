@@ -270,8 +270,8 @@ class UserController extends RestController {
         $market_id = $driversData['market_id'];//市场的id
         $marketData = M('markets')->where(array('id' => $market_id))->select()[0];
         //获取到市场的经度和纬度
-        $marketX = $marketData['lat'];//经度
-        $marketY = $marketData['lon'];//纬度
+        $marketX = $marketData['lon'];//经度
+        $marketY = $marketData['lat'];//纬度
         $radius = $marketData['radius'];
 
         $data['marketX'] = $marketX;
@@ -290,7 +290,7 @@ class UserController extends RestController {
      */
     private function rad($d)
     {
-        return floatval(floatval($d) * pi());
+        return floatval(floatval($d) * pi() / 180.0);
     }
 
     /**
