@@ -60,19 +60,38 @@ return array(
 
 
             /**
-             *  司机接口
+             *  公共接口
              *      3.获取历史订单
              *  状态：
              *        已完成
              *        魏星
              * $_POST:
              *  [token]
-             *
+             *如果是司机则：
              * return:
              *  {
-             *      merchant_name,
-             *      merchant_avatar,
-             *      cate_name
+             *        status,
+             *        content[{
+             *              merchant_name,
+             *              merchant_avatar,
+             *              cate_name,
+             *              time
+             *        }]
+             *      
+             *  }
+             *如果是商户则：
+             * return:
+             *  {
+             *        status,
+             *        content[{
+             *              demand_id,
+             *              demand_status,
+             *              order_id,
+             *              order_status,
+             *              driver_mobile,
+             *              driver_name
+             *        }]
+             *        
              *  }
              */
             array('transportOrder/getAllMyTransportOrder', 'User/getAllMyTransportOrder', array('method' => 'POST')),
@@ -89,7 +108,7 @@ return array(
              *  {
              *      id,
              *      name,
-             *      avatar
+             *      avatar,
              *  }
              */
             array('user/getMyProfile', 'User/getMyProfile', array('method => POST')),
@@ -105,7 +124,7 @@ return array(
              *
              * return:
              *  {
-             *      status: true|false
+             *      status: OK|ERROR|NOT_LOGGED_IN
              *  }
              */
             array('user/bindJPushRegistrationID', 'User/bindJPushRegistrationID', array('method => POST')),
@@ -121,7 +140,8 @@ return array(
              *
              * return:
              *  {
-             *      status: true|false
+             *      status,
+             *      content
              *  }
              */
             array('transportOrder/takeoverByTransportDemandId', 'User/takeoverByTransportDemandId', array('method => POST')),
@@ -253,17 +273,24 @@ return array(
             /**
              * 商户接口
              *      9.获取历史订单
+             * 状态：
+             *       已完成
+             *       魏星
              * $_POST:
              *  [token]
              *
              * return:
              *  {
-             *      demand_id,
-             *      demand_status,
-             *      order_id,
-             *      order_status,
-             *      driver_mobile,
-             *      driver_name,
+             *        status,
+             *        content:[{
+             *              demand_id,
+             *              demand_status,
+             *              order_id,
+             *              order_status,
+             *              driver_mobile,
+             *              driver_name
+             *        }]
+             *      
              *  }
              */
             array('transportOrder/getAllMyTransportOrder', 'User/getAllMyTransportOrder', array('method' => 'POST')),
@@ -303,21 +330,22 @@ return array(
              * 司机接口
              * 返回当前司机需要处理的订单
              * 状态:
-             *      未完成
+             *      已完成
              *      魏星
              * $_POST:
              *  [token]
              * return:
              * {
              *      status,
-             *      content:'{
+             *      content:[{
              *                  merchant_id,
              *                  merchant_name,
              *                  merchant_number,
              *                  cate_id,
              *                  cate_name,
-             *                  demand_id 
-             *                  }'
+             *                  demand_id,
+             *                  order_id 
+             *                  }]
              * }
              */
             array('transportOrder/getAllTransportOrder','User/getAllTransportOrder',array('method' => 'POST')),
@@ -326,21 +354,22 @@ return array(
              * 司机接口
              * 返回当前司机需要处理的请求，同时处理包括拒绝和接受
              * 状态:
-             *      未完成
+             *      已完成
              *      魏星
              * $_POST:
              *  [token]
              * return:
              * {
              *      status,
-             *      content:'{
+             *      content:[{
              *                  merchant_id,
              *                  merchant_name,
              *                  merchant_mobile,
              *                  cate_id,
-             *                  cate_mobile,
-             *                  ispoint 
-             *                  }'
+             *                  cate_name,
+             *                  ispoint,
+             *                  demand_id
+             *                  }]
              * }
              */
             array('transportOrder/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
