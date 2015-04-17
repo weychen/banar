@@ -44,7 +44,7 @@ return array(
              * return:
              *  {
              *      status: true|false
-             *      token:  __hash__
+             *      content: token
              *  }
              */
             array('user/driverRegister', 'User/driverRegister', array('method' => 'POST')),
@@ -72,6 +72,7 @@ return array(
              *  状态：
              *        已完成
              *        魏星
+             *  测试:
              * $_POST:
              *  [token]
              *如果是司机则：
@@ -118,7 +119,7 @@ return array(
              *      avatar,
              *  }
              */
-            array('user/getMyProfile', 'User/getMyProfile', array('method => POST')),
+            array('user/getMyProfile', 'User/update_pic', array('method => POST')),
 
             /**
              *  司机接口
