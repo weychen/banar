@@ -114,11 +114,14 @@ class UserController extends RestController {
 
         $this->response($data,'json');
     }
-
-    public function bindJPushRegistrationID()
+    /**
+     * 为用户绑定极光推送账号
+     * @param $token
+     * @param $registrationID
+     */
+    public function bindJPushRegistrationID($token,$registrationID)
     {
-        $token = I('token');
-        $registrationID = I('registrationID');
+        
         $response['status'] = ERROR;
         $response['content'];
         if (!empty($token) && !empty($registrationID)) {
@@ -137,7 +140,6 @@ class UserController extends RestController {
             $j_push_user->updated_at = date('Y-m-d H:i:s');
             
             if ($j_push_user->add()) {
-               
                 $response['status'] = OK;
                 $response['content'] = '绑定成功';
             }  
@@ -303,7 +305,7 @@ class UserController extends RestController {
                                     # 更新成功
                                     $response['status'] = OK;
                                     $response['content'] = '拒绝成功';
-                                    
+
                                 }
                                 else{
                                     $response['status'] = ERROR;
