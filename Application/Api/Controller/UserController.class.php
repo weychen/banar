@@ -160,6 +160,7 @@ class UserController extends RestController {
         $Users = M('users');
         $Token = M('tokens');//实例化token对象
         $token = I('token');
+        $this->validate_token($token);
         // 
         //用户传入token
         // $token = "AovMsrjlvQnV0SqYNdKiDFLKfFt0horf";
@@ -231,9 +232,9 @@ class UserController extends RestController {
         $response['status'] = ERROR;
         $response['content'];
         $token = I('token');
+        $token_data = $this->validate_token($token);
         $transportDemand_id = I('transportDemandId');
         $isAccept = I('isAccept');
-        dump($isAccept);
         if (!empty($token) && !empty($transportDemand_id) && !empty($isAccept)) {   //如果三个值都不为空
 
             $Token = M('tokens');          //查找driver_id
@@ -247,21 +248,16 @@ class UserController extends RestController {
                     $driver = M('drivers');
                     $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
                     $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
-                    dump($driver_id);
-                    dump($isFree);
-                    echo "isFree: $isFree";
-                    
+
                         # code...
                         if ($isAccept=='true'){    #如果司机接收订单
                         # code...
                             if (intval($isFree)!=0) {   #司机空闲
                             # code...
-                                echo "司机空闲";
                                 $demand = M('transport_demands');
                                 $maps['id'] = $transportDemand_id;
                                 $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-                                dump($demand_status);
-                                
+
                                 $orders = M('transport_orders');
                                 
                                 $orders->transportDemand_id = $transportDemand_id;
@@ -321,13 +317,10 @@ class UserController extends RestController {
                                 #随机生成一个数字
                                 $count = count($restDrivers);
                                 $index = rand(0,$count-1);
-                                dump($index);
                                 #选取司机id
                                 $driver_id = $restDrivers[$index]['id'];
-                                dump($driver_id);
                                 $data['driver_id'] = $driver_id;
                                 $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
-                                dump($result);
                                 if (intval($result)!=0) {
                                     # 更新成功
                                     $response['status'] = OK;
@@ -362,7 +355,7 @@ class UserController extends RestController {
     public function completeOrder_driver()
     {
         $token = I('post.token');
-        $token_data = validate_token($token);
+        $token_data = $this->validate_token($token);
 
         $condition['id'] = I('post.order_id');//查询条件
         $data['driver_ok'] = 1;
@@ -373,7 +366,7 @@ class UserController extends RestController {
             $driver_id = $Order->where($condition)->getField('driver_id'); //获得司机id
             $driver_data['isFree'] = 1;         //将isFree 设置成1
             $condition2['id'] = $driver_id;     //查询司机的条件
-            M('driver')->where($condition2)->save($driver_data);
+            M('drivers')->where($condition2)->save($driver_data);
             $result['status'] = 'OK';
             $this->response($result,'json');
         }
@@ -398,7 +391,7 @@ class UserController extends RestController {
                 if ($user_type == "driver") {
                     $driver = M('drivers');
                     $maps['user_id'] = $user_id;
-                    $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
+                    $driver_id = $driver->field('user_id')->where($maps)->select()['0']['user_id'];
                     $demand = M('transport_demands');    //实例化demand表
                     $response['content'] = $demand
                     ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
@@ -568,5 +561,40 @@ class UserController extends RestController {
 //            echo $objectSummary->getKey();
 //        }
 
+    }
+
+    /**
+     * @param $token    token 值
+     * @return mixed
+     * 用于验证token 是否正确
+     * 如果token 错误，则返回错误信息
+     */
+    function validate_token($token)
+    {
+
+        $condition['token'] = $token; // 查询条件
+        $token_data = M('tokens')->field('userType,user_id,updated_at')
+            ->where($condition)->select()[0];   //得到token 的数据
+
+        if(!$token_data) {
+            //如果token 错误，则返回错误信息
+            $result['status'] = 'error';
+            $result['content'] = 'token is error';
+            $this->response($result, 'json');
+        }else {
+            $token_updated_time = $token_data['updated_at'];
+            if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
+            {
+                //token 已经过期,销毁token
+                M('tokens')->where($condition)->delete();
+                $result['status'] = 'error';
+                $result['content'] = 'token is out_of_time';
+                $this->response($result,'json');
+            } else {
+                //token 未过期，进行相应的操作
+                $token_data['updated_at'] = date('Y-m-d H:i:s');
+                return $token_data;
+            }
+        }
     }
 }
