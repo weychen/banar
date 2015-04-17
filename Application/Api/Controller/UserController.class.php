@@ -8,6 +8,7 @@
 
 namespace Api\Controller;
 use Api\Model\UsersModel;
+use JPush\JPushClient;
 use Think\Controller\RestController;
 
 require_once MODULE_PATH. "aliyun-php/aliyun.php";
@@ -75,6 +76,7 @@ class UserController extends RestController {
     {
         $account = I('post.mobile');
         $password = I('post.password');
+        $registration_id = I('registrationid');
         $result['status'] = false;
         if(!empty($account) && !empty($password)){
 
@@ -88,6 +90,7 @@ class UserController extends RestController {
                 $token_data = generate_token();
                 put_token_into_sql($token_data, 'driver',$user_id);
                 $data['token'] = $token_data;
+                $this->bindJPushRegistrationID($token_data,$registration_id);
                 $result['status'] = 'OK';
                 $result['content'] = $data;
             }else {
@@ -372,8 +375,19 @@ class UserController extends RestController {
         if($Order){
             $driver_id = $Order->where($condition)->getField('driver_id'); //获得司机id
             $driver_data['isFree'] = 1;         //将isFree 设置成1
+            $driver_data['updated_at'] = date('Y-m-d H:i:s');
             $condition2['id'] = $driver_id;     //查询司机的条件
-            M('driver')->where($condition2)->save($driver_data);
+            M('driver')->where($condition2)->save($driver_data); //更新司机的状态
+
+            $JPush = new JPushController();
+
+//            $condition3['user_id'] = $user_id;
+            $transportDemand_id = $Order->where($condition)->getField('transportDemand_id');
+            $merchant_id = M('transport_demands')->where(array('transportDemand_id'=>$transportDemand_id))
+                ->getField('merchant_id');
+            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id');
+            $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
+            $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认'); //推送
             $result['status'] = 'OK';
             $this->response($result,'json');
         }
@@ -544,21 +558,26 @@ class UserController extends RestController {
 
     public function update_pic()
     {
+        move_uploaded_file($_FILES['file']['tmp_name'], "./".$_FILES["file"]["name"]);
 //        echo MODULE_PATH. "aliyun-php/aliyun.php" ;
-        $avatar = I('post.avatar');
-        $client = OSSClient::factory(array(
-            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
-            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
-        ));
-//        $client->setBucketAcl(array(
-//            'Bucket' => 'banar-image2',
-//            'ACL' => 'public-read',
+//        $avatar = I('post.avatar');
+//        $client = OSSClient::factory(array(
+//            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
+//            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
 //        ));
-        $client->putObject(array(
-            'Bucket' => 'banar-image2',
-            'Key' => '123',
-            'Content' => $avatar,
-        ));
+//        $token = generate_token();
+//        $client->putObject(array(
+//            'Bucket' => 'banar-image2',
+//            'Key' => $token.'.jpg',
+//            'Content' => $avatar,
+//        ));
+//        $url = $client->generatePresignedUrl(array(
+//            'Bucket' => 'banar-image2',
+//            'Key' => '123',
+//            'Expires' => new \DateTime("+5 minutes"),
+//        ));
+
+//        echo $url;
 
 //        $objectListing = $client->listObjects(array(
 //            'Bucket' => 'banar-image',

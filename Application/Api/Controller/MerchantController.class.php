@@ -7,6 +7,7 @@
  */
 
 namespace Api\Controller;
+use Api\Model\UsersModel;
 use Think\Controller\RestController;
 
 class MerchantController extends RestController {
@@ -65,6 +66,7 @@ class MerchantController extends RestController {
     {
         $account = I('post.mobile');
         $password = I('post.password');
+        $registration_id = I('registrationid');
         $result['status'] = false;
         if(!empty($account) && !empty($password)){
 
@@ -77,6 +79,8 @@ class MerchantController extends RestController {
                 $user_id = $user['id'];
                 $token_data = generate_token();
                 put_token_into_sql($token_data, 'merchant',$user_id);
+                $user = new UserController();
+                $user->bindJPushRegistrationID($token_data,$registration_id);
                 $result['token'] = $token_data;
                 $result['status'] = true;
             }
@@ -259,6 +263,18 @@ class MerchantController extends RestController {
             if ($Order) {
                 $result['status'] = 'OK';
                 $this->auto_completeOrder();//触发自动保存函数
+                $JPush = new JPushController();
+                $merchant_user_id = $token_data['user_id'];
+                $merchant_registration_id = M('j_push_users')->where(array('user_id'=>$merchant_user_id))
+                    ->getField('registrationID'); //得到registrationid
+                $JPush->sendToMerchantByRegistrationID($merchant_registration_id,'双方已经确认订单完成');
+
+                $driver_id = $Order->where($condition)->getField('driver_id');
+                $driver_user_id = M('drivers')->where(array('id'=>$driver_id))->getField('user_id');
+                $driver_registration_id =M('j_push_users')->where(array('user_id'=>$driver_user_id))
+                    ->getField('registrationID'); //得到registrationid
+                $JPush->sendToDriverByRegistrationID($driver_registration_id,'订单已经确认');
+
                 $this->response($result, 'json');
             }
         }else {

@@ -1426,3 +1426,174 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000943s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001162s ]
 
+[ 2015-04-17T19:00:46+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000085s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000802s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2015-04-17T19:02:11+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001029s ]
+
+[ 2015-04-17T19:02:50+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000885s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001115s ]
+
+[ 2015-04-17T19:03:49+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001246s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2015-04-17T19:04:52+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000901s ]
+
+[ 2015-04-17T19:05:05+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001093s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001370s ]
+
+[ 2015-04-17T19:07:43+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000844s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000987s ]
+
+[ 2015-04-17T19:12:09+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2015-04-17T19:12:20+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000959s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2015-04-17T19:38:13+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001210s ]
+
+[ 2015-04-17T19:41:29+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001217s ]
+
+[ 2015-04-17T21:59:22+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001173s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001350s ]
+
+[ 2015-04-17T22:04:23+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: HTTP_ACCEPT /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 117 行.
+NOTIC: [8] Undefined index: file /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 561 行.
+NOTIC: [8] Undefined index: file /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 561 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000833s ]
+
