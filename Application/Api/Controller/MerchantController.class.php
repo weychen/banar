@@ -154,6 +154,7 @@ class MerchantController extends RestController {
     {
         //获得参数
         $token = I('post.token');//商户信息
+        $this->validate_token($token);
         $cate_id = I('post.cate_id');//车型id
         $driver_id = I('driver_id');//司机id
         $isPointed = 1;
@@ -185,6 +186,7 @@ class MerchantController extends RestController {
     {
         $response = array();
         $token = I('token');
+        $this->validate_token($token);
         $id = I('id');
         $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
         if($demand[0]['user_id']!='')
@@ -213,6 +215,7 @@ class MerchantController extends RestController {
     public function postATransportDemandByAuto()
     {
         $token = I('post.token');//商户信息
+        $this->validate_token($token);
         $cate_id = I('post.cate_id');//车型id
         $isPointed = 0;
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
