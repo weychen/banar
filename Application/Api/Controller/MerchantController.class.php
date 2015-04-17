@@ -227,6 +227,53 @@ class MerchantController extends RestController {
         $this->response($result,'json');
     }
 
+    /**
+     * 商户确认订单
+     */
+    public function completeOrder_merchant()
+    {
+
+        $token = I('post.token');
+        $token_data = validate_token($token); //用户验证
+
+        $Order = M('transport_orders');
+        $condition['id'] = I('post.order_id');//查询条件
+        $driver_ok = $Order->where($condition)->getField('driver_ok');
+        if($driver_ok) {
+            // 更改的内容
+            $data['merchant_ok'] = 1;
+            $data['status'] = '已完成';
+            $Order->where($condition)->save($data);
+            if ($Order) {
+                $result['status'] = 'OK';
+                $this->auto_completeOrder();//触发自动保存函数
+                $this->response($result, 'json');
+            }
+        }else {
+            $result['status'] = 'error';
+            $result['content'] = '司机确认完成订单，不能完成';
+            $this->response($result, 'json');
+        }
+    }
+
+    /**
+     * 自动完成订单
+     */
+    public function auto_completeOrder()
+    {
+        $Order = M('transport_orders');
+        $condition['driver_ok'] = 1;
+        $condition['merchant_ok'] = 0;
+
+        $ensure_time = date("Y-m-d H:i:s",strtotime("-1 day"));
+        $map['updated_at'] = array('lt',$ensure_time);
+        $data['merchant_ok'] = 1;
+        $data['status'] = '已完成';
+        $data = $Order->where($condition)->where($map)->save($data);
+
+    }
+
+
 
 
 }

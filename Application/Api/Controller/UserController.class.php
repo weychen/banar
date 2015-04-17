@@ -223,7 +223,6 @@ class UserController extends RestController {
 
     /*
         接单
-
      */
     public function takeoverByTransportDemandId()
     {
@@ -245,85 +244,98 @@ class UserController extends RestController {
                 if ($user_type == 'driver') {      #如果类型为司机
                     $driver = M('drivers');
                     $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
+                    $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
                     dump($driver_id);
+                    dump($isFree);
+                    echo "isFree: $isFree";
+                    
                         # code...
                         if ($isAccept=='true'){    #如果司机接收订单
                         # code...
-                            echo "right";
-                            $demand = M('transport_demands');
-                            $maps['id'] = $transportDemand_id;
-                            $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-                            dump($demand_status);
-                            
-                            $orders = M('transport_orders');
-                            
-                            $orders->transportDemand_id = $transportDemand_id;
-                            $orders->driver_id = $driver_id;
-                            $orders->status = '未完成';
-                            $orders->created_at = date('Y-m-d H:i:s');
-                            $orders->updated_at = date('Y-m-d H:i:s');
-                            if ($demand_status == '未确认') {
-                                $mapper['id'] = $transportDemand_id;
-                                $result = $demand->where($mapper)->setField('status','已确认');
-                                if ($orders->add() && $result) {
-                                $response['status'] = OK;
-                                $response['content'] ='添加成功';
+                            if (intval($isFree)!=0) {   #司机空闲
+                            # code...
+                                echo "司机空闲";
+                                $demand = M('transport_demands');
+                                $maps['id'] = $transportDemand_id;
+                                $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
+                                dump($demand_status);
+                                
+                                $orders = M('transport_orders');
+                                
+                                $orders->transportDemand_id = $transportDemand_id;
+                                $orders->driver_id = $driver_id;
+                                $orders->status = '未完成';
+                                $orders->created_at = date('Y-m-d H:i:s');
+                                $orders->updated_at = date('Y-m-d H:i:s');
+                                if ($demand_status == '未确认') {
+                                    $mapper['id'] = $transportDemand_id;
+                                    $result = $demand->where($mapper)->setField('status','已确认');
+                                    $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
+                                    if ($orders->add() && $result) {
+                                    $response['status'] = OK;
+                                    $response['content'] ='添加成功';
 
+                                    }
+                                }
+                                elseif ($demand_status == '已取消') {
+                                    $response['content'] = '订单已取消';
+                                }
+                                elseif ($demand_status == '已确认') {
+                                    $response['content'] = '订单已存在';
+                                }   
+                            }
+                            else{
+                                #司机不空闲
+                                $response['status'] = ERROR;
+                                $response['content'] = '司机正忙';
+                            }
+                            
+                        }
+                        else   #如果拒绝接单
+                        {
+                            $demand = M('transport_demands');
+                            $mapper['id'] = $transportDemand_id;
+                            $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
+                            if ($demand_ispoint == 1) {  #如果是指定的
+                                $mapper['id'] = $transportDemand_id;
+                                $result = $demand->where($mapper)->setField('status','已取消');
+                                if (intval($result)!=0) {
+                                    # 更新成功
+                                    $response['status'] = OK;
+                                    $response['content'] = '拒绝成功';
+                                }
+                                else{
+                                    $response['status'] = ERROR;
+                                    $response['content'] = '更新失败';
                                 }
                             }
-                            elseif ($demand_status == '已取消') {
-                                $response['content'] = '订单已取消';
-                            }
-                            elseif ($demand_status == '已确认') {
-                                $response['content'] = '订单已存在';
-                            }   
-                        }
-                    else
-                    {
-                        $demand = M('transport_demands');
-                        $mapper['id'] = $transportDemand_id;
-                        $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
-                        if ($demand_ispoint == 1) {  #如果是指定的
-                            $mapper['id'] = $transportDemand_id;
-                            $result = $demand->where($mapper)->setField('status','已取消');
-                            if (intval($result)!=0) {
-                                # 更新成功
-                                $response['status'] = OK;
-                                $response['content'] = '拒绝成功';
-                            }
                             else{
-                                $response['status'] = ERROR;
-                                $response['content'] = '更新失败';
-                            }
+                                $mapper['id'] = $transportDemand_id;
+                                $driver = M('drivers');
+                                #获取
+                                #获取空闲司机列表
+                                $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
+                                #随机生成一个数字
+                                $count = count($restDrivers);
+                                $index = rand(0,$count-1);
+                                dump($index);
+                                #选取司机id
+                                $driver_id = $restDrivers[$index]['id'];
+                                dump($driver_id);
+                                $data['driver_id'] = $driver_id;
+                                $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
+                                dump($result);
+                                if (intval($result)!=0) {
+                                    # 更新成功
+                                    $response['status'] = OK;
+                                    $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
+                                }
+                                else{
+                                    $response['status'] = ERROR;
+                                    $response['content'] = '失败';
+                                }
+                            }       
                         }
-                        else{
-                            $mapper['id'] = $transportDemand_id;
-                            $driver = M('drivers');
-                            #获取
-                            #获取空闲司机列表
-                            $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
-                            #随机生成一个数字
-                            $count = count($restDrivers);
-                            $index = rand(0,$count-1);
-                            dump($index);
-                            #选取司机id
-                            $driver_id = $restDrivers[$index]['id'];
-                            dump($driver_id);
-                            $data['driver_id'] = $driver_id;
-                            $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
-                            dump($result);
-                            if (intval($result)!=0) {
-                                # 更新成功
-                                $response['status'] = OK;
-                                $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
-                            }
-                            else{
-                                $response['status'] = ERROR;
-                                $response['content'] = '失败';
-                            }
-                        }
-                        
-                    }
                     
                     
                 }
@@ -339,6 +351,26 @@ class UserController extends RestController {
             $response['content'] = '存在空值';
         }
         $this->response($response,'json');
+    }
+
+    /**
+     * 完成订单
+     */
+    public function completeOrder_driver()
+    {
+        $token = I('post.token');
+        $token_data = validate_token($token);
+
+        $condition['id'] = I('post.order_id');//查询条件
+        $data['driver_ok'] = 1;
+        $data['updated_at'] = date('Y-m-d H:i:s');
+        $Order = M('transport_orders');
+        $Order->where($condition)->save($data);
+        if($Order){
+            $result['status'] = 'OK';
+            $this->response($result,'json');
+        }
+
     }
 
     /*
