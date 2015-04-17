@@ -1137,3 +1137,36 @@ SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.
 SQL: UPDATE `lb_transport_demands` SET `status`='已取消' WHERE `id` = 194 [ RunTime:0.0556s ]
 NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 288 行.
 
+[ 2015-04-17T16:23:52+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000150s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001772s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002072s ]
+
+[ 2015-04-17T16:24:59+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001170s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001515s ]
+
+[ 2015-04-17T16:25:00+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
