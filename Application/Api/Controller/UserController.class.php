@@ -10,6 +10,8 @@ namespace Api\Controller;
 use Api\Model\UsersModel;
 use Think\Controller\RestController;
 
+require_once MODULE_PATH. "aliyun-php/aliyun.php";
+use \Aliyun\OSS\OSSClient;
 class UserController extends RestController {
 
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
@@ -29,7 +31,6 @@ class UserController extends RestController {
             'avatar' => I('post.avatar'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
-
         );
         $user = D('users');
         if(get_user('mobile',$user_data['mobile'])){
@@ -65,7 +66,6 @@ class UserController extends RestController {
             $result['content'] = $data;
         }
         $this->response($result,'json');
-
     }
 
     /**
@@ -107,18 +107,21 @@ class UserController extends RestController {
         $token = I('post.token');
         $condition['token'] = $token;
         $tokenData = M('tokens')->field('userType,user_id')
-            ->where($condition)->select();
-
-        $data = M('users')->field('id,name,avatar')
-            ->where(array('id' => $tokenData[user_id]))->select();
-
-        $this->response($data,'json');
+            ->where($condition)->select()[0];
+        $data = M('users')->field('id, name, avatar')
+            ->where(array('id' => $tokenData['user_id']))->select();
+        $result['status'] = 'OK';
+        $result['content'] = $data;
+        $this->response($result,'json');
     }
-
-    public function bindJPushRegistrationID()
+    /**
+     * 为用户绑定极光推送账号
+     * @param $token
+     * @param $registrationID
+     */
+    public function bindJPushRegistrationID($token,$registrationID)
     {
-        $token = I('token');
-        $registrationID = I('registrationID');
+        
         $response['status'] = ERROR;
         $response['content'];
         if (!empty($token) && !empty($registrationID)) {
@@ -137,7 +140,6 @@ class UserController extends RestController {
             $j_push_user->updated_at = date('Y-m-d H:i:s');
             
             if ($j_push_user->add()) {
-               
                 $response['status'] = OK;
                 $response['content'] = '绑定成功';
             }  
@@ -272,9 +274,15 @@ class UserController extends RestController {
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
                                     if ($orders->add() && $result) {
-                                    $response['status'] = OK;
-                                    $response['content'] ='添加成功';
-
+                                        $response['status'] = OK;
+                                        $response['content'] ='添加成功';
+                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
+                                        $registrationID = $j_push->field('registrationID')
+                                            ->where(array('user_id'=>$user_id))
+                                            ->select()['0']['registrationID'];
+                                        $content = "您的订单已被接收";  
+                                        $JPUSH = new JPushController();
+                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -303,6 +311,13 @@ class UserController extends RestController {
                                     # 更新成功
                                     $response['status'] = OK;
                                     $response['content'] = '拒绝成功';
+                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
+                                        $registrationID = $j_push->field('registrationID')
+                                            ->where(array('user_id'=>$user_id))
+                                            ->select()['0']['registrationID'];
+                                        $content = "您的订单已被拒绝，请您重新下单";  
+                                        $JPUSH = new JPushController();
+                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                 }
                                 else{
                                     $response['status'] = ERROR;
@@ -367,6 +382,10 @@ class UserController extends RestController {
         $Order = M('transport_orders');
         $Order->where($condition)->save($data);
         if($Order){
+            $driver_id = $Order->where($condition)->getField('driver_id'); //获得司机id
+            $driver_data['isFree'] = 1;         //将isFree 设置成1
+            $condition2['id'] = $driver_id;     //查询司机的条件
+            M('driver')->where($condition2)->save($driver_data);
             $result['status'] = 'OK';
             $this->response($result,'json');
         }
@@ -533,5 +552,33 @@ class UserController extends RestController {
         $s = $s * 6378.137;
         $s = round($s * 10000) / 10000;
         return $s;
+    }
+
+    public function update_pic()
+    {
+//        echo MODULE_PATH. "aliyun-php/aliyun.php" ;
+        $avatar = I('post.avatar');
+        $client = OSSClient::factory(array(
+            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
+            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
+        ));
+//        $client->setBucketAcl(array(
+//            'Bucket' => 'banar-image2',
+//            'ACL' => 'public-read',
+//        ));
+        $client->putObject(array(
+            'Bucket' => 'banar-image2',
+            'Key' => '123',
+            'Content' => $avatar,
+        ));
+
+//        $objectListing = $client->listObjects(array(
+//            'Bucket' => 'banar-image',
+//        ));
+//
+//        foreach ($objectListing->getObjectSummarys() as $objectSummary) {
+//            echo $objectSummary->getKey();
+//        }
+
     }
 }
