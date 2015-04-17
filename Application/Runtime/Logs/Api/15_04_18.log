@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ 2015-04-18T00:01:52+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
@@ -1189,3 +1190,14 @@ NOTIC: [8] Undefined variable: merchant_appKey X:\wamp\www\banar\Application\Api
 NOTIC: [8] Undefined variable: merchant_secret X:\wamp\www\banar\Application\Api\Controller\JPushController.class.php 第 31 行.
 ERR: Invalid appKey or masterSecret
 
+=======
+[ 2015-04-18T00:28:48+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemandAuto
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+ERR: 无法加载控制器:TransportDemand
+
+>>>>>>> 607cd7c74c8ddab05340c46af206ce02b0edb07b
