@@ -143,7 +143,7 @@ return array(
              *         已完成
              *         魏星
              * $_POST:
-             *  [token,transportDemandId]
+             *  [token,transportDemandId,isAccept]
              *
              * return:
              *  {
