@@ -17,6 +17,7 @@ class FavoriteController extends RestController{
      */
     public function getFavorites()
     {
+
         $token = I('post.token');
         $condition['token'] = $token;
         $tokenData = M('tokens')->field('userType,user_id')
