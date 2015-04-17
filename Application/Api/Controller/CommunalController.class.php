@@ -37,6 +37,6 @@ class CommunalController extends RestController{
         $data = $Market->field('id,name,address')->order('id asc')->select();
         $result['status'] = 'OK';
         $result['content'] = $data;
-        $this->response($data, 'json');
+        $this->response($result, 'json');
     }
 }

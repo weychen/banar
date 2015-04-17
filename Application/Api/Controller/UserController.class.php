@@ -29,7 +29,6 @@ class UserController extends RestController {
             'avatar' => I('post.avatar'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
-
         );
         $user = D('users');
         if(get_user('mobile',$user_data['mobile'])){
@@ -65,7 +64,6 @@ class UserController extends RestController {
             $result['content'] = $data;
         }
         $this->response($result,'json');
-
     }
 
     /**

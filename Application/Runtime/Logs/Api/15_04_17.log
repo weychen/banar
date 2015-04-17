@@ -1,0 +1,121 @@
+[ 2015-04-17T18:37:46+08:00 ] ::1 /banar/Api/favorite/getMyFavorites
+NOTIC: [2] mkdir(): File exists /Applications/MAMP/htdocs/banar/ThinkPHP/Library/Think/Build.class.php 第 110 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002264s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/banar/Application/Api/Controller/FavoriteController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`merchant_id`,`driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = null  [ RunTime:0.0003s ]
+
+[ 2015-04-17T18:38:31+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0004s ]
+
+[ 2015-04-17T18:39:34+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0004s ]
+
+[ 2015-04-17T18:41:29+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0003s ]
+
+[ 2015-04-17T18:41:32+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0006s ]
+
+[ 2015-04-17T18:41:59+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0002s ]
+
+[ 2015-04-17T18:42:16+08:00 ] ::1 /banar/Api/market/getAllMarkets
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `lb_markets` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`address` FROM `lb_markets` ORDER BY id asc  [ RunTime:0.0003s ]
+
+[ 2015-04-17T18:45:18+08:00 ] ::1 /banar/Api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='15652953455' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('15652953455','niuwei','niuwei','niuwei','2015-04-17 18:45:18','2015-04-17 18:45:18') [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_drivers` (`user_id`,`market_id`,`icId`,`created_at`,`updated_at`,`latestFreeTime`) VALUES ('11','','','2015-04-17 18:45:18','2015-04-17 18:45:18','2015-04-17 18:45:18') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_trucks` (`driver_id`,`plateId`,`cate_id`,`avatar`,`created_at`,`updated_at`) VALUES ('8','湘H7617','2','niuwei','2015-04-17 18:45:18','2015-04-17 18:45:18') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('929b2c94b1b4f076f65f7d5033c8af2b','driver','11','2015-04-17 18:45:18','2015-04-17 18:45:18') [ RunTime:0.0004s ]
+
+[ 2015-04-17T18:48:14+08:00 ] ::1 /banar/Api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='15652953455' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-04-17T18:48:22+08:00 ] ::1 /banar/Api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='15652953454' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('15652953454','niuwei','niuwei','niuwei','2015-04-17 18:48:22','2015-04-17 18:48:22') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+SQL: INSERT INTO `lb_drivers` (`user_id`,`market_id`,`icId`,`created_at`,`updated_at`,`latestFreeTime`) VALUES ('12','','','2015-04-17 18:48:22','2015-04-17 18:48:22','2015-04-17 18:48:22') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_trucks` [ RunTime:0.0016s ]
+SQL: INSERT INTO `lb_trucks` (`driver_id`,`plateId`,`cate_id`,`avatar`,`created_at`,`updated_at`) VALUES ('9','湘H7617','2','niuwei','2015-04-17 18:48:22','2015-04-17 18:48:22') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('24e58a5318e8d2e630beac9226e101a2','driver','12','2015-04-17 18:48:22','2015-04-17 18:48:22') [ RunTime:0.0006s ]
+
