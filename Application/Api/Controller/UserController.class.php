@@ -277,9 +277,15 @@ class UserController extends RestController {
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
                                     if ($orders->add() && $result) {
-                                    $response['status'] = OK;
-                                    $response['content'] ='添加成功';
-
+                                        $response['status'] = OK;
+                                        $response['content'] ='添加成功';
+                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
+                                        $registrationID = $j_push->field('registrationID')
+                                            ->where(array('user_id'=>$user_id))
+                                            ->select()['0']['registrationID'];
+                                        $content = "您的订单已被接收";  
+                                        $JPUSH = new JPushController();
+                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -308,7 +314,13 @@ class UserController extends RestController {
                                     # 更新成功
                                     $response['status'] = OK;
                                     $response['content'] = '拒绝成功';
-
+                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
+                                        $registrationID = $j_push->field('registrationID')
+                                            ->where(array('user_id'=>$user_id))
+                                            ->select()['0']['registrationID'];
+                                        $content = "您的订单已被拒绝，请您重新下单";  
+                                        $JPUSH = new JPushController();
+                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                 }
                                 else{
                                     $response['status'] = ERROR;
