@@ -127,9 +127,7 @@ class UserController extends RestController {
      */
     public function bindJPushRegistrationID($token,$registrationID)
     {
-        
         $response['status'] = ERROR;
-        $response['content'];
         if (!empty($token) && !empty($registrationID)) {
             
             $Token = M('tokens');
@@ -139,20 +137,29 @@ class UserController extends RestController {
             $userType = $user_data['0']['usertype'];
             
             $j_push_user = M('j_push_users');//实例化极光推送模型
-            //$j_push_user->user_id = $user_id;
-            $j_push_user->where(array('user_id'=> $user_id))->setField(array('registrationID' => $registrationID));
-            //$j_push_user->userType = $userType;
-            //$j_push_user->created_at = date('Y-m-d H:i:s');
-            //$j_push_user->updated_at = date('Y-m-d H:i:s');
-            
-            if ($j_push_user->add()) {
-                $response['status'] = OK;
-                $response['content'] = '绑定成功';
-            }  
-        }
-        return $response;
-    }
 
+
+            $result = $j_push_user->where(array('$user_id'=>$user_id))->select();
+            if ($result!=null) {   //如果已存在记录
+                # code...
+                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s')));
+                echo "绑定新记录成功";
+                $response['status'] = OK;
+            }
+            else {  //如果不存在记录
+                $j_push_user->user_id = $user_id;
+                $j_push_user->registrationID = $registrationID;
+                $j_push_user->userType = $userType;
+                $j_push_user->created_at = date('Y-m-d H:i:s');
+                $j_push_user->updated_at = date('Y-m-d H:i:s');
+                $j_push_user->add();
+                echo "更新registrationID成功";
+                $response['status'] = OK;
+            }       
+            return $response;
+        }
+
+    }
     /**
      * 获得历史订单
      */
@@ -258,26 +265,34 @@ class UserController extends RestController {
                         # code...
                         if ($isAccept=='true'){    #如果司机接收订单
                         # code...
-                            if (intval($isFree)!=0) {   #司机空闲
+                            echo "司机同意接收订单";
+                            if (intval($isFree)!=0) {   #如果司机空闲
                             # code...
+
+                                echo "司机状态空闲";
                                 $demand = M('transport_demands');
                                 $maps['id'] = $transportDemand_id;
                                 $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-
-                                $orders = M('transport_orders');
+                                dump($demand_status);
                                 
-                                $orders->transportDemand_id = $transportDemand_id;
-                                $orders->driver_id = $driver_id;
-                                $orders->status = '未完成';
-                                $orders->created_at = date('Y-m-d H:i:s');
-                                $orders->updated_at = date('Y-m-d H:i:s');
-                                if ($demand_status == '未确认') {
+                                $orders = M('transport_orders');   //实例化订单模型
+                                if ($demand_status == '未确认') {  //请求为未确认状态
+                                    $orders->transportDemand_id = $transportDemand_id;   //插入order记录
+                                    $orders->driver_id = $driver_id;
+                                    $orders->status = '未完成';
+                                    $orders->created_at = date('Y-m-d H:i:s');
+                                    $orders->updated_at = date('Y-m-d H:i:s');
+
+                                
                                     $mapper['id'] = $transportDemand_id;
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
+                                    if ($result) {
+                                        echo "askfjslkfjls";
+                                    }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
-                                        $response['content'] ='添加成功';
+                                        $response['content'] ='订您已成功添加订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
                                         $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
@@ -295,9 +310,9 @@ class UserController extends RestController {
                                 }   
                             }
                             else{
-                                #司机不空闲
+                                #如果司机不空闲
                                 $response['status'] = ERROR;
-                                $response['content'] = '司机正忙';
+                                $response['content'] = '您有未完成订单，暂时不能接单';
                             }
                             
                         }
@@ -306,13 +321,16 @@ class UserController extends RestController {
                             $demand = M('transport_demands');
                             $mapper['id'] = $transportDemand_id;
                             $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
+                            echo "是否指定：$demand_ispoint";
                             if ($demand_ispoint == 1) {  #如果是指定的
                                 $mapper['id'] = $transportDemand_id;
-                                $result = $demand->where($mapper)->setField('status','已取消');
-                                if (intval($result)!=0) {
+                                $result = $demand->where($mapper)->setField('status','已取消');//直接取消订单
+                                echo "更新结果：";
+                                echo $result;
+                                if (false!==$result) {
                                     # 更新成功
                                     $response['status'] = OK;
-                                    $response['content'] = '拒绝成功';
+                                    $response['content'] = '您已成功拒绝订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
                                         $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
@@ -321,7 +339,7 @@ class UserController extends RestController {
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                 }
-                                else{
+                                else{   #更新失败
                                     $response['status'] = ERROR;
                                     $response['content'] = '更新失败';
                                 }
@@ -346,7 +364,7 @@ class UserController extends RestController {
                                 }
                                 else{
                                     $response['status'] = ERROR;
-                                    $response['content'] = '失败';
+                                    $response['content'] = '更新呀失败';
                                 }
                             }       
                         }
