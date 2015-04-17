@@ -223,7 +223,6 @@ class UserController extends RestController {
 
     /*
         接单
-
      */
     public function takeoverByTransportDemandId()
     {
@@ -339,6 +338,26 @@ class UserController extends RestController {
             $response['content'] = '存在空值';
         }
         $this->response($response,'json');
+    }
+
+    /**
+     * 完成订单
+     */
+    public function completeOrder_driver()
+    {
+        $token = I('post.token');
+        $token_data = validate_token($token);
+
+        $condition['id'] = I('post.order_id');//查询条件
+        $data['driver_ok'] = 1;
+        $data['updated_at'] = date('Y-m-d H:i:s');
+        $Order = M('transport_orders');
+        $Order->where($condition)->save($data);
+        if($Order){
+            $result['status'] = 'OK';
+            $this->response($result,'json');
+        }
+
     }
 
     /*

@@ -1137,6 +1137,7 @@ SQL: SELECT `ispoint` FROM `lb_transport_demands` WHERE `id` = 194  [ RunTime:0.
 SQL: UPDATE `lb_transport_demands` SET `status`='已取消' WHERE `id` = 194 [ RunTime:0.0556s ]
 NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 288 行.
 
+<<<<<<< HEAD
 [ 2015-04-17T10:20:12+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
@@ -1173,3 +1174,655 @@ SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=2 )  [ RunTime:0.0007s ]
 SQL: SELECT lb_users.name AS `merchant_name`,lb_users.avatar AS `merchant_avatar`,lb_cates.name AS `cate_name`,lb_transport_orders.created_at AS `time` FROM `lb_transport_orders` INNER JOIN lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id INNER JOIN lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id INNER JOIN lb_cates ON lb_transport_demands.cate_id = lb_cates.id INNER JOIN lb_users ON lb_merchants.user_id = lb_users.id  WHERE ( lb_transport_orders.driver_id=1 )  [ RunTime:0.0018s ]
 NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 188 行.
 
+=======
+[ 2015-04-17T00:45:05+08:00 ] ::1 /banar/api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0022s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'iJwTDuq43wW2B8LmAZdrGB9XWe7Ho8er'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1' WHERE `id` = 1 [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002980s ]
+
+[ 2015-04-17T00:45:21+08:00 ] ::1 /banar/api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'iJwTDuq43wW2B8LmAZdrGB9XWe7Ho8er'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0016s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1' WHERE `id` = 2 [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000831s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2015-04-17T00:52:27+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '3a94b5cb7d2919d4670ed75d0b93116d'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 /Users/joy/www/banar/Application/Api/Common/function.php 第 51 行.
+
+[ 2015-04-17T00:53:30+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001298s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0015s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `lb_transport_orders` SET `merchant_ok`='1' WHERE `id` = 1 [ RunTime:0.0015s ]
+
+[ 2015-04-17T00:55:20+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001263s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0044s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0026s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 75 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002241s ]
+
+[ 2015-04-17T00:55:40+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002991s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0019s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 75 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-17T01:10:14+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0084s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 75 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-17T01:10:16+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002486s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0103s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 75 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-17T01:10:18+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003198s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: SELECT `driver_ok` FROM `lb_transport_orders` WHERE `id` = 75 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2015-04-17T01:10:39+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000814s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001984s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:10:39'  [ RunTime:0.0011s ]
+
+[ 2015-04-17T01:11:11+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001607s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` > '2015-04-17 01:11:11'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:12:49+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < 'date(\'Y-m-d H:i:s\') -2 day'  [ RunTime:0.0004s ]
+
+[ 2015-04-17T01:13:31+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001276s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < 'date(\'Y-m-d H:i:s\') -2 day'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:15:22+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:15:22'  [ RunTime:0.0004s ]
+
+[ 2015-04-17T01:16:59+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:17:30+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002190s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:17:46+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:18:43+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:18:51+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001741s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:19:55+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0004s ]
+
+[ 2015-04-17T01:21:00+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:261) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:21:50+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000113s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002371s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:00:00'  [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:262) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:262) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:22:38+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined variable: map /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 265 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array /Users/joy/www/banar/ThinkPHP/Library/Think/Model.class.php 第 1794 行.
+SQL: SELECT * FROM `lb_transport_orders`  [ RunTime:0.0014s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:263) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:263) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:22:47+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0021s ]
+NOTIC: [8] Undefined variable: data /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 266 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:263) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:263) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:24:18+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001314s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002636s ]
+
+[ 2015-04-17T01:24:52+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000790s ]
+
+[ 2015-04-17T01:25:15+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2015-04-17T01:28:46+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001986s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0020s ]
+NOTIC: [8] A non well formed numeric value encountered /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 264 行.
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '1970-01-01 08:33:35'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:29:17+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001917s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:29:17'  [ RunTime:0.0006s ]
+
+[ 2015-04-17T01:29:34+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:29:34'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:29:51+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:29:51'  [ RunTime:0.0009s ]
+
+[ 2015-04-17T01:30:00+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:30:00'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:30:39+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:30:39'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:30:42+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-17 01:30:42'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:31:18+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001406s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0004s ]
+
+[ 2015-04-17T01:33:45+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:267) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:267) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:35:17+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002355s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:267) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:267) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:35:32+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+NOTIC: [8] Array to string conversion /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 268 行.
+
+[ 2015-04-17T01:39:24+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:268) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:268) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:42:13+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001891s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-18 01:42:13'  [ RunTime:0.0011s ]
+
+[ 2015-04-17T01:42:25+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004695s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:42:25'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:43:16+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000192s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001529s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:43:16'  [ RunTime:0.0003s ]
+
+[ 2015-04-17T01:47:21+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:47:21'  [ RunTime:0.0017s ]
+
+[ 2015-04-17T01:47:39+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:47:39'  [ RunTime:0.0008s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:264) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:264) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:48:23+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < 1429120103  [ RunTime:0.0010s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:264) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:264) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:49:54+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+NOTIC: [8] Undefined variable: ensure_time /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 265 行.
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < null  [ RunTime:0.0009s ]
+
+[ 2015-04-17T01:50:05+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0115s ]
+NOTIC: [8] Undefined variable: ensure_time /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 265 行.
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < null  [ RunTime:0.0005s ]
+
+[ 2015-04-17T01:50:19+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000214s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0007s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:50:31+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0029s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:50:57+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:51:52+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0003s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:52:04+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:52:17+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001476s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0019s ]
+
+[ 2015-04-17T01:52:33+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0  [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:271) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-17T01:54:01+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `lb_transport_orders` WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:54:01'  [ RunTime:0.0005s ]
+
+[ 2015-04-17T01:55:51+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_transport_orders` SET `merchant_ok`='1',`status`='已完成' WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:55:51' [ RunTime:0.0006s ]
+
+[ 2015-04-17T01:56:29+08:00 ] ::1 /banar/api/transportOrder/completeOrder_merchant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0017s ]
+SQL: UPDATE `lb_transport_orders` SET `merchant_ok`='1',`status`='已完成' WHERE `driver_ok` = 1 AND `merchant_ok` = 0 AND `updated_at` < '2015-04-16 01:56:29' [ RunTime:0.0012s ]
+
+>>>>>>> 8fb1b237a2beb5f845854705e168a7d774f63762

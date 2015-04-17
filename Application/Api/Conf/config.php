@@ -10,6 +10,8 @@ return array(
              *      1.获取车型
              * 状态:
              *  已完成 weychen
+             * 测试状态
+             *      已通过 weychen
              * $_GET:
              *  [ { id, name }]
              */
@@ -19,6 +21,8 @@ return array(
              *      2.获取市场
              * 状态:
              *  已完成 weychen
+             * 测试状态
+             *      已通过 weychen
              * $_GET:
              *  [ {id, name, address}]
              */
@@ -29,7 +33,10 @@ return array(
              * 司机接口接口
              *      1.司机注册
              * 状态
-             *  基本已完成 weychen
+             *      基本已完成 weychen
+             * 测试状态
+             *      已通过     weychen
+             *
              *
              * $_POST:
              *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
@@ -146,7 +153,20 @@ return array(
              */
             array('transportOrder/takeoverByTransportDemandId', 'User/takeoverByTransportDemandId', array('method => POST')),
 
-
+            /**
+             *  司机接口
+             *      7.司机完成订单
+             *  状态:
+             *      weychen
+             *  $_POST:
+             *  [token, order_id]
+             *
+             * return :
+             * {
+             *      status: true | false
+             * }
+             */
+            array('transportOrder/completeOrder_driver', 'User/completeOrder_driver', array('method' => 'POST')),
 
             /**
              *  商户接口
@@ -312,6 +332,22 @@ return array(
              *  }
              */
             array('driver/getDriversByCateId', 'Merchant/getDriversByCateId', array('method' => 'POST')),
+
+            /**
+             *  商户接口
+             *      11.确认已完成订单
+             *  状态:
+             *      weychen
+             *  $_POST:
+             *  [token, order_id]
+             *
+             * return :
+             * {
+             *      status: true | false
+             * }
+             */
+            array('transportOrder/completeOrder_merchant', 'Merchant/completeOrder_merchant', array('method' => 'POST')),
+
 
             /**
              * 判断车主是否在地理围栏的位置当中

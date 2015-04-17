@@ -163,8 +163,8 @@ class MerchantController extends RestController {
         $this->response($result,'json');
     }
     /*
- *取消订单（如何保证操作安全）
- */
+    *取消订单（如何保证操作安全）
+    */
     public function cancelTransportDemandById()
     {
         $response = array();
@@ -201,13 +201,13 @@ class MerchantController extends RestController {
         $isPointed = 0;
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
         $status = '未确认';
-        //获取空闲司机列表
-        $restDrivers = '';
-        //随机生成一个数字
-        $index = rand(0, 100);
+        #获取空闲司机列表
+        $restDrivers = M('drivers')->field('id')->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
+        #随机生成一个数字
+        $count = count($restDrivers);
+        $index = rand(0,$count-1);
         //选取司机的driver_id
         $driver_id = $restDrivers[$index]['driver_id'];
-
 
         $data['cate_id'] = $cate_id;
         $data['driver_id'] = $driver_id;
@@ -226,6 +226,53 @@ class MerchantController extends RestController {
         }
         $this->response($result,'json');
     }
+
+    /**
+     * 商户确认订单
+     */
+    public function completeOrder_merchant()
+    {
+
+        $token = I('post.token');
+        $token_data = validate_token($token); //用户验证
+
+        $Order = M('transport_orders');
+        $condition['id'] = I('post.order_id');//查询条件
+        $driver_ok = $Order->where($condition)->getField('driver_ok');
+        if($driver_ok) {
+            // 更改的内容
+            $data['merchant_ok'] = 1;
+            $data['status'] = '已完成';
+            $Order->where($condition)->save($data);
+            if ($Order) {
+                $result['status'] = 'OK';
+                $this->auto_completeOrder();//触发自动保存函数
+                $this->response($result, 'json');
+            }
+        }else {
+            $result['status'] = 'error';
+            $result['content'] = '司机确认完成订单，不能完成';
+            $this->response($result, 'json');
+        }
+    }
+
+    /**
+     * 自动完成订单
+     */
+    public function auto_completeOrder()
+    {
+        $Order = M('transport_orders');
+        $condition['driver_ok'] = 1;
+        $condition['merchant_ok'] = 0;
+
+        $ensure_time = date("Y-m-d H:i:s",strtotime("-1 day"));
+        $map['updated_at'] = array('lt',$ensure_time);
+        $data['merchant_ok'] = 1;
+        $data['status'] = '已完成';
+        $data = $Order->where($condition)->where($map)->save($data);
+
+    }
+
 
 
 
