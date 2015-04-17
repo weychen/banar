@@ -303,6 +303,7 @@ class UserController extends RestController {
                                     # 更新成功
                                     $response['status'] = OK;
                                     $response['content'] = '拒绝成功';
+                                    
                                 }
                                 else{
                                     $response['status'] = ERROR;
