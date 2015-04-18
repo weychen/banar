@@ -25,11 +25,12 @@ class UserController extends RestController {
     {
         $result = array();
         $result['status'] = false;
+        $avatar_data = $this->put_pic_to_oss('avatar');
         $user_data = array(
             'mobile' => I('post.mobile'),
             'password' => I('post.password'),
             'name' => I('post.name'),
-            'avatar' => I('post.avatar'),
+            'avatar' => $avatar_data,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         );
@@ -49,14 +50,14 @@ class UserController extends RestController {
             );
             $driver_id = D('drivers')->add($driver_data);
 
+            $avatar_data = $this->put_pic_to_oss('truck_avatar');
             $truck_data = array(
                 'driver_id' => $driver_id,
                 'plateId' => I('post.truck_plateId'),
                 'cate_id' => I('post.truck_cate_id'),
-                'avatar' => I('post.truck_avatar'),
+                'avatar' =>  $avatar_data,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-
             );
             $truck_id = D('trucks')->add($truck_data);
             //生成token并写入
@@ -392,8 +393,7 @@ class UserController extends RestController {
     {
         $token = I('post.token');
         $token_data = $this->validate_token($token);
-
-        $condition['id'] = I('post.order_id');//查询条件
+        $condition['id'] = I('post.id');//查询条件
         $data['driver_ok'] = 1;
         $data['updated_at'] = date('Y-m-d H:i:s');
         $Order = M('transport_orders');
@@ -403,8 +403,8 @@ class UserController extends RestController {
             $driver_data['isFree'] = 1;         //将isFree 设置成1
             $driver_data['updated_at'] = date('Y-m-d H:i:s');
             $condition2['id'] = $driver_id;     //查询司机的条件
+            M('drivers')->where($condition2)->save($driver_data);
 
-            M('driver')->where($condition2)->save($driver_data); //更新司机的状态
 
             $JPush = new JPushController();
 
@@ -587,38 +587,7 @@ class UserController extends RestController {
         return $s;
     }
 
-    public function update_pic()
-    {
-        move_uploaded_file($_FILES['file']['tmp_name'], "./".$_FILES["file"]["name"]);
-//        echo MODULE_PATH. "aliyun-php/aliyun.php" ;
-//        $avatar = I('post.avatar');
-//        $client = OSSClient::factory(array(
-//            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
-//            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
-//        ));
-//        $token = generate_token();
-//        $client->putObject(array(
-//            'Bucket' => 'banar-image2',
-//            'Key' => $token.'.jpg',
-//            'Content' => $avatar,
-//        ));
-//        $url = $client->generatePresignedUrl(array(
-//            'Bucket' => 'banar-image2',
-//            'Key' => '123',
-//            'Expires' => new \DateTime("+5 minutes"),
-//        ));
-
-//        echo $url;
-
-//        $objectListing = $client->listObjects(array(
-//            'Bucket' => 'banar-image',
-//        ));
-//
-//        foreach ($objectListing->getObjectSummarys() as $objectSummary) {
-//            echo $objectSummary->getKey();
-//        }
-
-    }
+    
 
     /**
      * @param $token    token 值
@@ -654,6 +623,44 @@ class UserController extends RestController {
             }
         }
     }
+    /**
+     * @return string
+     * 把图像上传到云端
+     */
+    public function put_pic_to_oss($avatar_name)
+    {
+
+        $token = generate_token();
+        move_uploaded_file($_FILES[$avatar_name]['tmp_name'], "./upload/".$token.".png");
+        $client = OSSClient::factory(array(
+            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
+            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
+        ));
+        $client->putObject(array(
+            'Bucket' => 'banar-image2',
+            'Key' => "$token.png",
+            'Content' => fopen('./upload/123.png', 'r'),
+            'ContentLength' => filesize("./upload/".$token.".png"),
+        ));
+        return $token. ".png";
+    }
+
+    public function getUrlByAvatar($key)
+    {
+        $client = OSSClient::factory(array(
+            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
+            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
+        ));
+
+        $url = $client->generatePresignedUrl(array(
+            'Bucket' => 'banar-image2',
+            'Key' => $key,
+            'Expires' => new \DateTime("+5 minutes"),
+        ));
+        return $url;
+    }
+
+
 
 
 }

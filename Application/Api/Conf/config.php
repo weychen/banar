@@ -215,7 +215,18 @@ return array(
              *  }
              */
             array('transportDemand/addTransportDemand','Merchant/postATransportDemand', array('method => POST')),
-
+            /*
+             * 商户接口
+             *      商户发起用车请求，自动分配司机
+             * $_POST:
+             * [token,cate]
+             *
+             * return:{
+             *
+             * }
+             *
+             * */
+            array('transportDemand/addTransportDemandAuto','Merchant/postATransportDemandByAuto',array('method => POST')),
             /**
              * 商户接口
              *      4.取消请求
@@ -226,6 +237,8 @@ return array(
              *  {
              *  }
              */
+
+
             array('transportDemand/cancelTransportDemandById','Merchant/cancelTransportDemandById',array('method'=>'POST')),
 
             /*
@@ -240,13 +253,6 @@ return array(
              * }
              * */
             array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
-            /**
-             * 商户接口
-             *      5.完成订单
-             * $_POST:
-             *  [token, id]
-             */
-            array('transportOrder/finishTransportOrderById', ),
 
 
 
