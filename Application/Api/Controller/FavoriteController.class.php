@@ -17,16 +17,21 @@ class FavoriteController extends RestController{
      */
     public function getFavorites()
     {
-
+        $result = array();
         $token = I('post.token');
+        $this->validate_token($token);
         $condition['token'] = $token;
         $tokenData = M('tokens')->field('userType,user_id')
             ->where($condition)->select()[0];
 
         $data = M('merchant_favorites')->field('id,merchant_id,driver_id')
             ->where(array('merchant_id' => $tokenData['user_id']))->select();
-
-        $this->response($data,'json');
+        if($data)
+        {
+            $result['status'] = 'OK';
+            $result['content'] = $data;
+        }
+        $this->response($result,'json');
     }
 
     /**
@@ -53,10 +58,10 @@ class FavoriteController extends RestController{
         //返回数据
         if(intval($id) != 0)
         {
-            $result['status'] = 'ok';
+            $result['status'] = 'OK';
             $result['content'] = '添加成功';
         }else{
-            $result['status'] = 'error';
+            $result['status'] = 'ERROR';
             $result['content'] = '添加失败,车主已经被添加';
         }
         $this->response($result,'json');
@@ -80,12 +85,41 @@ class FavoriteController extends RestController{
         //返回数据
         if (intval($id) != 0)
         {
-            $result['status'] = 'ok';
+            $result['status'] = 'OK';
             $result['content'] = '删除成功';
         }else{
-            $result['status'] = 'error';
+            $result['status'] = 'ERROR';
             $result['content'] = '删除失败,车主已经被删除';
         }
         $this->response($result,'json');
+    }
+
+    function validate_token($token)
+    {
+
+        $condition['token'] = $token; // 查询条件
+        $token_data = M('tokens')->field('userType,user_id,updated_at')
+            ->where($condition)->select()[0];   //得到token 的数据
+
+        if(!$token_data) {
+            //如果token 错误，则返回错误信息
+            $result['status'] = 'ERROR';
+            $result['content'] = 'token is error';
+            $this->response($result, 'json');
+        }else {
+            $token_updated_time = $token_data['updated_at'];
+            if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
+            {
+                //token 已经过期,销毁token
+                M('tokens')->where($condition)->delete();
+                $result['status'] = 'ERROR';
+                $result['content'] = 'token is out_of_time';
+                $this->response($result,'json');
+            } else {
+                //token 未过期，进行相应的操作
+                $token_data['updated_at'] = date('Y-m-d H:i:s');
+                return $token_data;
+            }
+        }
     }
 }

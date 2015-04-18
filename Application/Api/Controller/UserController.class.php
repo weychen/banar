@@ -233,7 +233,7 @@ class UserController extends RestController {
         else{
             $response['status'] = ERROR;
             $response['content'] = '空token';
-        }  
+        }
         $this->response($response,'json');
     }
 
@@ -604,8 +604,8 @@ class UserController extends RestController {
 
         if(!$token_data) {
             //如果token 错误，则返回错误信息
-            $result['status'] = 'error';
-            $result['content'] = 'token is error';
+            $result['status'] = 'ERROR';
+            $result['content'] = 'token is out_of_time';
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
@@ -613,7 +613,7 @@ class UserController extends RestController {
             {
                 //token 已经过期,销毁token
                 M('tokens')->where($condition)->delete();
-                $result['status'] = 'error';
+                $result['status'] = 'ERROR';
                 $result['content'] = 'token is out_of_time';
                 $this->response($result,'json');
             } else {
