@@ -393,12 +393,7 @@ class UserController extends RestController {
     {
         $token = I('post.token');
         $token_data = $this->validate_token($token);
-<<<<<<< HEAD
         $condition['id'] = I('post.id');//查询条件
-=======
-
-        $condition['id'] = I('post.order_id');//查询条件
->>>>>>> c268ce416d2730500572ca21747981905a3369fb
         $data['driver_ok'] = 1;
         $data['updated_at'] = date('Y-m-d H:i:s');
         $Order = M('transport_orders');
@@ -408,11 +403,8 @@ class UserController extends RestController {
             $driver_data['isFree'] = 1;         //将isFree 设置成1
             $driver_data['updated_at'] = date('Y-m-d H:i:s');
             $condition2['id'] = $driver_id;     //查询司机的条件
-<<<<<<< HEAD
             M('drivers')->where($condition2)->save($driver_data);
-=======
 
-            M('driver')->where($condition2)->save($driver_data); //更新司机的状态
 
             $JPush = new JPushController();
 
@@ -424,7 +416,6 @@ class UserController extends RestController {
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
             $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认'); //推送
 
->>>>>>> c268ce416d2730500572ca21747981905a3369fb
             $result['status'] = 'OK';
             $this->response($result,'json');
         }
@@ -668,38 +659,8 @@ class UserController extends RestController {
         ));
         return $url;
     }
-<<<<<<< HEAD
-    function validate_token($token)
-    {
-
-        $condition['token'] = $token; // 查询条件
-        $token_data = M('tokens')->field('userType,user_id,updated_at')
-            ->where($condition)->select()[0];   //得到token 的数据
-
-        if(!$token_data) {
-            //如果token 错误，则返回错误信息
-            $result['status'] = 'error';
-            $result['content'] = 'token is error';
-            $this->response($result, 'json');
-        }else {
-            $token_updated_time = $token_data['updated_at'];
-            if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
-            {
-                //token 已经过期,销毁token
-                M('tokens')->where($condition)->delete();
-                $result['status'] = 'error';
-                $result['content'] = 'token is out_of_time';
-                $this->response($result,'json');
-            } else {
-                //token 未过期，进行相应的操作
-                $token_data['updated_at'] = date('Y-m-d H:i:s');
-                return $token_data;
-            }
-        }
-    }
-=======
 
 
->>>>>>> c268ce416d2730500572ca21747981905a3369fb
+
 
 }

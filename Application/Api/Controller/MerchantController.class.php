@@ -186,11 +186,7 @@ class MerchantController extends RestController {
     {
         $response = array();
         $token = I('token');
-<<<<<<< HEAD
-        $token_data = $this->validate_token($token); //用户验证
-=======
         $this->validate_token($token);
->>>>>>> c268ce416d2730500572ca21747981905a3369fb
         $id = I('id');
         $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
         if($demand[0]['user_id']!='')
@@ -220,11 +216,7 @@ class MerchantController extends RestController {
     public function postATransportDemandByAuto()
     {
         $token = I('post.token');//商户信息
-<<<<<<< HEAD
-        $token_data = $this->validate_token($token); //用户验证
-=======
         $this->validate_token($token);
->>>>>>> c268ce416d2730500572ca21747981905a3369fb
         $cate_id = I('post.cate_id');//车型id
         $isPointed = 0;
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
