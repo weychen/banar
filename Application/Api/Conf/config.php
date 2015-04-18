@@ -119,7 +119,7 @@ return array(
              *      avatar,
              *  }
              */
-            array('user/getMyProfile', 'User/update_pic', array('method => POST')),
+            array('user/getMyProfile', 'User/getMyProfile', array('method => POST')),
 
             /**
              *  司机接口
@@ -127,6 +127,7 @@ return array(
              *   状态：
              *         已完成
              *         魏星
+             *         现在已经不是一个接口了
              * $_POST:
              *  [token,registrationID]
              *
