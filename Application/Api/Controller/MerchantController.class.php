@@ -181,11 +181,13 @@ class MerchantController extends RestController {
     {
         $response = array();
         $token = I('token');
+        $token_data = $this->validate_token($token); //用户验证
         $id = I('id');
         $demand = M('tokens')->field('user_id')->where(array('token'=>$token))->select();
         if($demand[0]['user_id']!='')
         {
-            $result = M('transport_demands')->where("id = {$id}")->setField('status','已取消');
+            $update_at = date('y-m-s h:m:s');
+            $result = M('transport_demands')->where("id = {$id}")->setField(array('status'=>'已取消','updated_at'=>$update_at));
             if($result)
             {
                 $response['status'] = 'OK';
@@ -204,38 +206,50 @@ class MerchantController extends RestController {
 
 
     /**
-     * 商户发起用车请求,商户自动选取
+     * 商户发起用车请求,司机自动选取
      */
     public function postATransportDemandByAuto()
     {
         $token = I('post.token');//商户信息
+        $token_data = $this->validate_token($token); //用户验证
         $cate_id = I('post.cate_id');//车型id
         $isPointed = 0;
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
         $status = '未确认';
         #获取空闲司机列表
-        $restDrivers = M('drivers')->field('id')->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
+        $restDrivers = M('drivers')->join("lb_trucks on lb_drivers.user_id = lb_trucks.driver_id")
+            ->where("lb_drivers.isFree = 1 AND lb_trucks.cate_id = $cate_id")->select();
+       // echo $restDrivers[0]['user_id'];
+     // $restDrivers = M('drivers')      ->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
         #随机生成一个数字
         $count = count($restDrivers);
-        $index = rand(0,$count-1);
-        //选取司机的driver_id
-        $driver_id = $restDrivers[$index]['driver_id'];
-
-        $data['cate_id'] = $cate_id;
-        $data['driver_id'] = $driver_id;
-        $data['isPointed'] = $isPointed;
-        $data['merchant_id'] = $merchant_id;
-        $data['status'] = $status;
-        $id = M('transport_demands')->add($data);
-        //返回数据
-        if(intval($id) != 0)
+        if($count > 0 )
         {
-            $result['status'] = 'ok';
-            $result['content'] = $data;
+            $index = rand(0,$count-1);
+            //选取司机的driver_id
+            $driver_id = $restDrivers[$index]['user_id'];
+
+            $data['cate_id'] = $cate_id;
+            $data['driver_id'] = $driver_id;
+            $data['isPointed'] = $isPointed;
+            $data['merchant_id'] = $merchant_id;
+            $data['status'] = $status;
+            //echo $data['driver_id'];
+            $id = M('transport_demands')->add($data);
+            //返回数据
+            if(intval($id) != 0)
+            {
+                $result['status'] = 'OK';
+                $result['content'] = $data;
+            }else{
+                $result['status'] = 'error';
+                $result['content'] = '添加失败';
+            }
         }else{
-            $result['status'] = 'error';
-            $result['content'] = '添加失败';
+            $result['status'] = 'ERROR';
+            $result['content'] = '没有空闲司机，请换个车型';
         }
+
         $this->response($result,'json');
     }
 
@@ -249,8 +263,9 @@ class MerchantController extends RestController {
         $token_data = $this->validate_token($token); //用户验证
 
         $Order = M('transport_orders');
-        $condition['id'] = I('post.order_id');//查询条件
+        $condition['id'] = I('post.id');//查询条件
         $driver_ok = $Order->where($condition)->getField('driver_ok');
+
         if($driver_ok) {
             // 更改的内容
             $data['merchant_ok'] = 1;

@@ -374,9 +374,8 @@ class UserController extends RestController {
     public function completeOrder_driver()
     {
         $token = I('post.token');
-        $token_data = validate_token($token);
-
-        $condition['id'] = I('post.order_id');//查询条件
+        $token_data = $this->validate_token($token);
+        $condition['id'] = I('post.id');//查询条件
         $data['driver_ok'] = 1;
         $data['updated_at'] = date('Y-m-d H:i:s');
         $Order = M('transport_orders');
@@ -385,7 +384,7 @@ class UserController extends RestController {
             $driver_id = $Order->where($condition)->getField('driver_id'); //获得司机id
             $driver_data['isFree'] = 1;         //将isFree 设置成1
             $condition2['id'] = $driver_id;     //查询司机的条件
-            M('driver')->where($condition2)->save($driver_data);
+            M('drivers')->where($condition2)->save($driver_data);
             $result['status'] = 'OK';
             $this->response($result,'json');
         }
@@ -581,4 +580,33 @@ class UserController extends RestController {
 //        }
 
     }
+    function validate_token($token)
+    {
+
+        $condition['token'] = $token; // 查询条件
+        $token_data = M('tokens')->field('userType,user_id,updated_at')
+            ->where($condition)->select()[0];   //得到token 的数据
+
+        if(!$token_data) {
+            //如果token 错误，则返回错误信息
+            $result['status'] = 'error';
+            $result['content'] = 'token is error';
+            $this->response($result, 'json');
+        }else {
+            $token_updated_time = $token_data['updated_at'];
+            if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
+            {
+                //token 已经过期,销毁token
+                M('tokens')->where($condition)->delete();
+                $result['status'] = 'error';
+                $result['content'] = 'token is out_of_time';
+                $this->response($result,'json');
+            } else {
+                //token 未过期，进行相应的操作
+                $token_data['updated_at'] = date('Y-m-d H:i:s');
+                return $token_data;
+            }
+        }
+    }
+
 }
