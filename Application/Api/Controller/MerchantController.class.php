@@ -170,13 +170,17 @@ class MerchantController extends RestController {
         $data['status'] = $status;
 
         $id = M('transport_demands')->add($data);
+
 	    $data['demand_id'] = $id;
+
         //返回数据
         if(intval($id) != 0)
         {
             $result['status'] = 'OK';
             $result['content'] = $data;
+            $result['demand_id'] = $id;
         }else{
+
             $result['status'] = 'ERROR';
             $result['content'] = '添加失败';
         }
@@ -246,6 +250,7 @@ class MerchantController extends RestController {
             $data['status'] = $status;
             //echo $data['driver_id'];
             $id = M('transport_demands')->add($data);
+
 	        $data['demand_id'] = $id;
             //返回数据
             if(intval($id) != 0)
