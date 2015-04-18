@@ -1,0 +1,36 @@
+[ 2015-04-18T15:15:57+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+NOTIC: [2] mkdir(): File exists /Applications/MAMP/htdocs/banar/ThinkPHP/Library/Think/Build.class.php 第 110 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002939s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2015-04-18T15:16:24+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000084s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001422s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0005s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`status`) VALUES ('1','6','1','1','未确认') [ RunTime:0.0015s ]
+
+[ 2015-04-18T15:17:23+08:00 ] ::1 /banar/index.php/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`status`) VALUES ('1','6','1','1','未确认') [ RunTime:0.0006s ]
+

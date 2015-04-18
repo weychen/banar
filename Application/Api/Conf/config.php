@@ -425,7 +425,7 @@ return array(
     'DB_HOST'       =>  'localhost',
     'DB_NAME'       =>  'banar',
     'DB_USER'       =>  'root',
-    'DB_PWD'        =>  '100693',
+    'DB_PWD'        =>  'root',
     'DB_PORT'       =>  '3306',
     'DB_PREFIX'     =>  'lb_',    // 数据库表前缀
 );
