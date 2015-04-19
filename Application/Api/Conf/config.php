@@ -417,6 +417,18 @@ return array(
              * }
              */
             array('transportOrder/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
+
+            /**
+             * 添加姓名内容地址
+             * $_POST:
+             *   [name,content,address]
+             * return:
+             * {
+             *       status,
+             *       content
+             * }
+             */
+            array('all/addContacts','User/addContacts',array('method'=>'POST')),
         ),
 	  
 

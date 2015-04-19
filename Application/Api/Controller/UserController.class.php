@@ -663,6 +663,38 @@ class UserController extends RestController {
     }
 
 
+    public function addContacts(){
+        $response['status'] = ERROR;
+        $response['content'];
+        $name = I('name');
+        $content = I('content');
+        $address = I('address');
+        if (!empty($name) && !empty($content) && !empty($address)) {
+            # 如果不存在空值
+            $contact = M('contacts');
+            $data = array(
+                'name' => $name,
+                'content' => $content,
+                'address' => $address
+                );
+            $contact->add($data);
+            if ($contact) {
+                #如果插入成功
+                $response['status'] = OK;
+                $response['content'] = '插入成功';
+            }
+            else{
+                $response['status'] = ERROR;
+                $response['content'] = '插入失败';
+            }
 
+        }
+        else {
+            # 如果存在空值
+            $response['status'] = ERROR;
+            $response['content'] = '存在空值';
+        }
+        $this->response($response,'json');
+    }
 
 }

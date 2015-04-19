@@ -1272,3 +1272,109 @@ SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0061s ]
 NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
 SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0012s ]
 
+[ 2015-04-19T21:11:49+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001407s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0228s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = ''  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 343 行.
+
+[ 2015-04-19T21:12:35+08:00 ] ::1 /banar/Api/all/transportOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001803s ]
+ERR: 无法加载控制器:All
+
+[ 2015-04-19T21:13:27+08:00 ] ::1 /banar/Api/all/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+ERR: 无法加载控制器:All
+
+[ 2015-04-19T21:13:35+08:00 ] ::1 /banar/Api/transportOrder/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001564s ]
+
+[ 2015-04-19T21:13:55+08:00 ] ::1 /banar/Api/transportOrder/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+
+[ 2015-04-19T21:14:17+08:00 ] ::1 /banar/Api/transportOrder/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+
+[ 2015-04-19T21:14:30+08:00 ] ::1 /banar/Api/transportOrder/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 667 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 668 行.
+SQL: SHOW COLUMNS FROM `lb_contacts` [ RunTime:0.0077s ]
+SQL: INSERT INTO `lb_contacts` (`name`,`content`,`address`) VALUES ('axiba','这个产品好','北京航空航天大学') [ RunTime:0.1416s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 683 行.
+
+[ 2015-04-19T21:14:36+08:00 ] ::1 /banar/Api/transportOrder/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 667 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 668 行.
+SQL: SHOW COLUMNS FROM `lb_contacts` [ RunTime:0.0065s ]
+SQL: INSERT INTO `lb_contacts` (`name`,`content`,`address`) VALUES ('axiba','这个产品好','北京航空航天大学') [ RunTime:0.0566s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 683 行.
+
+[ 2015-04-19T21:16:19+08:00 ] ::1 /banar/Api/axiba/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001492s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 667 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 668 行.
+SQL: SHOW COLUMNS FROM `lb_contacts` [ RunTime:0.0058s ]
+SQL: INSERT INTO `lb_contacts` (`name`,`content`,`address`) VALUES ('axiba','这个产品好','北京航空航天大学') [ RunTime:0.0775s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 683 行.
+
+[ 2015-04-19T21:16:47+08:00 ] ::1 /banar/Api/all/addcontacts
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001634s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 667 行.
+NOTIC: [8] Undefined index: content X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 668 行.
+SQL: SHOW COLUMNS FROM `lb_contacts` [ RunTime:0.0069s ]
+SQL: INSERT INTO `lb_contacts` (`name`,`content`,`address`) VALUES ('axiba','这个产品好','北京航空航天大学') [ RunTime:0.0570s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' X:\wamp\www\banar\Application\Api\Controller\UserController.class.php 第 683 行.
+
