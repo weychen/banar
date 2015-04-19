@@ -25,6 +25,10 @@ class CommunalController extends RestController{
         {
             $result['status'] = 'OK';
             $result['content'] = $data;
+        }else
+        {
+            $result['status'] = 'ERROR';
+            $result['content'] = '车型为空';
         }
         $this->response($result,'json');
     }
@@ -36,8 +40,16 @@ class CommunalController extends RestController{
     {
         $Market = M('markets');
         $data = $Market->field('id,name,address')->order('id asc')->select();
-        $result['status'] = 'OK';
-        $result['content'] = $data;
+        if($data)
+        {
+            $result['status'] = 'OK';
+            $result['content'] = $data;
+        }else{
+            $result['status'] = 'ERROR';
+            $result['content'] = '市场为空';
+        }
+
+
         $this->response($result, 'json');
     }
 }

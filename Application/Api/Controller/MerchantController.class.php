@@ -31,7 +31,8 @@ class MerchantController extends RestController {
         $user = D('users');
         //判断该用户是否已经被注册
         if(get_user('mobile',$user_data['mobile'])){
-            $result['error'] = '该手机号码已经注册';
+            $result['status'] = 'ERROR';
+            $result['content'] = '该手机号码已经注册';
         } else {
             $user_id = $user->add($user_data);
             $merchant_data = array(
@@ -54,6 +55,7 @@ class MerchantController extends RestController {
                 'updated_at' => date('Y-m-d H:i:s')
             );
             D('tokens')->add($token_data);
+            $result['status'] = 'OK';
         }
         $this->response($result,'json');
 
@@ -81,8 +83,8 @@ class MerchantController extends RestController {
                 put_token_into_sql($token_data, 'merchant',$user_id);
                 $user = new UserController();
                 $user->bindJPushRegistrationID($token_data,$registration_id);
-                $result['token'] = $token_data;
-                $result['status'] = true;
+                $result['content'] = $token_data;
+                $result['status'] = 'OK';
             }
         }
         $this->response($result,'json');
@@ -169,15 +171,19 @@ class MerchantController extends RestController {
         $data['status'] = $status;
 
         $id = M('transport_demands')->add($data);
-        $data['driver_id'] = $id;
+
+	    $data['demand_id'] = $id;
+
         //返回数据
         if(intval($id) != 0)
         {
-            $result['status'] = 'ok';
+            $result['status'] = 'OK';
             $result['content'] = $data;
             $result['demand_id'] = $id;
         }else{
-            $result['status'] = 'error';
+
+            $result['status'] = 'ERROR';
+            $result['content'] = '添加失败';
         }
         $this->response($result,'json');
     }
@@ -198,14 +204,15 @@ class MerchantController extends RestController {
             if($result)
             {
                 $response['status'] = 'OK';
-                $response['content'] = '取消订单成功';
             }else
             {
                 $response['status'] = 'ERROR';
+                $response['content'] = '取消订单失败';
             }
         }else
         {
-            $response['status'] = 'NOT_LOGED_IN';
+            $response['status'] = 'ERROR';
+            $response['content'] = 'token is out_of_time';
         }
         $this->response($response,'json');
     }
@@ -224,6 +231,7 @@ class MerchantController extends RestController {
         $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
         $status = '未确认';
         #获取空闲司机列表
+
         $restDrivers = M('drivers')->join("lb_trucks on lb_drivers.user_id = lb_trucks.driver_id")
             ->where("lb_drivers.isFree = 1 AND lb_trucks.cate_id = $cate_id")->select();
        // echo $restDrivers[0]['user_id'];
@@ -243,14 +251,15 @@ class MerchantController extends RestController {
             $data['status'] = $status;
             //echo $data['driver_id'];
             $id = M('transport_demands')->add($data);
-            $data['driver_id'] = $id;
+
+	        $data['demand_id'] = $id;
             //返回数据
             if(intval($id) != 0)
             {
                 $result['status'] = 'OK';
                 $result['content'] = $data;
             }else{
-                $result['status'] = 'error';
+                $result['status'] = 'ERROR';
                 $result['content'] = '添加失败';
             }
         }else{
@@ -297,7 +306,7 @@ class MerchantController extends RestController {
                 $this->response($result, 'json');
             }
         }else {
-            $result['status'] = 'error';
+            $result['status'] = 'ERROR';
             $result['content'] = '司机未确认完成订单，不能完成';
             $this->response($result, 'json');
         }
@@ -335,16 +344,17 @@ class MerchantController extends RestController {
 
         if(!$token_data) {
             //如果token 错误，则返回错误信息
-            $result['status'] = 'error';
+            $result['status'] = 'ERROR';
             $result['content'] = 'token is error';
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
+            echo $token_updated_time;
             if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
             {
                 //token 已经过期,销毁token
                 M('tokens')->where($condition)->delete();
-                $result['status'] = 'error';
+                $result['status'] = 'ERROR';
                 $result['content'] = 'token is out_of_time';
                 $this->response($result,'json');
             } else {
