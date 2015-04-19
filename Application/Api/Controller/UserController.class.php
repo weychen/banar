@@ -601,11 +601,10 @@ class UserController extends RestController {
         $condition['token'] = $token; // 查询条件
         $token_data = M('tokens')->field('userType,user_id,updated_at')
             ->where($condition)->select()[0];   //得到token 的数据
-
         if(!$token_data) {
             //如果token 错误，则返回错误信息
             $result['status'] = 'ERROR';
-            $result['content'] = 'token is out_of_time';
+            $result['content'] = 'token is error';
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
@@ -637,12 +636,14 @@ class UserController extends RestController {
             'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
         ));
         $client->putObject(array(
-            'Bucket' => 'banar-image2',
-            'Key' => "$token.png",
-            'Content' => fopen('./upload/123.png', 'r'),
+            'Bucket' => 'banar-image',
+            'Key' => $token.".png",
+            'Endpoint' => 'http://oss-cn-beijing.aliyuncs.com',
+            'Content' => fopen("./upload/".$token.".png", 'r'),
             'ContentLength' => filesize("./upload/".$token.".png"),
         ));
-        return $token. ".png";
+
+        return "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
     }
 
     public function getUrlByAvatar($key)
@@ -653,8 +654,9 @@ class UserController extends RestController {
         ));
 
         $url = $client->generatePresignedUrl(array(
-            'Bucket' => 'banar-image2',
+            'Bucket' => 'banar-image',
             'Key' => $key,
+            'Endpoint' => 'http://oss-cn-beijing.aliyuncs.com',
             'Expires' => new \DateTime("+5 minutes"),
         ));
         return $url;
