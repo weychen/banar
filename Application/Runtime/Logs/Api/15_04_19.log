@@ -1068,3 +1068,26 @@ SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = '9bf0209ee608d
 SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0012s ]
 SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 21  [ RunTime:0.0058s ]
 
+[ 2015-04-19T19:46:12+08:00 ] ::1 /banar/api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+NOTIC: [8] Undefined index: avatar /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 633 行.
+NOTIC: [2] fopen(./upload/6fae9734a019e5388f9c84617a36e05e.png): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 642 行.
+NOTIC: [2] filesize(): stat failed for ./upload/6fae9734a019e5388f9c84617a36e05e.png /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 643 行.
+ERR: [ContentLength] must be a number.
+
+[ 2015-04-19T19:46:33+08:00 ] ::1 /banar/api/user/driverRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001351s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='11122s3asd1231asds231' ) LIMIT 1   [ RunTime:0.0002s ]
+
