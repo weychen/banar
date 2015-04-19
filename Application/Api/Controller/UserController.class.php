@@ -630,11 +630,17 @@ class UserController extends RestController {
     {
 
         $token = generate_token();
-        move_uploaded_file($_FILES[$avatar_name]['tmp_name'], "./upload/".$token.".png");
+        if(!move_uploaded_file($_FILES[$avatar_name]['tmp_name'],"./upload/".$token.".png" ))
+        {
+            $result['status'] = "ERROR";
+            $result['content'] = "图片上传失败";
+            $this->response($result, 'json');
+        }
         $client = OSSClient::factory(array(
             'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
             'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
         ));
+
         $client->putObject(array(
             'Bucket' => 'banar-image',
             'Key' => $token.".png",
@@ -643,7 +649,8 @@ class UserController extends RestController {
             'ContentLength' => filesize("./upload/".$token.".png"),
         ));
 
-        return "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
+        $avatar_data = "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
+        return $avatar_data;
     }
 
     public function getUrlByAvatar($key)
