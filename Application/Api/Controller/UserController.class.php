@@ -299,8 +299,8 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被接收";  
-                                        $JPUSH = new JPushController();
-                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+                                        // $JPUSH = new JPushController();
+                                        // $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -337,8 +337,8 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被拒绝，请您重新下单";  
-                                        $JPUSH = new JPushController();
-                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+                                        // $JPUSH = new JPushController();
+                                        // $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;
@@ -670,6 +670,38 @@ class UserController extends RestController {
     }
 
 
+    public function addContacts(){
+        $response['status'] = ERROR;
+        $response['content'];
+        $name = I('name');
+        $content = I('content');
+        $address = I('address');
+        if (!empty($name) && !empty($content) && !empty($address)) {
+            # 如果不存在空值
+            $contact = M('contacts');
+            $data = array(
+                'name' => $name,
+                'content' => $content,
+                'address' => $address
+                );
+            $contact->add($data);
+            if ($contact) {
+                #如果插入成功
+                $response['status'] = OK;
+                $response['content'] = '插入成功';
+            }
+            else{
+                $response['status'] = ERROR;
+                $response['content'] = '插入失败';
+            }
 
+        }
+        else {
+            # 如果存在空值
+            $response['status'] = ERROR;
+            $response['content'] = '存在空值';
+        }
+        $this->response($response,'json');
+    }
 
 }
