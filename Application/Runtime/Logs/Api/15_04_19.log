@@ -1,0 +1,137 @@
+[ 2015-04-19T20:08:04+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003208s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0091s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'AovMsrjlvQnV0SqYNdKiDFLKfFt0horf'  [ RunTime:0.0617s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = 'AovMsrjlvQnV0SqYNdKiDFLKfFt0horf' [ RunTime:0.3024s ]
+
+[ 2015-04-19T20:08:28+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001887s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0034s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h'  [ RunTime:0.0004s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = 'oV1HgneMQViXefC2tXLiaVG7fdJYek9h' [ RunTime:0.2446s ]
+
+[ 2015-04-19T20:08:42+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001673s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0074s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '1KmmNXGxgj5wT9nUhIt2jtNkK5JQKvvm'  [ RunTime:0.0009s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '1KmmNXGxgj5wT9nUhIt2jtNkK5JQKvvm' [ RunTime:0.1240s ]
+
+[ 2015-04-19T20:09:21+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0058s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'o6rIp8M4E3g5PHWUk3bb9EaV9YCkE6Zi'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0055s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 106 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0058s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 2 )  [ RunTime:0.0200s ]
+
+[ 2015-04-19T20:09:40+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002016s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0068s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '9ch8N8WX3hDDCJ2ItW5tvzlVgtfvSXgh'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0059s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 106 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0067s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 2 )  [ RunTime:0.0007s ]
+
+[ 2015-04-19T20:10:42+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0062s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '7hgl3KGXppmlQXj4yc7ZIYjEmnxxWBvh'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0058s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 106 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0059s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 2 )  [ RunTime:0.0017s ]
+
+[ 2015-04-19T20:10:45+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001880s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0063s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '7hgl3KGXppmlQXj4yc7ZIYjEmnxxWBvh'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0056s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 106 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0059s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0009s ]
+
+[ 2015-04-19T20:10:59+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001452s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0060s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '7hgl3KXppmlQXj4yc7ZIYjEmnxxWBvh'  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 333 行.
+
+[ 2015-04-19T20:12:25+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001622s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 98 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0065s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '7hgl3KGXppmlQXj4yc7ZIYjEmnxxWBvh'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_merchant_favorites` [ RunTime:0.0057s ]
+NOTIC: [8] Use of undefined constant user_id - assumed 'user_id' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 107 行.
+SQL: SELECT `driver_id` FROM `lb_merchant_favorites` WHERE `merchant_id` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0059s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT lb_drivers.id,lb_users.name,lb_users.mobile,lb_drivers.isFree FROM `lb_drivers` INNER JOIN lb_trucks on lb_drivers.id = lb_trucks.driver_id INNER JOIN lb_users on lb_drivers.user_id = lb_users.id  WHERE ( lb_trucks.cate_id = 1 )  [ RunTime:0.0010s ]
+
+[ 2015-04-19T20:12:29+08:00 ] ::1 /banar/Api/driver/getDriversByCateId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 98 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0271s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '7hgl3KGXppmQXj4yc7ZIYjEmnxxWBvh'  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 X:\wamp\www\banar\Application\Api\Controller\MerchantController.class.php 第 334 行.
+

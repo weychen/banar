@@ -95,6 +95,7 @@ class MerchantController extends RestController {
      */
     public function getDriversByCateId()
     {
+        $result['status'] = ERROR;
         // 获得token 相对应的usertpye, user_id
         $token = I('post.token');
         $token_data = $this->validate_token($token);
@@ -143,7 +144,7 @@ class MerchantController extends RestController {
             }
             $result['status'] = 'OK';
             $result['content'] = $data;
-            $this->response($data, 'json');
+            $this->response($result, 'json');
         }
     }
 
