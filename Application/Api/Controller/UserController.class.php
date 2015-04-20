@@ -285,7 +285,7 @@ class UserController extends RestController {
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
                                     if ($result) {
-                                        
+
                                     }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
@@ -295,8 +295,8 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被接收";  
-                                        // $JPUSH = new JPushController();
-                                        // $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+                                         $JPUSH = new JPushController();
+                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -333,8 +333,8 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被拒绝，请您重新下单";  
-                                        // $JPUSH = new JPushController();
-                                        // $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+                                         $JPUSH = new JPushController();
+                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;
@@ -361,7 +361,7 @@ class UserController extends RestController {
                                 }
                                 else{
                                     $response['status'] = ERROR;
-                                    $response['content'] = '更新呀失败';
+                                    $response['content'] = '更新失败';
                                 }
                             }       
                         }
