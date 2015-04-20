@@ -145,7 +145,7 @@ return array(
              *         已完成
              *         魏星
              * $_POST:
-             *  [token,transportDemandId,isAccept]
+             *  [token,transportDemandId,isAccept（true | false）]
              *
              * return:
              *  {

@@ -144,7 +144,7 @@ class UserController extends RestController {
             if ($result!=null) {   //如果已存在记录
                 # code...
                 $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s')));
-                echo "绑定新记录成功";
+                
                 $response['status'] = OK;
             }
             else {  //如果不存在记录
@@ -154,7 +154,7 @@ class UserController extends RestController {
                 $j_push_user->created_at = date('Y-m-d H:i:s');
                 $j_push_user->updated_at = date('Y-m-d H:i:s');
                 $j_push_user->add();
-                echo "更新registrationID成功";
+                
                 $response['status'] = OK;
             }       
             return $response;
@@ -266,15 +266,11 @@ class UserController extends RestController {
                         # code...
                         if ($isAccept=='true'){    #如果司机接收订单
                         # code...
-                            echo "司机同意接收订单";
                             if (intval($isFree)!=0) {   #如果司机空闲
                             # code...
-
-                                echo "司机状态空闲";
                                 $demand = M('transport_demands');
                                 $maps['id'] = $transportDemand_id;
                                 $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-                                dump($demand_status);
                                 
                                 $orders = M('transport_orders');   //实例化订单模型
                                 if ($demand_status == '未确认') {  //请求为未确认状态
@@ -289,7 +285,7 @@ class UserController extends RestController {
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
                                     if ($result) {
-                                        echo "askfjslkfjls";
+
                                     }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
@@ -299,8 +295,10 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被接收";  
+
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -322,12 +320,11 @@ class UserController extends RestController {
                             $demand = M('transport_demands');
                             $mapper['id'] = $transportDemand_id;
                             $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
-                            echo "是否指定：$demand_ispoint";
+                            
                             if ($demand_ispoint == 1) {  #如果是指定的
                                 $mapper['id'] = $transportDemand_id;
                                 $result = $demand->where($mapper)->setField('status','已取消');//直接取消订单
-                                echo "更新结果：";
-                                echo $result;
+                                
                                 if (false!==$result) {
                                     # 更新成功
                                     $response['status'] = OK;
@@ -337,8 +334,10 @@ class UserController extends RestController {
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被拒绝，请您重新下单";  
+
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
+
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;
@@ -365,7 +364,7 @@ class UserController extends RestController {
                                 }
                                 else{
                                     $response['status'] = ERROR;
-                                    $response['content'] = '更新呀失败';
+                                    $response['content'] = '更新失败';
                                 }
                             }       
                         }
@@ -630,11 +629,17 @@ class UserController extends RestController {
     {
 
         $token = generate_token();
-        move_uploaded_file($_FILES[$avatar_name]['tmp_name'], "./upload/".$token.".png");
+        if(!move_uploaded_file($_FILES[$avatar_name]['tmp_name'],"./upload/".$token.".png" ))
+        {
+            $result['status'] = "ERROR";
+            $result['content'] = "图片上传失败";
+            $this->response($result, 'json');
+        }
         $client = OSSClient::factory(array(
             'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
             'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
         ));
+
         $client->putObject(array(
             'Bucket' => 'banar-image',
             'Key' => $token.".png",
@@ -643,7 +648,8 @@ class UserController extends RestController {
             'ContentLength' => filesize("./upload/".$token.".png"),
         ));
 
-        return "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
+        $avatar_data = "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
+        return $avatar_data;
     }
 
     public function getUrlByAvatar($key)

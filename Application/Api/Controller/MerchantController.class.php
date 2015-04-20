@@ -131,7 +131,7 @@ class MerchantController extends RestController {
                 $data2[$key]['isFavorite'] = 0;
             }
             $data = array_merge($data1, $data2);
-//
+
             $result['status'] = "OK";
             $result['content'] = $data;
             $this->response($result, 'json');
@@ -168,6 +168,8 @@ class MerchantController extends RestController {
         $data['driver_id'] = $driver_id;
         $data['ispoint'] = $isPointed;
         $data['merchant_id'] = $merchant_id;
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $data['updated_at'] = date('Y-m-d H:i:s');
         $data['status'] = $status;
 
         $id = M('transport_demands')->add($data);
@@ -220,7 +222,7 @@ class MerchantController extends RestController {
 
 
     /**
-     * 商户发起用车请求,司机自动选取
+     * 商户发起用车,司机自动选取
      */
     public function postATransportDemandByAuto()
     {
@@ -246,9 +248,11 @@ class MerchantController extends RestController {
 
             $data['cate_id'] = $cate_id;
             $data['driver_id'] = $driver_id;
-            $data['isPointed'] = $isPointed;
+            $data['ispoint'] = $isPointed;
             $data['merchant_id'] = $merchant_id;
             $data['status'] = $status;
+            $data['created_at'] = date('Y-m-d H:i:s');
+            $data['updated_at'] = date('Y-m-d H:i:s');
             //echo $data['driver_id'];
             $id = M('transport_demands')->add($data);
 
@@ -287,6 +291,7 @@ class MerchantController extends RestController {
             // 更改的内容
             $data['merchant_ok'] = 1;
             $data['status'] = '已完成';
+            $data['updated_at'] = date('Y-m-d H:i:s');
             $Order->where($condition)->save($data);
             if ($Order) {
                 $result['status'] = 'OK';
@@ -325,6 +330,7 @@ class MerchantController extends RestController {
         $map['updated_at'] = array('elt',$ensure_time);
         $data['merchant_ok'] = 1;
         $data['status'] = '已完成';
+        $data['updated_at'] = date('Y-m-d H:i:s');
         $data = $Order->where($condition)->where($map)->save($data);
 
     }
@@ -349,7 +355,6 @@ class MerchantController extends RestController {
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
-            echo $token_updated_time;
             if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
             {
                 //token 已经过期,销毁token
