@@ -266,15 +266,11 @@ class UserController extends RestController {
                         # code...
                         if ($isAccept=='true'){    #如果司机接收订单
                         # code...
-                            echo "司机同意接收订单";
                             if (intval($isFree)!=0) {   #如果司机空闲
                             # code...
-
-                                echo "司机状态空闲";
                                 $demand = M('transport_demands');
                                 $maps['id'] = $transportDemand_id;
                                 $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-                                dump($demand_status);
                                 
                                 $orders = M('transport_orders');   //实例化订单模型
                                 if ($demand_status == '未确认') {  //请求为未确认状态
@@ -289,7 +285,7 @@ class UserController extends RestController {
                                     $result = $demand->where($mapper)->setField('status','已确认');
                                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
                                     if ($result) {
-                                        echo "askfjslkfjls";
+                                        
                                     }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
