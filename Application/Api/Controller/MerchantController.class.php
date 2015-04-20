@@ -131,7 +131,7 @@ class MerchantController extends RestController {
                 $data2[$key]['isFavorite'] = 0;
             }
             $data = array_merge($data1, $data2);
-//
+
             $result['status'] = "OK";
             $result['content'] = $data;
             $this->response($result, 'json');
@@ -246,7 +246,7 @@ class MerchantController extends RestController {
 
             $data['cate_id'] = $cate_id;
             $data['driver_id'] = $driver_id;
-            $data['isPointed'] = $isPointed;
+            $data['ispoint'] = $isPointed;
             $data['merchant_id'] = $merchant_id;
             $data['status'] = $status;
             //echo $data['driver_id'];
@@ -349,7 +349,6 @@ class MerchantController extends RestController {
             $this->response($result, 'json');
         }else {
             $token_updated_time = $token_data['updated_at'];
-            echo $token_updated_time;
             if(strtotime("$token_updated_time +2 day") - strtotime(date("Y-m-d H:i:s")) < 0)
             {
                 //token 已经过期,销毁token

@@ -1,0 +1,13 @@
+[ 2015-04-20T13:39:19+08:00 ] ::1 /banar/api/user/getMyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002019s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0037s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SELECT `userType`,`user_id` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name`,`avatar` FROM `lb_users` WHERE `id` = 22  [ RunTime:0.0008s ]
+
