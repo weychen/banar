@@ -1,0 +1,757 @@
+[ 2015-04-21T20:49:29+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000138s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001638s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0032s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0021s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:49:29' WHERE `id` = 0 [ RunTime:0.0010s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:49:29' WHERE `id` = null [ RunTime:0.0002s ]
+NOTIC: [2] require_once(../../vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T20:50:32+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000125s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0017s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:50:32' WHERE `id` = 0 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0022s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:50:32' WHERE `id` = null [ RunTime:0.0002s ]
+NOTIC: [2] require_once(../../vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T20:50:53+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000895s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:50:53' WHERE `id` = 0 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0026s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:50:53' WHERE `id` = null [ RunTime:0.0004s ]
+NOTIC: [2] require_once(../../vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T20:51:03+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:51:03' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:51:03' WHERE `id` = null [ RunTime:0.0007s ]
+
+[ 2015-04-21T20:55:52+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000103s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001462s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:55:52' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:55:52' WHERE `id` = null [ RunTime:0.0002s ]
+
+[ 2015-04-21T20:56:50+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001852s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0046s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:56:50' WHERE `id` = 115 [ RunTime:0.0006s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:56:50' WHERE `id` = 1 [ RunTime:0.0005s ]
+
+[ 2015-04-21T20:57:24+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0022s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0036s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:57:24' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:57:24' WHERE `id` = 1 [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:401) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:401) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-21T20:57:49+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:57:49' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:57:49' WHERE `id` = 1 [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-21T20:58:51+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0014s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:58:51' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0015s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:58:51' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-21T20:59:02+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001231s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:59:02' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:59:02' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-21T20:59:26+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0033s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0014s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 20:59:26' WHERE `id` = 115 [ RunTime:0.0010s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0037s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 20:59:26' WHERE `id` = 19 [ RunTime:0.0004s ]
+NOTIC: [2] require_once(../../vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T21:00:37+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000103s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0020s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0067s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:00:37' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:00:37' WHERE `id` = 19 [ RunTime:0.0004s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T21:01:57+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0021s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0013s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:01:57' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:01:57' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 13 行.
+
+[ 2015-04-21T21:02:10+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0034s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0030s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:02:10' WHERE `id` = 115 [ RunTime:0.0012s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:02:10' WHERE `id` = 19 [ RunTime:0.0004s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 13 行.
+
+[ 2015-04-21T21:02:19+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:02:19' WHERE `id` = 115 [ RunTime:0.0013s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:02:19' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0010s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0047s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-04-21T21:02:38+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001709s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0018s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:02:38' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:02:38' WHERE `id` = 19 [ RunTime:0.0008s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 13 行.
+
+[ 2015-04-21T21:02:59+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:02:59' WHERE `id` = 115 [ RunTime:0.0006s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:02:59' WHERE `id` = 19 [ RunTime:0.0010s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T21:04:07+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0026s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:04:07' WHERE `id` = 115 [ RunTime:0.0014s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0017s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:04:07' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 12 行.
+
+[ 2015-04-21T21:04:45+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0026s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:04:45' WHERE `id` = 115 [ RunTime:0.0015s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0057s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:04:45' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 14 行.
+
+[ 2015-04-21T21:05:09+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003100s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0037s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:05:09' WHERE `id` = 115 [ RunTime:0.0020s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:05:09' WHERE `id` = 19 [ RunTime:0.0005s ]
+NOTIC: [2] require_once(./Application/Api/vendors/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 14 行.
+
+[ 2015-04-21T21:05:28+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0025s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:05:28' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:05:28' WHERE `id` = 19 [ RunTime:0.0006s ]
+NOTIC: [2] require_once(./Application/Api/vendor/autoload.php): failed to open stream: No such file or directory /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 14 行.
+
+[ 2015-04-21T21:06:24+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0018s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:06:24' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:06:24' WHERE `id` = 19 [ RunTime:0.0005s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0029s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+
+[ 2015-04-21T21:20:20+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0024s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:20:20' WHERE `id` = 115 [ RunTime:0.0010s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:20:20' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0028s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+
+[ 2015-04-21T21:22:48+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0027s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:22:48' WHERE `id` = 115 [ RunTime:0.0016s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0030s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:22:48' WHERE `id` = 19 [ RunTime:0.0015s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0034s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0010s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:23:15+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:23:15' WHERE `id` = 115 [ RunTime:0.0007s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:23:15' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0009s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0007s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:402) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:24:57+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0026s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:24:57' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:24:57' WHERE `id` = 19 [ RunTime:0.0005s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:25:44+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0018s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0008s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:25:44' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:25:44' WHERE `id` = 19 [ RunTime:0.0005s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0009s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:26:10+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0041s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:26:10' WHERE `id` = 115 [ RunTime:0.0007s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0019s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:26:10' WHERE `id` = 19 [ RunTime:0.0006s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0019s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:412) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:26:45+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0024s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:26:45' WHERE `id` = 115 [ RunTime:0.0020s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:26:45' WHERE `id` = 19 [ RunTime:0.0019s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0008s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:27:20+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0021s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:27:20' WHERE `id` = 115 [ RunTime:0.0016s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:27:20' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0013s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0020s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:27:45+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0021s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0038s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:27:45' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:27:45' WHERE `id` = 19 [ RunTime:0.0009s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0043s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:415) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:28:01+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002457s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0028s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0027s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:28:01' WHERE `id` = 115 [ RunTime:0.0007s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:28:01' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0009s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: merchant_appKey /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+NOTIC: [8] Undefined variable: merchant_secret /Users/joy/www/banar/Application/Api/Controller/JPushController.class.php 第 32 行.
+ERR: Invalid appKey or masterSecret
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:33:16+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0027s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:33:16' WHERE `id` = 115 [ RunTime:0.0004s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:33:16' WHERE `id` = 19 [ RunTime:0.0007s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0011s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0010s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-21T21:38:08+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002537s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0025s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:38:08' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0018s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:38:08' WHERE `id` = 19 [ RunTime:0.0018s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0009s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0029s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:41:44+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0021s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0018s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:41:43' WHERE `id` = 115 [ RunTime:0.0018s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:41:43' WHERE `id` = 19 [ RunTime:0.0005s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0023s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0007s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:42:08+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0027s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:42:06' WHERE `id` = 115 [ RunTime:0.0017s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0032s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:42:06' WHERE `id` = 19 [ RunTime:0.0004s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0011s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0017s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-21T21:42:36+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002011s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0024s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:42:34' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0025s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:42:34' WHERE `id` = 19 [ RunTime:0.0005s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0026s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
