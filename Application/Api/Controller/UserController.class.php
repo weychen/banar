@@ -293,7 +293,8 @@ class UserController extends RestController {
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
                                         $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
-                                            ->select()['0']['registrationID'];
+                                            ->select()['0']['registrationid'];
+
                                         $content = "您的订单已被接收";  
 
                                         $JPUSH = new JPushController();
@@ -330,7 +331,7 @@ class UserController extends RestController {
                                     $response['status'] = OK;
                                     $response['content'] = '您已成功拒绝订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
-                                        $registrationID = $j_push->field('registrationID')
+                                        $registrationID = $j_push->field('registrationid')
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被拒绝，请您重新下单";  
@@ -429,6 +430,7 @@ class UserController extends RestController {
         $response['status'] = ERROR;
         $response['content'];
         $token = I('token');
+        $token_data = $this->validate_token($token);
         if (!empty($token)) {   //检查token是否为空
             $Token = M('tokens');
             $map['token'] = $token;
@@ -439,7 +441,8 @@ class UserController extends RestController {
                 if ($user_type == "driver") {
                     $driver = M('drivers');
                     $maps['user_id'] = $user_id;
-                    $driver_id = $driver->field('user_id')->where($maps)->select()['0']['user_id'];
+                    $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
+                    
                     $demand = M('transport_demands');    //实例化demand表
                     $response['content'] = $demand
                     ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
@@ -474,6 +477,7 @@ class UserController extends RestController {
         $response['status'] = ERROR;
         $response['content'];
         $token = I('token');
+        $token_data = $this->validate_token($token);
         if (!empty($token)) {   //检查token是否为空
             $Token = M('tokens');
             $map['token'] = $token;

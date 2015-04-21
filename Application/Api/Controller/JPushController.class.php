@@ -9,7 +9,7 @@
 namespace Api\Controller;
 use Think\Controller\RestController;
 
-require_once '../../vendor/autoload.php';
+require_once './Application/vendor/autoload.php';
 
 use JPush\Model as M;
 use JPush\JPushClient;
@@ -28,7 +28,7 @@ class JPushController extends RestController{
      * @param $content
      */
     public function sendToMerchantByRegistrationID($registration_id, $content) {
-        $client = new JPushClient($this->$merchant_appKey, $this->$merchant_secret);
+        $client = new JPushClient("868cb71e4bf509eceb859d20", "d21e8793170e4abdecec17fc");
         $response = $client->push()->setPlatform(M\all)
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
             ->setNotification(M\notification($content))
