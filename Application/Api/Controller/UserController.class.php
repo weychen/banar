@@ -407,12 +407,13 @@ class UserController extends RestController {
 
 
             $JPush = new JPushController();
-
-//            $condition3['user_id'] = $user_id;
+//
+////            $condition3['user_id'] = $user_id;
             $transportDemand_id = $Order->where($condition)->getField('transportDemand_id');
-            $merchant_id = M('transport_demands')->where(array('transportDemand_id'=>$transportDemand_id))
-                ->getField('merchant_id');
-            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id');
+            $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                ->getField('merchant_id');      //得到商户的id
+            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+            //echo $user_id;
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
             $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认'); //推送
 
