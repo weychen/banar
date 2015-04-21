@@ -755,3 +755,25 @@ SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1
 NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
 NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:417) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
 
+[ 2015-04-21T21:45:46+08:00 ] ::1 /banar/Api/transportOrder/completeOrder_driver
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002487s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0010s ]
+SQL: UPDATE `lb_transport_orders` SET `driver_ok`='1',`updated_at`='2015-04-21 21:45:46' WHERE `id` = 115 [ RunTime:0.0005s ]
+SQL: SELECT `driver_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0014s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='1',`updated_at`='2015-04-21 21:45:46' WHERE `id` = 19 [ RunTime:0.0008s ]
+SQL: SELECT `transportDemand_id` FROM `lb_transport_orders` WHERE `id` = 115 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0017s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 194 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0014s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0037s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+
