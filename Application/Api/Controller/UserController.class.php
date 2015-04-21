@@ -289,13 +289,15 @@ class UserController extends RestController {
                                     }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
-                                        $response['content'] ='订您已成功添加订单';
+                                        $response['content'] ='您已成功添加订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
                                         $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
+
                                             ->select()['0']['registrationid'];
 
                                         $content = "您的订单已被接收";  
+
 
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
@@ -338,7 +340,6 @@ class UserController extends RestController {
 
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
-
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;
@@ -407,12 +408,13 @@ class UserController extends RestController {
 
 
             $JPush = new JPushController();
-
-//            $condition3['user_id'] = $user_id;
+//
+////            $condition3['user_id'] = $user_id;
             $transportDemand_id = $Order->where($condition)->getField('transportDemand_id');
-            $merchant_id = M('transport_demands')->where(array('transportDemand_id'=>$transportDemand_id))
-                ->getField('merchant_id');
-            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id');
+            $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                ->getField('merchant_id');      //得到商户的id
+            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+            //echo $user_id;
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
             $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认'); //推送
 
