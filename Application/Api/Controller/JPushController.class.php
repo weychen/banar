@@ -9,7 +9,8 @@
 namespace Api\Controller;
 use Think\Controller\RestController;
 
-require_once '../../vendor/autoload.php';
+//require_once '../../vendor/autoload.php';
+require_once './Application/vendor/autoload.php';
 
 use JPush\Model as M;
 use JPush\JPushClient;
@@ -33,6 +34,12 @@ class JPushController extends RestController{
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
             ->setNotification(M\notification($content))
             ->send();
+
+        $br = '<br/>';
+        echo 'Push Success.' . $br;
+        echo 'sendno : ' . $response->sendno . $br;
+        echo 'msg_id : ' .$response->msg_id . $br;
+        echo 'Response JSON : ' . $response->json . $br;
 
         $this->assertTrue($response->isOk === true);
     }

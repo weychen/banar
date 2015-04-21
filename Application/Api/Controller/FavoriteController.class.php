@@ -30,6 +30,9 @@ class FavoriteController extends RestController{
         {
             $result['status'] = 'OK';
             $result['content'] = $data;
+        } else {
+            $result['status'] = 'OK';
+            $result['content'] = [];
         }
         $this->response($result,'json');
     }

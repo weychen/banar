@@ -289,12 +289,14 @@ class UserController extends RestController {
                                     }
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
-                                        $response['content'] ='订您已成功添加订单';
+                                        $response['content'] ='您已成功添加订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
                                         $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
-                                        $content = "您的订单已被接收";  
+                                        $content = "您的订单已被接收";
+
+                                        dump($registrationID);
 
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
@@ -337,7 +339,6 @@ class UserController extends RestController {
 
                                         $JPUSH = new JPushController();
                                         $JPUSH->sendToMerchantByRegistrationID($registrationID,$content);#调用向商家推送信息函数
-
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;
