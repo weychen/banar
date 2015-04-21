@@ -34,12 +34,6 @@ class JPushController extends RestController{
             ->setNotification(M\notification($content))
             ->send();
 
-        $br = '<br/>';
-        echo 'Push Success.' . $br;
-        echo 'sendno : ' . $response->sendno . $br;
-        echo 'msg_id : ' .$response->msg_id . $br;
-        echo 'Response JSON : ' . $response->json . $br;
-
         $this->assertTrue($response->isOk === true);
     }
 
