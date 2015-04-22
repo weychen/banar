@@ -10,6 +10,7 @@ namespace Api\Controller;
 use Think\Controller\RestController;
 
 
+
 require_once './Application/vendor/autoload.php';
 use JPush\Model as M;
 use JPush\JPushClient;

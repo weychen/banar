@@ -242,8 +242,8 @@ return array(
             array('transportDemand/cancelTransportDemandById','Merchant/cancelTransportDemandById',array('method'=>'POST')),
 
             /*
-             *商户接口
-             *      5.获取所有请求
+             *司机接口
+             *      5.获取当前需处理请求
              * $_POST:
              * [token]
              *
@@ -252,7 +252,7 @@ return array(
              *     请求id，cate_id，driver_name(请求详情)
              * }
              * */
-            array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
+            //array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
 
 
 
@@ -416,7 +416,7 @@ return array(
              *                  }]
              * }
              */
-            array('transportOrder/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
+            array('transportDemand/getAllTransportDemand','User/getAllTransportDemand',array('method'=>'POST')),
 
             /**
              * 添加姓名内容地址
