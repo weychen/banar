@@ -296,18 +296,19 @@ class MerchantController extends RestController {
             if ($Order) {
                 $result['status'] = 'OK';
                 $this->auto_completeOrder();//触发自动保存函数
-                $JPush = new JPushController();
+                //$JPush = new JPushController();
                 $merchant_user_id = $token_data['user_id'];
                 $merchant_registration_id = M('j_push_users')->where(array('user_id'=>$merchant_user_id))
                     ->getField('registrationID'); //得到registrationid
-                $JPush->sendToMerchantByRegistrationID($merchant_registration_id,'双方已经确认订单完成');
+                //$JPush->sendToMerchantByRegistrationID($merchant_registration_id,'双方已经确认订单完成',);
 
                 $driver_id = $Order->where($condition)->getField('driver_id');
                 $driver_user_id = M('drivers')->where(array('id'=>$driver_id))->getField('user_id');
                 $driver_registration_id =M('j_push_users')->where(array('user_id'=>$driver_user_id))
                     ->getField('registrationID'); //得到registrationid
-                $JPush->sendToDriverByRegistrationID($driver_registration_id,'订单已经确认');
+                //$JPush->sendToDriverByRegistrationID($driver_registration_id,'订单已经确认');
 
+                $result['content'] = '订单已完成';
                 $this->response($result, 'json');
             }
         }else {
