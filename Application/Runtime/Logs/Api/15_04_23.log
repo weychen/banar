@@ -252,3 +252,20 @@ SQL: SELECT `mobile` FROM `lb_users` WHERE `id` = 1  [ RunTime:0.0001s ]
 NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:298) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
 NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:298) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
 
+[ 2015-04-23T20:37:07+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id`,`usertype` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0011s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0005s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 308 行.
+

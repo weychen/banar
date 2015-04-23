@@ -324,16 +324,16 @@ class UserController extends RestController {
                                     # 更新成功
                                     $response['status'] = OK;
                                     $response['content'] = '您已成功拒绝订单';
-                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
-                                        $registrationID = $j_push->field('registrationID')
-                                            ->where(array('user_id'=>$user_id))
-                                            ->select()['0']['registrationID'];
-                                        $content = "您的订单已被拒绝，请您重新下单";  
+                                    $content = "您的订单已被拒绝，请您重新下单";
 
+                                    $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                                        ->getField('merchant_id');      //得到商户的id
+                                    $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+                                    $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
                                         $JPUSH = new JPushController();
                                         #司机的电话号码
                                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content,$transportDemand_id, $telePhone);#调用向商家推送信息函数
+                                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$transportDemand_id, $telePhone);#调用向商家推送信息函数
                                 }
                                 else{   #更新失败
                                     $response['status'] = ERROR;

@@ -371,6 +371,36 @@ class MerchantController extends RestController {
             }
         }
     }
+    /**
+     * @return string
+     * 把图像上传到云端
+     */
+    public function put_pic_to_oss($avatar_name)
+    {
+
+        $token = generate_token();
+        if(!move_uploaded_file($_FILES[$avatar_name]['tmp_name'],"./upload/".$token.".png" ))
+        {
+            $result['status'] = "ERROR";
+            $result['content'] = "图片上传失败";
+            $this->response($result, 'json');
+        }
+        $client = OSSClient::factory(array(
+            'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
+            'AccessKeySecret' => 'nsMLg5QRScXirbW6UGL9Ec6VGqP2VV',
+        ));
+
+        $client->putObject(array(
+            'Bucket' => 'banar-image',
+            'Key' => $token.".png",
+            'Endpoint' => 'http://oss-cn-beijing.aliyuncs.com',
+            'Content' => fopen("./upload/".$token.".png", 'r'),
+            'ContentLength' => filesize("./upload/".$token.".png"),
+        ));
+
+        $avatar_data = "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
+        return $avatar_data;
+    }
 
 
 
