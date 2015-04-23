@@ -28,11 +28,14 @@ class JPushController extends RestController{
      * @param $registration_id
      * @param $content
      */
-    public function sendToMerchantByRegistrationID($registration_id, $content) {
+    public function sendToMerchantByRegistrationID($registration_id, $content, $transport_demandId, $mobile) {
         $client = new JPushClient("868cb71e4bf509eceb859d20", "d21e8793170e4abdecec17fc");
         $response = $client->push()->setPlatform(M\all)
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
             ->setNotification(M\notification($content))
+            ->setMessage(M\message($content, null, null, array(
+                'transportDemand_id' => $transport_demandId,
+                'mobile' => $mobile)))
             ->send();
 
         $this->assertTrue($response->isOk === true);
@@ -43,11 +46,14 @@ class JPushController extends RestController{
      * @param $registration_id
      * @param $content
      */
-    public function sendToDriverByRegistrationID($registration_id, $content) {
+    public function sendToDriverByRegistrationID($registration_id, $content, $transport_demandId, $mobile) {
         $client = new JPushClient($this->driver_appKey, $this->driver_secret);
         $response = $client->push()->setPlatform(M\all)
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
             ->setNotification(M\notification($content))
+            ->setMessage(M\message($content, null, null, array(
+                'transportDemand_id' => $transport_demandId,
+                'mobile' => $mobile)))
             ->send();
 
         $this->assertTrue($response->isOk === true);
