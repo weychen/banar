@@ -19,11 +19,12 @@ class MerchantController extends RestController {
     public function  merchantRegister()
     {
         $result = array();
+        $avatar_data = $this->put_pic_to_oss('avatar');
         $user_data = array(
             'mobile' => I('post.mobile'),
             'password' => I('post.password'),
             'name' => I('post.name'),
-            'avatar' => I('post.avatar'),
+            'avatar' => $avatar_data,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 

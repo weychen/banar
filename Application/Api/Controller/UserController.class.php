@@ -24,7 +24,6 @@ class UserController extends RestController {
     public function driverRegister()
     {
         $result = array();
-        $result['status'] = false;
         $avatar_data = $this->put_pic_to_oss('avatar');
         $user_data = array(
             'mobile' => I('post.mobile'),
@@ -50,12 +49,12 @@ class UserController extends RestController {
             );
             $driver_id = D('drivers')->add($driver_data);
 
-            $avatar_data = $this->put_pic_to_oss('truck_avatar');
+            $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
             $truck_data = array(
                 'driver_id' => $driver_id,
                 'plateId' => I('post.truck_plateId'),
                 'cate_id' => I('post.truck_cate_id'),
-                'avatar' =>  $avatar_data,
+                'avatar' =>  $truck_avatar_data,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             );

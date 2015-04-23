@@ -39,7 +39,7 @@ return array(
              *
              *
              * $_POST:
-             *  [mobile, password, name, market_id, avatar, icld, truck_cate_id, truck_plateld, truck_avatar]
+             *  [mobile, password, name, market_id, avatar, icid, truck_cate_id, truck_plateId, truck_avatar]
              *
              * return:
              *  {
