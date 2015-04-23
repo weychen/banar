@@ -47,7 +47,7 @@ class JPushController extends RestController{
      * @param $content
      */
     public function sendToDriverByRegistrationID($registration_id, $content, $transport_demandId, $mobile) {
-        $client = new JPushClient($this->driver_appKey, $this->driver_secret);
+        $client = new JPushClient("868cb71e4bf509eceb859d20", "d21e8793170e4abdecec17fc");
         $response = $client->push()->setPlatform(M\all)
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
             ->setNotification(M\notification($content))

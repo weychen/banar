@@ -255,18 +255,13 @@ class UserController extends RestController {
             $user_data = $Token->field('user_id,usertype')->where($map)->select();
             $user_id = $user_data['0']['user_id'];
             if (!empty($user_id)) {     //如果user_id不为空，说明用户已登陆
-                # code...
                 $user_type = $user_data['0']['usertype'];
                 if ($user_type == 'driver') {      #如果类型为司机
                     $driver = M('drivers');
                     $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
                     $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
-
-                        # code...
                         if ($isAccept=='true'){    #如果司机接收订单
-                        # code...
                             if (intval($isFree)!=0) {   #如果司机空闲
-                            # code...
                                 $demand = M('transport_demands');
                                 $maps['id'] = $transportDemand_id;
                                 $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
@@ -289,19 +284,16 @@ class UserController extends RestController {
                                     if ($orders->add() && $result) {
                                         $response['status'] = OK;
                                         $response['content'] ='您已成功添加订单';
-                                        $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
-                                        $registrationID = $j_push->field('registrationID')
-                                            ->where(array('user_id'=>$user_id))
-
-                                            ->select()['0']['registrationid'];
-
-                                        $content = "您的订单已被接收";  
-
-
+                                        //司机接单成功应该是给商户发消息
+                                        $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                                            ->getField('merchant_id');      //得到商户的id
+                                        $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+                                        $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
+                                        $content = "您的订单已被接收";
                                         $JPUSH = new JPushController();
                                         #司机的电话号码
                                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                                        $JPUSH->sendToMerchantByRegistrationID($registrationID,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
+                                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
                                     }
                                 }
                                 elseif ($demand_status == '已取消') {
@@ -333,7 +325,7 @@ class UserController extends RestController {
                                     $response['status'] = OK;
                                     $response['content'] = '您已成功拒绝订单';
                                         $j_push = M('j_push_users');    #获得用户绑定的registrationID,用于推送
-                                        $registrationID = $j_push->field('registrationid')
+                                        $registrationID = $j_push->field('registrationID')
                                             ->where(array('user_id'=>$user_id))
                                             ->select()['0']['registrationID'];
                                         $content = "您的订单已被拒绝，请您重新下单";  
