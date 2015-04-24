@@ -11,6 +11,7 @@ use Api\Model\UsersModel;
 use Think\Controller\RestController;
 require_once MODULE_PATH. "aliyun-php/aliyun.php";
 use \Aliyun\OSS\OSSClient;
+use JPush\JPushClient;
 class MerchantController extends RestController {
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
 
@@ -65,8 +66,9 @@ class MerchantController extends RestController {
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             );
-            D('j_push_users')->add($jPush_data);
-
+//            D('j_push_users')->add($jPush_data);
+            $registration_id = I('post.registrationid');
+            $this->bindJPushRegistrationID($token_data,$registration_id);
             $result['status'] = 'OK';
         }
         $this->response($result,'json');
@@ -171,9 +173,10 @@ class MerchantController extends RestController {
         $token = I('post.token');//商户信息
         $this->validate_token($token);
         $cate_id = I('post.cate_id');//车型id
-        $driver_id = I('driver_id');//司机id
+        $driver_id = I('post.driver_id');//司机id
         $isPointed = 1;
-        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $user_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $merchant_id = M('merchants')->where(array('user_id' => $user_id))->getField('id');
         $status = '未确认';
 
         $data['cate_id'] = $cate_id;
@@ -242,7 +245,8 @@ class MerchantController extends RestController {
         $this->validate_token($token);
         $cate_id = I('post.cate_id');//车型id
         $isPointed = 0;
-        $merchant_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $user_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $merchant_id = M('merchants')->where(array('user_id' => $user_id))->getField('id');
         $status = '未确认';
         #获取空闲司机列表
 
@@ -410,5 +414,45 @@ class MerchantController extends RestController {
 
         $avatar_data = "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
         return $avatar_data;
+    }
+    /**
+     * 为用户绑定极光推送账号
+     * @param $token
+     * @param $registrationID
+     */
+    public function bindJPushRegistrationID($token,$registrationID)
+    {
+        $response['status'] = ERROR;
+        if (!empty($token) && !empty($registrationID)) {
+
+            $Token = M('tokens');
+            $map['token'] = $token;
+            $user_data = $Token->field('user_id,userType')->where($map)->select();
+            $user_id = $user_data['0']['user_id'];
+            $userType = $user_data['0']['usertype'];
+
+            $j_push_user = M('j_push_users');//实例化极光推送模型
+
+
+            $result = $j_push_user->where(array('$user_id'=>$user_id))->select();
+            if ($result!=null) {   //如果已存在记录
+                # code...
+                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s')));
+
+                $response['status'] = OK;
+            }
+            else {  //如果不存在记录
+                $j_push_user->user_id = $user_id;
+                $j_push_user->registrationID = $registrationID;
+                $j_push_user->userType = $userType;
+                $j_push_user->created_at = date('Y-m-d H:i:s');
+                $j_push_user->updated_at = date('Y-m-d H:i:s');
+                $j_push_user->add();
+
+                $response['status'] = OK;
+            }
+            return $response;
+        }
+
     }
 }
