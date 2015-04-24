@@ -11,8 +11,11 @@ use Api\Model\UsersModel;
 use JPush\JPushClient;
 use Think\Controller\RestController;
 
+
 require_once MODULE_PATH. "aliyun-php/aliyun.php";
 use \Aliyun\OSS\OSSClient;
+use Think\Model;
+
 class UserController extends RestController {
 
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
@@ -259,7 +262,8 @@ class UserController extends RestController {
         $token_data = $this->validate_token($token);  //如果token 合法的话，返回user_id , user_type
         $transportDemand_id = I('post.transportDemandId'); //传入的需求id
         $isAccept = I('post.isAccept');                 //传入司机是否确认接单
-
+        $tranDb = new Model();
+        $tranDb->startTrans();
         $user_type = $token_data['usertype'];       //得到用户类型
         $user_id = $token_data['user_id'];          //得到用户id
 
@@ -298,6 +302,14 @@ class UserController extends RestController {
                         #司机的电话号码
                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
                         $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
+                        if($update && $result)
+                        {
+                            $tranDb->commit();
+                        }
+                        else
+                        {
+                            $tranDb->rollback();
+                        }
                     }
                 }
                 elseif ($demand_status == '已取消') {
