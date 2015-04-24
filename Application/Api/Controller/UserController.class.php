@@ -40,7 +40,7 @@ class UserController extends RestController {
             $user_id = $user->add($user_data);
 
             $jPush_data = array(
-                'registrationid' => I('registrationid'),
+                'registrationID' => I('registrationid'),
                 'user_id' => $user_id,
                 'user_type' => 'driver',
                 'created_at' => date('Y-m-d H:i:s'),
