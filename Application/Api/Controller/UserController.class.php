@@ -43,7 +43,7 @@ class UserController extends RestController {
             $user_id = $user->add($user_data);
 
             $jPush_data = array(
-                'registrationid' => I('registrationid'),
+                'registrationID' => I('registrationid'),
                 'user_id' => $user_id,
                 'user_type' => 'driver',
                 'created_at' => date('Y-m-d H:i:s'),
@@ -60,7 +60,7 @@ class UserController extends RestController {
                 'isFree' => 1
             );
             //添加jPush数据
-            D('j_push_users')->add($jPush_data);
+            //D('j_push_users')->add($jPush_data);
             $driver_id = D('drivers')->add($driver_data);
 
             $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
@@ -77,6 +77,8 @@ class UserController extends RestController {
             $token_data = generate_token();
             put_token_into_sql($token_data, 'driver', $user_id);
             $data['token'] = $token_data;
+            $registration_id = I('post.registrationid');
+            $this->bindJPushRegistrationID($token_data,$registration_id);
             $result['status'] = 'OK';
             $result['content'] = $data;
         }

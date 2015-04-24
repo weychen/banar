@@ -59,7 +59,7 @@ class MerchantController extends RestController {
             D('tokens')->add($token_data);
             //添加jPush信息
             $jPush_data = array(
-                'registrationid' => I('registrationid'),
+                'registrationID' => I('registrationid'),
                 'user_id' => $user_id,
                 'user_type' => 'merchant',
                 'created_at' => date('Y-m-d H:i:s'),
