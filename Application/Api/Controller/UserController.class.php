@@ -38,6 +38,15 @@ class UserController extends RestController {
             $result['content']['error'] = '该手机号码已经注册';
         } else {
             $user_id = $user->add($user_data);
+
+            $jPush_data = array(
+                'registrationid' => I('registrationid'),
+                'user_id' => $user_id,
+                'user_type' => 'driver',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            );
+
             $driver_data = array(
                 'user_id' => $user_id,
                 'market_id' => I('post.market_id'),
@@ -47,6 +56,8 @@ class UserController extends RestController {
                 'latestFreeTime' => date('Y-m-d H:i:s'),
 
             );
+            //添加jPush数据
+            D('j_push_users')->add($jPush_data);
             $driver_id = D('drivers')->add($driver_data);
 
             $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
