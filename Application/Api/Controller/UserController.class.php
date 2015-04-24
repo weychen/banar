@@ -54,7 +54,7 @@ class UserController extends RestController {
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'latestFreeTime' => date('Y-m-d H:i:s'),
-
+                'isFree' => 1
             );
             //添加jPush数据
             D('j_push_users')->add($jPush_data);
