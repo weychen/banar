@@ -1,0 +1,134 @@
+[ 2015-04-24T11:27:01+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002374s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0005s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:27:01' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: userType /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 252 行.
+
+[ 2015-04-24T11:27:58+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000954s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:27:58' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: userType /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 252 行.
+
+[ 2015-04-24T11:28:16+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:28:16' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: userType /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 252 行.
+
+[ 2015-04-24T11:28:36+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:28:36' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: userType /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 252 行.
+
+[ 2015-04-24T11:28:53+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0007s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:28:53' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: userType /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 252 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:254) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:254) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-24T11:29:30+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 11:29:29' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0004s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0037s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 195  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_demands` SET `status`='已确认' WHERE `id` = 195 [ RunTime:0.0004s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='0' WHERE `user_id` = 22 [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_transport_orders` (`transportDemand_id`,`driver_id`,`status`,`created_at`,`updated_at`) VALUES ('195','19','未完成','2015-04-24 11:29:29','2015-04-24 11:29:29') [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 282 行.
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 195 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0009s ]
+SQL: SELECT `mobile` FROM `lb_users` WHERE `id` = 1  [ RunTime:0.0001s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:254) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/UserController.class.php:254) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-24T12:01:17+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001811s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 245 行.
+NOTIC: [8] Undefined index: content /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 246 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279'  [ RunTime:0.0004s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='22',`updated_at`='2015-04-24 12:01:16' WHERE `token` = 'a3d713626f4381e2837f98bd2ef62279' [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0022s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0002s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=22 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0037s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 195  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0015s ]
+SQL: UPDATE `lb_transport_demands` SET `status`='已确认' WHERE `id` = 195 [ RunTime:0.0004s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='0' WHERE `user_id` = 22 [ RunTime:0.0004s ]
+SQL: INSERT INTO `lb_transport_orders` (`transportDemand_id`,`driver_id`,`status`,`created_at`,`updated_at`) VALUES ('195','19','未完成','2015-04-24 12:01:16','2015-04-24 12:01:16') [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 277 行.
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 195 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0018s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0009s ]
+SQL: SELECT `mobile` FROM `lb_users` WHERE `id` = 1  [ RunTime:0.0001s ]
+

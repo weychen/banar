@@ -9,7 +9,8 @@
 namespace Api\Controller;
 use Api\Model\UsersModel;
 use Think\Controller\RestController;
-
+require_once MODULE_PATH. "aliyun-php/aliyun.php";
+use \Aliyun\OSS\OSSClient;
 class MerchantController extends RestController {
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
 
@@ -237,8 +238,7 @@ class MerchantController extends RestController {
 
         $restDrivers = M('drivers')->join("lb_trucks on lb_drivers.user_id = lb_trucks.driver_id")
             ->where("lb_drivers.isFree = 1 AND lb_trucks.cate_id = $cate_id")->select();
-       // echo $restDrivers[0]['user_id'];
-     // $restDrivers = M('drivers')      ->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
+     // $restDrivers = M('drivers')->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
         #随机生成一个数字
         $count = count($restDrivers);
         if($count > 0 )
@@ -401,7 +401,4 @@ class MerchantController extends RestController {
         $avatar_data = "http://banar-image.oss-cn-beijing.aliyuncs.com/".$token. ".png";
         return $avatar_data;
     }
-
-
-
 }

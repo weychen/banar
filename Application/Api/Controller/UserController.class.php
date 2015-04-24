@@ -245,138 +245,116 @@ class UserController extends RestController {
         $response['status'] = ERROR;
         $response['content'];
         $token = I('post.token');
-        $token_data = $this->validate_token($token);
-        $transportDemand_id = I('transportDemandId');
-        $isAccept = I('isAccept');
-        if (!empty($token) && !empty($transportDemand_id) && !empty($isAccept)) {   //如果三个值都不为空
+        $token_data = $this->validate_token($token);  //如果token 合法的话，返回user_id , user_type
+        $transportDemand_id = I('post.transportDemandId'); //传入的需求id
+        $isAccept = I('post.isAccept');                 //传入司机是否确认接单
 
-            $Token = M('tokens');          //查找driver_id
-            $map['token'] = $token;
-            $user_data = $Token->field('user_id,usertype')->where($map)->select();
-            $user_id = $user_data['0']['user_id'];
-            if (!empty($user_id)) {     //如果user_id不为空，说明用户已登陆
-                $user_type = $user_data['0']['usertype'];
-                if ($user_type == 'driver') {      #如果类型为司机
-                    $driver = M('drivers');
-                    $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
-                    $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
-                        if ($isAccept=='true'){    #如果司机接收订单
-                            if (intval($isFree)!=0) {   #如果司机空闲
-                                $demand = M('transport_demands');
-                                $maps['id'] = $transportDemand_id;
-                                $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
-                                
-                                $orders = M('transport_orders');   //实例化订单模型
-                                if ($demand_status == '未确认') {  //请求为未确认状态
-                                    $orders->transportDemand_id = $transportDemand_id;   //插入order记录
-                                    $orders->driver_id = $driver_id;
-                                    $orders->status = '未完成';
-                                    $orders->created_at = date('Y-m-d H:i:s');
-                                    $orders->updated_at = date('Y-m-d H:i:s');
+        $user_type = $token_data['usertype'];       //得到用户类型
+        $user_id = $token_data['user_id'];          //得到用户id
 
-                                
-                                    $mapper['id'] = $transportDemand_id;
-                                    $result = $demand->where($mapper)->setField('status','已确认');
-                                    $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
-                                    if ($result) {
+        $driver = M('drivers');
+        $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
+        $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
+        if ($isAccept=='true'){    #如果司机接收订单
+            if (intval($isFree)!=0) {   #如果司机空闲
+                $demand = M('transport_demands');
+                $maps['id'] = $transportDemand_id;
+                $demand_status = $demand->field('status')->where($maps)->select()['0']['status'];
 
-                                    }
-                                    if ($orders->add() && $result) {
-                                        $response['status'] = OK;
-                                        $response['content'] ='您已成功添加订单';
-                                        //司机接单成功应该是给商户发消息
-                                        $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
-                                            ->getField('merchant_id');      //得到商户的id
-                                        $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
-                                        $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
-                                        $content = "您的订单已被接收";
-                                        $JPUSH = new JPushController();
-                                        #司机的电话号码
-                                        $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
-                                    }
-                                }
-                                elseif ($demand_status == '已取消') {
-                                    $response['content'] = '订单已取消';
-                                }
-                                elseif ($demand_status == '已确认') {
-                                    $response['content'] = '订单已存在';
-                                }   
-                            }
-                            else{
-                                #如果司机不空闲
-                                $response['status'] = ERROR;
-                                $response['content'] = '您有未完成订单，暂时不能接单';
-                            }
-                            
-                        }
-                        else   #如果拒绝接单
-                        {
-                            $demand = M('transport_demands');
-                            $mapper['id'] = $transportDemand_id;
-                            $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
-                            
-                            if ($demand_ispoint == 1) {  #如果是指定的
-                                $mapper['id'] = $transportDemand_id;
-                                $result = $demand->where($mapper)->setField('status','已取消');//直接取消订单
-                                
-                                if (false!==$result) {
-                                    # 更新成功
-                                    $response['status'] = OK;
-                                    $response['content'] = '您已成功拒绝订单';
-                                    $content = "您的订单已被拒绝，请您重新下单";
+                $orders = M('transport_orders');   //实例化订单模型
+                if ($demand_status == '未确认') {  //请求为未确认状态
+                    $orders->transportDemand_id = $transportDemand_id;   //插入order记录
+                    $orders->driver_id = $driver_id;
+                    $orders->status = '未完成';
+                    $orders->created_at = date('Y-m-d H:i:s');
+                    $orders->updated_at = date('Y-m-d H:i:s');
 
-                                    $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
-                                        ->getField('merchant_id');      //得到商户的id
-                                    $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
-                                    $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
-                                        $JPUSH = new JPushController();
-                                        #司机的电话号码
-                                        $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$transportDemand_id, $telePhone);#调用向商家推送信息函数
-                                }
-                                else{   #更新失败
-                                    $response['status'] = ERROR;
-                                    $response['content'] = '更新失败';
-                                }
-                            }
-                            else{
-                                $mapper['id'] = $transportDemand_id;
-                                $driver = M('drivers');
-                                #获取
-                                #获取空闲司机列表
-                                $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
-                                #随机生成一个数字
-                                $count = count($restDrivers);
-                                $index = rand(0,$count-1);
-                                #选取司机id
-                                $driver_id = $restDrivers[$index]['id'];
-                                $data['driver_id'] = $driver_id;
-                                $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
-                                if (intval($result)!=0) {
-                                    # 更新成功
-                                    $response['status'] = OK;
-                                    $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
-                                }
-                                else{
-                                    $response['status'] = ERROR;
-                                    $response['content'] = '更新失败';
-                                }
-                            }       
-                        }
-                    
-                    
+
+                    $mapper['id'] = $transportDemand_id;
+                    $result = $demand->where($mapper)->setField('status','已确认');
+                    $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
+                    if ($orders->add() && $result) {
+                        $response['status'] = OK;
+                        $response['content'] ='您已成功添加订单';
+                        //极光推送部分
+                        //司机接单成功应该是给商户发消息
+                        $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                            ->getField('merchant_id');      //得到商户的id
+                        $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+                        $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
+                        $content = "您的订单已被接收";
+                        $JPUSH = new JPushController();
+                        #司机的电话号码
+                        $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
+                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
+                    }
                 }
+                elseif ($demand_status == '已取消') {
+                    $response['content'] = '订单已取消';
+                }
+                elseif ($demand_status == '已确认') {
+                    $response['content'] = '订单已存在';
+                }
+            }
+            else{
+                #如果司机不空闲
+                $response['status'] = ERROR;
+                $response['content'] = '您有未完成订单，暂时不能接单';
+            }
 
-            }
-            else
-                {
-                    $response['status'] = NOT_LOGGED_IN;
-            }
         }
-        else{
-            $response['status'] = ERROR;
-            $response['content'] = '存在空值';
+        else   #如果拒绝接单
+        {
+            $demand = M('transport_demands');
+            $mapper['id'] = $transportDemand_id;
+            $demand_ispoint = (int)$demand->field('ispoint')->where($mapper)->select()['0']['ispoint'];
+
+            if ($demand_ispoint == 1) {  #如果是指定的
+                $mapper['id'] = $transportDemand_id;
+                $result = $demand->where($mapper)->setField('status','已取消');//直接取消订单
+
+                if (false!==$result) {
+                    # 更新成功
+                    $response['status'] = OK;
+                    $response['content'] = '您已成功拒绝订单';
+                    $content = "您的订单已被拒绝，请您重新下单";
+
+                    $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
+                        ->getField('merchant_id');      //得到商户的id
+                    $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
+                    $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
+                    $JPUSH = new JPushController();
+                    #司机的电话号码
+                    $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
+                    $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$transportDemand_id, $telePhone);#调用向商家推送信息函数
+                }
+                else{   #更新失败
+                    $response['status'] = ERROR;
+                    $response['content'] = '更新失败';
+                }
+            }
+            else{
+                $mapper['id'] = $transportDemand_id;
+                $driver = M('drivers');
+                #获取空闲司机列表
+                $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
+                #随机生成一个数字
+                $count = count($restDrivers);
+                $index = rand(0,$count-1);
+                #选取司机id
+                $driver_id = $restDrivers[$index]['id'];
+                $data['driver_id'] = $driver_id;
+                $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
+                if (intval($result)!=0) {
+                    # 更新成功
+                    $response['status'] = OK;
+                    $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
+                }
+                else{
+                    $response['status'] = ERROR;
+                    $response['content'] = '更新失败';
+                }
+            }
         }
         $this->response($response,'json');
     }
@@ -614,11 +592,12 @@ class UserController extends RestController {
                 //token 已经过期,销毁token
                 M('tokens')->where($condition)->delete();
                 $result['status'] = 'ERROR';
-                $result['content'] = 'token is out_of_time';
+                $result['content'] = 'token is out_of_time,请重新登录';
                 $this->response($result,'json');
             } else {
                 //token 未过期，进行相应的操作
                 $token_data['updated_at'] = date('Y-m-d H:i:s');
+                M('tokens')->where($condition)->save($token_data);
                 return $token_data;
             }
         }
