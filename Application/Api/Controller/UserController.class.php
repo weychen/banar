@@ -300,12 +300,16 @@ class UserController extends RestController {
                         $JPUSH = new JPushController();
                         #司机的电话号码
                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
+                        $extra['transportDemand_id'] = $transportDemand_id;
+                        $extra['telePhone'] = $telePhone;
+                        $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $extra);#调用向商家推送信息函数
                         if($update && $result)
                         {
                             $response['status'] = OK;
                             $response['content'] ='您已成功添加订单';
                             $response['order_id'] = $order_id;
+                            $name = M('users')->where(array('id' => $user_id))->getField('name');
+                            $response['driver_name'] = $name;
                             $tranDb->commit();
                         }
                         else
@@ -350,7 +354,9 @@ class UserController extends RestController {
                     $JPUSH = new JPushController();
                     #司机的电话号码
                     $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
-                    $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$transportDemand_id, $telePhone);#调用向商家推送信息函数
+                    $extra['transportDemand_id'] = $transportDemand_id;
+                    $extra['telePhone'] = $telePhone;
+                    $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$extra);#调用向商家推送信息函数
                 }
                 else{   #更新失败
                     $response['status'] = ERROR;
@@ -411,7 +417,9 @@ class UserController extends RestController {
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
 
             $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];            #司机的电话号码
-            $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认',$transportDemand_id, $telePhone); //推送
+            $extra['transportDemand_id'] = $transportDemand_id;
+            $extra['telePhone'] = $telePhone;
+            $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认',$extra); //推送
 
             $result['status'] = 'OK';
             $this->response($result,'json');

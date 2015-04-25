@@ -45,7 +45,8 @@ class MerchantController extends RestController {
         //判断该用户是否已经被注册
         if(get_user('mobile',$user_data['mobile'])){
             $result['status'] = 'ERROR';
-            $result['content'] = '该手机号码已经注册';
+            $result['content']['error'] = '该手机号码已经注册';
+            $this->response($result,'json');
         }
         $user = D('users');
         $user_id = $user->add($user_data);
@@ -70,6 +71,7 @@ class MerchantController extends RestController {
         {
             $result['status'] = 'OK';
             $data['token'] = $token_data;
+            $result['content'] = $data;
             $tranDb->commit();
         }
         else
@@ -100,6 +102,13 @@ class MerchantController extends RestController {
                 ->select()[0];
             if($user){
                 $user_id = $user['id'];
+                $token = M('tokens')->where(array('user_id' => $user_id))->getField('token');
+                if($token)
+                {
+                    $condition['token'] = $token; // 查询条件
+                    M('tokens')->where($condition)->delete();
+                }
+
                 $token_data = generate_token();
                 put_token_into_sql($token_data, 'merchant',$user_id);
                 $user = new UserController();
@@ -182,7 +191,8 @@ class MerchantController extends RestController {
         $cate_id = I('post.cate_id');//车型id
         $driver_id = I('post.driver_id');//司机id
         $isPointed = 1;
-        $user_id = M('tokens')->field('user_id')->where(array('token' => $token))->select()[0]['user_id'];
+        $user_id = M('tokens')->field('user_id')
+                    ->where(array('token' => $token))->select()[0]['user_id'];//商户user_id
         $merchant_id = M('merchants')->where(array('user_id' => $user_id))->getField('id');
         $status = '未确认';
 
@@ -204,6 +214,18 @@ class MerchantController extends RestController {
             $result['status'] = 'OK';
             $result['content'] = $data;
             $result['demand_id'] = $id;
+            $driver_user_id = M('drivers')->where(array('id' => $driver_id))->getField('user_id');
+            $driver_registration_id = M('j_push_users')->where(array('user_id' => $driver_user_id))
+                ->getField('registrationID');
+//            echo $driver_registration_id;
+            $JPush = new JPushController();
+//            $user_data = M('users')->where(array('id' => $user_id))->getField('mobile, avatar, name');
+            $extra['demand_id'] = $id;
+//            $extra['mobile'] = $user_data['mobile'];
+//            $extra['avatar'] = $user_data['avatar'];
+//            $extra['name'] = $user_data['name'];
+//            $JPush->sendToDriverByRegistrationID("010df7479ef",'订单已经确认',$extra); //极光推送
+
         }else{
 
             $result['status'] = 'ERROR';

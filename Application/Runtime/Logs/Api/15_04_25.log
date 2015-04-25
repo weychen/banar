@@ -2510,3 +2510,580 @@ SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0008s ]
 SQL: SELECT lb_users.name AS `merchant_name`,lb_users.avatar AS `merchant_avatar`,lb_cates.name AS `cate_name`,lb_transport_orders.created_at AS `time` FROM `lb_transport_orders` INNER JOIN lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id INNER JOIN lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id INNER JOIN lb_cates ON lb_transport_demands.cate_id = lb_cates.id INNER JOIN lb_users ON lb_merchants.user_id = lb_users.id  WHERE ( lb_transport_orders.driver_id=33 )  [ RunTime:0.0021s ]
 NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 223 行.
 
+[ 2015-04-25T15:53:18+08:00 ] ::1 /banar/Api/user/merchantRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009655s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='merchant_demo5' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0010s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('merchant_demo5','123456','weychen','http://banar-image.oss-cn-beijing.aliyuncs.com/ca62b710d1cd1a3dbdef78c3b3675afe.png','2015-04-25 15:53:18','2015-04-25 15:53:18') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: INSERT INTO `lb_merchants` (`user_id`,`market_id`,`address`,`telephone`,`created_at`,`updated_at`) VALUES ('42','1','1111','1234567','2015-04-25 15:53:18','2015-04-25 15:53:18') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('2ce104141b0a567b7c641744d0b69530','merchant','42','2015-04-25 15:53:18','2015-04-25 15:53:18') [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 431 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '2ce104141b0a567b7c641744d0b69530'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `lb_j_push_users`  [ RunTime:0.0004s ]
+SQL: INSERT INTO `lb_j_push_users` (`registrationID`,`user_id`,`userType`,`created_at`,`updated_at`) VALUES ('050be0c1907','42','merchant','2015-04-25 15:53:18','2015-04-25 15:53:18') [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 455 行.
+
+[ 2015-04-25T15:54:10+08:00 ] ::1 /banar/Api/user/merchantRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='merchant_demo6' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('merchant_demo6','123456','weychen','http://banar-image.oss-cn-beijing.aliyuncs.com/8c2d2a2e1500e349eb6fbc0089d88cdf.png','2015-04-25 15:54:10','2015-04-25 15:54:10') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0020s ]
+SQL: INSERT INTO `lb_merchants` (`user_id`,`market_id`,`address`,`telephone`,`created_at`,`updated_at`) VALUES ('43','1','1111','1234567','2015-04-25 15:54:10','2015-04-25 15:54:10') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('28b4363fda613f9d5512f1a1d6c4a311','merchant','43','2015-04-25 15:54:10','2015-04-25 15:54:10') [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 432 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0008s ]
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '28b4363fda613f9d5512f1a1d6c4a311'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `lb_j_push_users`  [ RunTime:0.0004s ]
+SQL: INSERT INTO `lb_j_push_users` (`registrationID`,`user_id`,`userType`,`created_at`,`updated_at`) VALUES ('050be0c1907','43','merchant','2015-04-25 15:54:10','2015-04-25 15:54:10') [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 456 行.
+
+[ 2015-04-25T16:10:43+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001721s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0035s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0021s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0009s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '28b4363fda613f9d5512f1a1d6c4a311' [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('6d05828ac5d0b4f91ec2d84434748b89','merchant','43','2015-04-25 16:10:43','2015-04-25 16:10:43') [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '6d05828ac5d0b4f91ec2d84434748b89'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:10:43' WHERE `user_id` = 43 [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+
+[ 2015-04-25T16:10:48+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0037s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0003s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '6d05828ac5d0b4f91ec2d84434748b89' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('6972c6055f8d889a27911eb0c9f2c7c2','merchant','43','2015-04-25 16:10:48','2015-04-25 16:10:48') [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '6972c6055f8d889a27911eb0c9f2c7c2'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:10:48' WHERE `user_id` = 43 [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+
+[ 2015-04-25T16:11:06+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000122s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001396s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0008s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0002s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '6972c6055f8d889a27911eb0c9f2c7c2' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('0ec592afd977d810a8559167f730f9ac','merchant','43','2015-04-25 16:11:06','2015-04-25 16:11:06') [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '0ec592afd977d810a8559167f730f9ac'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:11:06' WHERE `user_id` = 43 [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+
+[ 2015-04-25T16:11:41+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0008s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0002s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '0ec592afd977d810a8559167f730f9ac' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('8f5cca0aa131bd86398819d7f14fafbe','merchant','43','2015-04-25 16:11:40','2015-04-25 16:11:40') [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '8f5cca0aa131bd86398819d7f14fafbe'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:11:41' WHERE `user_id` = 43 [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:107) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:107) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-25T16:11:51+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0009s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0002s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '8f5cca0aa131bd86398819d7f14fafbe' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('6e6ff42233ada1e1566b8b191c319cb5','merchant','43','2015-04-25 16:11:51','2015-04-25 16:11:51') [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '6e6ff42233ada1e1566b8b191c319cb5'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0003s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:11:51' WHERE `user_id` = 43 [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:110) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:110) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-25T16:12:16+08:00 ] ::1 /banar/Api/user/merchantLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`mobile`,`password`,`name`,`avatar`,`isValid`,`created_at`,`updated_at` FROM `lb_users` WHERE ( mobile = 'merchant_demo6' AND password = '123456' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0012s ]
+SQL: SELECT `token` FROM `lb_tokens` WHERE `user_id` = 43 LIMIT 1   [ RunTime:0.0006s ]
+SQL: DELETE FROM `lb_tokens` WHERE `token` = '6e6ff42233ada1e1566b8b191c319cb5' [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('ddc26fcf0356dd6d335236736975f516','merchant','43','2015-04-25 16:12:16','2015-04-25 16:12:16') [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 160 行.
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = 'ddc26fcf0356dd6d335236736975f516'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lb_j_push_users` WHERE `user_id` = 43  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_j_push_users` SET `registrationID`='050be0c1907',`updated_at`='2015-04-25 16:12:16' WHERE `user_id` = 43 [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 174 行.
+
+[ 2015-04-25T16:19:16+08:00 ] ::1 /banar/Api/user/merchantRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='merchant_demo6' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0009s ]
+SQL: INSERT INTO `lb_users` (`mobile`,`password`,`name`,`avatar`,`created_at`,`updated_at`) VALUES ('merchant_demo6','123456','weychen','http://banar-image.oss-cn-beijing.aliyuncs.com/0f5260485029ba73440b1af409089796.png','2015-04-25 16:19:16','2015-04-25 16:19:16') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: INSERT INTO `lb_merchants` (`user_id`,`market_id`,`address`,`telephone`,`created_at`,`updated_at`) VALUES ('44','1','1111','1234567','2015-04-25 16:19:16','2015-04-25 16:19:16') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: INSERT INTO `lb_tokens` (`token`,`userType`,`user_id`,`created_at`,`updated_at`) VALUES ('1cc47823d6ea4f765aeea84e3147b094','merchant','44','2015-04-25 16:19:16','2015-04-25 16:19:16') [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 439 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0008s ]
+SQL: SELECT `user_id`,`userType` FROM `lb_tokens` WHERE `token` = '1cc47823d6ea4f765aeea84e3147b094'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `lb_j_push_users`  [ RunTime:0.0004s ]
+SQL: INSERT INTO `lb_j_push_users` (`registrationID`,`user_id`,`userType`,`created_at`,`updated_at`) VALUES ('050be0c1907','44','merchant','2015-04-25 16:19:16','2015-04-25 16:19:16') [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 463 行.
+
+[ 2015-04-25T16:23:23+08:00 ] ::1 /banar/Api/user/merchantRegister
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000091s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002088s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `lb_users` WHERE ( mobile ='merchant_demo6' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T16:54:21+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0025s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:54:20','2015-04-25 16:54:20','未确认') [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0031s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
+SQL: SELECT `mobile`,`avatar`,`name` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mobile /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 223 行.
+NOTIC: [8] Undefined index: avatar /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 224 行.
+NOTIC: [8] Undefined index: name /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 225 行.
+ERR: cannot find user by this audience
+
+[ 2015-04-25T16:55:14+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0013s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0014s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0015s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:55:13','2015-04-25 16:55:13','未确认') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0026s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0009s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0019s ]
+SQL: SELECT `mobile`,`avatar`,`name` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mobile /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 223 行.
+NOTIC: [8] Undefined index: avatar /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 224 行.
+NOTIC: [8] Undefined index: name /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 225 行.
+ERR: cannot find user by this audience
+
+[ 2015-04-25T16:56:37+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0029s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0013s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0019s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:56:37','2015-04-25 16:56:37','未确认') [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0013s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0058s ]
+SQL: SELECT `mobile`,`avatar`,`name` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mobile /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 224 行.
+NOTIC: [8] Undefined index: avatar /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 225 行.
+NOTIC: [8] Undefined index: name /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 226 行.
+ERR: cannot find user by this audience
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:220) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:220) /Users/joy/www/banar/ThinkPHP/Library/Think/Think.class.php 第 230 行.
+
+[ 2015-04-25T16:57:12+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0024s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0012s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0021s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:57:12','2015-04-25 16:57:12','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0016s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0028s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:220) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:220) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
+[ 2015-04-25T16:57:23+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0023s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0012s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0010s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:57:23','2015-04-25 16:57:23','未确认') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0022s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0011s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-04-25T16:59:31+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0019s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0015s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0030s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:59:31','2015-04-25 16:59:31','未确认') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0007s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-04-25T16:59:33+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002661s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0025s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0006s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0019s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0021s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:59:33','2015-04-25 16:59:33','未确认') [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0018s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T16:59:34+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002978s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0016s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0022s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 16:59:34','2015-04-25 16:59:34','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0020s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0007s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T17:01:24+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001795s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0017s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0015s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 17:01:24','2015-04-25 17:01:24','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0016s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0014s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T17:01:53+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000845s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001259s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0024s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0029s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 17:01:53','2015-04-25 17:01:53','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0039s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+
+[ 2015-04-25T17:02:36+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0033s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0006s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0009s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 17:02:36','2015-04-25 17:02:36','未确认') [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0012s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0015s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+
+[ 2015-04-25T17:02:50+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0025s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0019s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 17:02:50','2015-04-25 17:02:50','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0018s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0008s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T22:54:12+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0015s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0016s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0014s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 22:54:11','2015-04-25 22:54:11','未确认') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0029s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0014s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-04-25T22:54:20+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0011s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '85c211aaa59fe798f42865706c0b05bd'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0017s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0012s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-25 22:54:20','2015-04-25 22:54:20','未确认') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0010s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0011s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0003s ]
+ERR: cannot find user by this audience
+
+[ 2015-04-25T23:06:02+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000830s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001647s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 257 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0023s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'f828632cedc6994840f59cff2d5c2396'  [ RunTime:0.0011s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='36',`updated_at`='2015-04-25 23:06:02' WHERE `token` = 'f828632cedc6994840f59cff2d5c2396' [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0013s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0004s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0022s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 211  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0019s ]
+
+[ 2015-04-25T23:06:33+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 257 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0010s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'f828632cedc6994840f59cff2d5c2396'  [ RunTime:0.0002s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='36',`updated_at`='2015-04-25 23:06:32' WHERE `token` = 'f828632cedc6994840f59cff2d5c2396' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0009s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0006s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0011s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 211  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0011s ]
+SQL: UPDATE `lb_transport_demands` SET `status`='已确认' WHERE `id` = 211 [ RunTime:0.0004s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='0' WHERE `user_id` = 36 [ RunTime:0.0002s ]
+SQL: INSERT INTO `lb_transport_orders` (`transportDemand_id`,`driver_id`,`status`,`created_at`,`updated_at`) VALUES ('211','33','未完成','2015-04-25 23:06:32','2015-04-25 23:06:32') [ RunTime:0.0002s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0009s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0036s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
+SQL: SELECT `mobile` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0002s ]
+ERR: cannot find user by this audience
+
+[ 2015-04-25T23:06:58+08:00 ] ::1 /banar/Api/transportOrder/takeoverByTransportDemandId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+NOTIC: [8] Use of undefined constant ERROR - assumed 'ERROR' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 257 行.
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0050s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = 'f828632cedc6994840f59cff2d5c2396'  [ RunTime:0.0008s ]
+SQL: UPDATE `lb_tokens` SET `user_id`='36',`updated_at`='2015-04-25 23:06:58' WHERE `token` = 'f828632cedc6994840f59cff2d5c2396' [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0021s ]
+SQL: SELECT `id` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0010s ]
+SQL: SELECT `isFree` FROM `lb_drivers` WHERE ( user_id=36 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0013s ]
+SQL: SELECT `status` FROM `lb_transport_demands` WHERE `id` = 211  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_transport_orders` [ RunTime:0.0009s ]
+SQL: UPDATE `lb_transport_demands` SET `status`='已确认' WHERE `id` = 211 [ RunTime:0.0002s ]
+SQL: UPDATE `lb_drivers` SET `isFree`='0' WHERE `user_id` = 36 [ RunTime:0.0001s ]
+SQL: INSERT INTO `lb_transport_orders` (`transportDemand_id`,`driver_id`,`status`,`created_at`,`updated_at`) VALUES ('211','33','未完成','2015-04-25 23:06:58','2015-04-25 23:06:58') [ RunTime:0.0002s ]
+SQL: SELECT `merchant_id` FROM `lb_transport_demands` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `lb_merchants` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0010s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
+SQL: SELECT `mobile` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant OK - assumed 'OK' /Users/joy/www/banar/Application/Api/Controller/UserController.class.php 第 306 行.
+SQL: SELECT `name` FROM `lb_users` WHERE `id` = 41 LIMIT 1   [ RunTime:0.0004s ]
+

@@ -150,7 +150,8 @@ return array(
              * return:
              *  {
              *      status,
-             *      content
+             *      content,
+             *      driver_name
              *  }
              */
             array('transportOrder/takeoverByTransportDemandId', 'User/takeoverByTransportDemandId', array('method => POST')),
