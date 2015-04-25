@@ -79,7 +79,6 @@ class FavoriteController extends RestController{
         $condition['token'] = $token;
         $tokenData = M('tokens')->field('userType,user_id')
             ->where($condition)->select()[0];
-
         $merchant_id = $tokenData['user_id'];//商户id
         $id = I('post.id');
 
@@ -92,7 +91,7 @@ class FavoriteController extends RestController{
             $result['content'] = '删除成功';
         }else{
             $result['status'] = 'ERROR';
-            $result['content'] = '删除失败,车主已经被删除';
+            $result['content'] = '删除失败';
         }
         $this->response($result,'json');
     }

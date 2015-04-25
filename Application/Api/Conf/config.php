@@ -39,7 +39,7 @@ return array(
              *
              *
              * $_POST:
-             *  [mobile, password, name, market_id, avatar, icid, truck_cate_id, truck_plateId, truck_avatar]
+             *  [mobile, password, name, market_id, avatar, icId, truck_cate_id, truck_plateId, truck_avatar, registrationid]
              *
              * return:
              *  {
@@ -53,7 +53,7 @@ return array(
              * 司机接口
              *      2.司机登录
              * $_POST:
-             *  [mobile, password]
+             *  [mobile, password,registrationid]
              *
              * 状态:
              *  基本已完成， weychen
@@ -177,7 +177,7 @@ return array(
              *      已完成  weychen
              *
              * $_POST:
-             *  [mobile, password, name, market_id, avatar, address, telephone]
+             *  [mobile, password, name, market_id, avatar, address, telephone, registrationid]
              *
              * return:
              *  {

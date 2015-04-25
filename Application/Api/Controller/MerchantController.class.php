@@ -12,6 +12,8 @@ use Think\Controller\RestController;
 require_once MODULE_PATH. "aliyun-php/aliyun.php";
 use \Aliyun\OSS\OSSClient;
 use JPush\JPushClient;
+use Think\Model;
+
 class MerchantController extends RestController {
     protected $userFields = 'id,mobile,password,name,avatar,isValid,created_at,updated_at';
 
@@ -20,8 +22,17 @@ class MerchantController extends RestController {
      */
     public function  merchantRegister()
     {
+        //事务操作
+        $tranDb = new Model();
+        $tranDb->startTrans();
+
         $result = array();
+        $data = array();
         $avatar_data = $this->put_pic_to_oss('avatar');
+        if(!$avatar_data) {
+            $data['error'] = '司机头像上传失败';
+        }
+
         $user_data = array(
             'mobile' => I('post.mobile'),
             'password' => I('post.password'),
@@ -31,46 +42,42 @@ class MerchantController extends RestController {
             'updated_at' => date('Y-m-d H:i:s'),
 
         );
-        $user = D('users');
         //判断该用户是否已经被注册
         if(get_user('mobile',$user_data['mobile'])){
             $result['status'] = 'ERROR';
             $result['content'] = '该手机号码已经注册';
-        } else {
-            $user_id = $user->add($user_data);
-            $merchant_data = array(
-                'user_id' => $user_id,
-                'market_id' => I('post.market_id'),
-                'address' => I('post.address'),
-                'telephone' => I('post.telephone'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            );
-            $merchant_id = D('merchants')->add($merchant_data);
-            //生成token并写入
-            $token_data = generate_token();
-            $result['token'] = $token_data;
-            $token_data = array(
-                'token' => $token_data,
-                'userType' => 'merchant',
-                'user_id' => $user_id,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            );
-            D('tokens')->add($token_data);
-            //添加jPush信息
-            $jPush_data = array(
-                'registrationID' => I('registrationid'),
-                'user_id' => $user_id,
-                'user_type' => 'merchant',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            );
-//            D('j_push_users')->add($jPush_data);
-            $registration_id = I('post.registrationid');
-            $this->bindJPushRegistrationID($token_data,$registration_id);
-            $result['status'] = 'OK';
         }
+        $user = D('users');
+        $user_id = $user->add($user_data);
+
+        $merchant_data = array(
+            'user_id' => $user_id,
+            'market_id' => I('post.market_id'),
+            'address' => I('post.address'),
+            'telephone' => I('post.telephone'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        );
+        $merchant_id = D('merchants')->add($merchant_data);
+        //生成token并写入
+        $token_data = generate_token();
+        put_token_into_sql($token_data, 'merchant', $user_id);
+
+        $registration_id = I('post.registrationid');
+        $this->bindJPushRegistrationID($token_data,$registration_id); //绑定极光推送
+        $result['status'] = 'OK';
+        if($avatar_data && $user_id )
+        {
+            $result['status'] = 'OK';
+            $data['token'] = $token_data;
+            $tranDb->commit();
+        }
+        else
+        {
+            $result['status'] = 'ERROR';
+            $tranDb->rollback();
+        }
+
         $this->response($result,'json');
 
     }
@@ -200,7 +207,7 @@ class MerchantController extends RestController {
         }else{
 
             $result['status'] = 'ERROR';
-            $result['content'] = '添加失败';
+            $result['content'] = '发起请求失败';
         }
         $this->response($result,'json');
     }
@@ -268,7 +275,6 @@ class MerchantController extends RestController {
             $data['status'] = $status;
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['updated_at'] = date('Y-m-d H:i:s');
-            //echo $data['driver_id'];
             $id = M('transport_demands')->add($data);
 
 	        $data['demand_id'] = $id;
@@ -299,7 +305,7 @@ class MerchantController extends RestController {
         $token_data = $this->validate_token($token); //用户验证
 
         $Order = M('transport_orders');
-        $condition['id'] = I('post.id');//查询条件
+        $condition['id'] = I('post.order_id');//查询条件
         $driver_ok = $Order->where($condition)->getField('driver_ok');
 
         if($driver_ok) {
@@ -424,30 +430,27 @@ class MerchantController extends RestController {
     {
         $response['status'] = ERROR;
         if (!empty($token) && !empty($registrationID)) {
-
             $Token = M('tokens');
             $map['token'] = $token;
             $user_data = $Token->field('user_id,userType')->where($map)->select();
             $user_id = $user_data['0']['user_id'];
             $userType = $user_data['0']['usertype'];
-
             $j_push_user = M('j_push_users');//实例化极光推送模型
 
 
             $result = $j_push_user->where(array('$user_id'=>$user_id))->select();
-            if ($result!=null) {   //如果已存在记录
-                # code...
-                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s')));
-
+            if (!$result) {   //如果已存在记录
+                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s'))); //更新时间
                 $response['status'] = OK;
             }
             else {  //如果不存在记录
-                $j_push_user->user_id = $user_id;
-                $j_push_user->registrationID = $registrationID;
-                $j_push_user->userType = $userType;
-                $j_push_user->created_at = date('Y-m-d H:i:s');
-                $j_push_user->updated_at = date('Y-m-d H:i:s');
-                $j_push_user->add();
+
+                $data['registrationID'] = $registrationID;
+                $data['user_id'] = $user_id;
+                $data['userType'] = $userType;
+                $data['created_at'] = date('Y-m-d H:i:s');
+                $data['updated_at'] = date('Y-m-d H:i:s');
+                $result1 = $j_push_user->add($data);
 
                 $response['status'] = OK;
             }

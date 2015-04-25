@@ -26,8 +26,17 @@ class UserController extends RestController {
      */
     public function driverRegister()
     {
+        //事务操作
+        $tranDb = new Model();
+        $tranDb->startTrans();
+
         $result = array();
+        $data = array();
         $avatar_data = $this->put_pic_to_oss('avatar');
+        if(!$avatar_data) {
+            $data['error'] = '司机头像上传失败';
+        }
+
         $user_data = array(
             'mobile' => I('post.mobile'),
             'password' => I('post.password'),
@@ -36,52 +45,57 @@ class UserController extends RestController {
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         );
-        $user = D('users');
+
         if(get_user('mobile',$user_data['mobile'])){
             $result['content']['error'] = '该手机号码已经注册';
-        } else {
-            $user_id = $user->add($user_data);
-
-            $jPush_data = array(
-                'registrationID' => I('registrationid'),
-                'user_id' => $user_id,
-                'user_type' => 'driver',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            );
-
-            $driver_data = array(
-                'user_id' => $user_id,
-                'market_id' => I('post.market_id'),
-                'icId' => I('post.icId'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-                'latestFreeTime' => date('Y-m-d H:i:s'),
-                'isFree' => 1
-            );
-            //添加jPush数据
-            //D('j_push_users')->add($jPush_data);
-            $driver_id = D('drivers')->add($driver_data);
-
-            $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
-            $truck_data = array(
-                'driver_id' => $driver_id,
-                'plateId' => I('post.truck_plateId'),
-                'cate_id' => I('post.truck_cate_id'),
-                'avatar' =>  $truck_avatar_data,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            );
-            $truck_id = D('trucks')->add($truck_data);
-            //生成token并写入
-            $token_data = generate_token();
-            put_token_into_sql($token_data, 'driver', $user_id);
-            $data['token'] = $token_data;
-            $registration_id = I('post.registrationid');
-            $this->bindJPushRegistrationID($token_data,$registration_id);
-            $result['status'] = 'OK';
-            $result['content'] = $data;
+            $this->response($result,'json');
         }
+        $user = D('users');
+        $user_id = $user->add($user_data);
+
+        $driver_data = array(
+            'user_id' => $user_id,
+            'market_id' => I('post.market_id'),
+            'icId' => I('post.icId'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            'latestFreeTime' => date('Y-m-d H:i:s'),
+            'isFree' => 1
+        );
+        $driver_id = D('drivers')->add($driver_data);
+
+        $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
+        if(!$truck_avatar_data) {
+            $data['error'] = '车辆图片上传失败';
+        }
+        $truck_data = array(
+            'driver_id' => $driver_id,
+            'plateId' => I('post.truck_plateId'),
+            'cate_id' => I('post.truck_cate_id'),
+            'avatar' =>  $truck_avatar_data,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        );
+        $truck_id = D('trucks')->add($truck_data);
+        //生成token并写入
+        $token_data = generate_token();
+        put_token_into_sql($token_data, 'driver', $user_id);
+        $registration_id = I('post.registrationid');
+        $this->bindJPushRegistrationID($token_data,$registration_id);
+
+        if($avatar_data && $user_id && $truck_id && $truck_avatar_data)
+        {
+            $result['status'] = 'OK';
+            $data['token'] = $token_data;
+            $tranDb->commit();
+        }
+        else
+        {
+            $result['status'] = 'ERROR';
+            $tranDb->rollback();
+        }
+
+        $result['content'] = $data;
         $this->response($result,'json');
     }
 
@@ -145,31 +159,29 @@ class UserController extends RestController {
     {
         $response['status'] = ERROR;
         if (!empty($token) && !empty($registrationID)) {
-            
             $Token = M('tokens');
             $map['token'] = $token;
             $user_data = $Token->field('user_id,userType')->where($map)->select();
             $user_id = $user_data['0']['user_id'];
             $userType = $user_data['0']['usertype'];
-            
             $j_push_user = M('j_push_users');//实例化极光推送模型
 
 
-            $result = $j_push_user->where(array('$user_id'=>$user_id))->select();
-            if ($result!=null) {   //如果已存在记录
-                # code...
-                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s')));
-                
+            $result = $j_push_user->where(array('user_id'=>$user_id))->select(); //查找相应的记录
+
+            if ($result) {   //如果已存在记录
+                $j_push_user->where(array('user_id'=>$user_id))->setField(array('registrationID'=>$registrationID,'updated_at'=>date('Y-m-d H:i:s'))); //更新时间
                 $response['status'] = OK;
             }
             else {  //如果不存在记录
-                $j_push_user->user_id = $user_id;
-                $j_push_user->registrationID = $registrationID;
-                $j_push_user->userType = $userType;
-                $j_push_user->created_at = date('Y-m-d H:i:s');
-                $j_push_user->updated_at = date('Y-m-d H:i:s');
-                $j_push_user->add();
-                
+
+                $data['registrationID'] = $registrationID;
+                $data['user_id'] = $user_id;
+                $data['userType'] = $userType;
+                $data['created_at'] = date('Y-m-d H:i:s');
+                $data['updated_at'] = date('Y-m-d H:i:s');
+                $result1 = $j_push_user->add($data);
+
                 $response['status'] = OK;
             }       
             return $response;
@@ -187,26 +199,17 @@ class UserController extends RestController {
         $TransportOrder = M('transport_orders');
         $TransportDemand = M('transport_demands');
         $Users = M('users');
-        $Token = M('tokens');//实例化token对象
         $token = I('token');
-        $this->validate_token($token);
-        // 
-        //用户传入token
-        // $token = "AovMsrjlvQnV0SqYNdKiDFLKfFt0horf";
-        // $token = "WN6uZTE3KJgbMDawa5QhmoqRrig9Qe80";
-        if(!empty($token))    //如果token不为空
-        {
-            $map['token'] = $token;//使用数组的where
-            $user_data = $Token->field('user_id,usertype')->where($map)->limit(1)->select();
-            $user_id = $user_data['0']['user_id'];//user_id
-            $user_type = $user_data['0']['usertype'];//userType
-            if (!empty($user_id)) {    #如果user_id不为空，说明用户处在登陆状态
-                # code...
-                if ($user_type == 'driver') {    #如果为司机
 
-                $Driver = M('drivers');
-                $driver_id = (int)$Driver->field('id')->where('user_id=%d',$user_id)->select()['0']['id'];
-                $response['content'] = M('transport_orders')
+        $map['token'] = $token;//使用数组的where
+        $user_data = $this->validate_token($token);
+        $user_id = $user_data['user_id'];//user_id
+        $user_type = $user_data['usertype'];//userType
+        if ($user_type == 'driver') {    #如果为司机
+            $Driver = M('drivers');
+            $driver_id = (int)$Driver->field('id')->where('user_id=%d',$user_id)->select()['0']['id'];
+
+            $data= M('transport_orders')
                 ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
                 ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
                 ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
@@ -217,38 +220,30 @@ class UserController extends RestController {
                     'lb_transport_orders.created_at'=>'time'))
                 ->where('lb_transport_orders.driver_id=%s',$driver_id)
                 ->select();
-                $response['status'] = OK;
-                
-                }
-                elseif($user_type == 'merchant'){
+            $response['status'] = OK;
+            $response['content'] = $data;
 
-                    $Merchant = M('merchants');
-                    $merchant_id = (int)$Merchant->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
-                    $response['content'] = M("transport_demands")
-                    ->join('lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id')
-                    ->join('lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id')
-                    ->join('lb_users ON lb_drivers.user_id = lb_users.id')
-                    ->field(array('lb_transport_demands.id'=>'demand_id',
-                        'lb_transport_demands.status'=>'demand_status',
-                        'lb_transport_orders.id'=>'order_id',
-                        'lb_transport_orders.status'=>'order_status',
-                        'lb_users.mobile'=>'driver_mobile',
-                        'lb_users.name'=>'driver_name'))
-                    ->where('lb_transport_demands.merchant_id=%s',$merchant_id)
-                    ->select();
-                    $response['status'] = OK;
-                    
-                }
-                
-            }
-            else{
-                $response['status'] = NOT_LOGGED_IN;
-            }
         }
-        else{
-            $response['status'] = ERROR;
-            $response['content'] = '空token';
+        elseif($user_type == 'merchant'){
+
+            $Merchant = M('merchants');
+            $merchant_id = (int)$Merchant->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
+            $response['content'] = M("transport_demands")
+                ->join('lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id')
+                ->join('lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id')
+                ->join('lb_users ON lb_drivers.user_id = lb_users.id')
+                ->field(array('lb_transport_demands.id'=>'demand_id',
+                    'lb_transport_demands.status'=>'demand_status',
+                    'lb_transport_orders.id'=>'order_id',
+                    'lb_transport_orders.status'=>'order_status',
+                    'lb_users.mobile'=>'driver_mobile',
+                    'lb_users.name'=>'driver_name'))
+                ->where('lb_transport_demands.merchant_id=%s',$merchant_id)
+                ->select();
+            $response['status'] = OK;
+
         }
+
         $this->response($response,'json');
     }
 
@@ -258,14 +253,14 @@ class UserController extends RestController {
      */
     public function takeoverByTransportDemandId()
     {
+        $response = array();
         $response['status'] = ERROR;
-        $response['content'];
+
         $token = I('post.token');
         $token_data = $this->validate_token($token);  //如果token 合法的话，返回user_id , user_type
         $transportDemand_id = I('post.transportDemandId'); //传入的需求id
         $isAccept = I('post.isAccept');                 //传入司机是否确认接单
-        $tranDb = new Model();
-        $tranDb->startTrans();
+
         $user_type = $token_data['usertype'];       //得到用户类型
         $user_id = $token_data['user_id'];          //得到用户id
 
@@ -273,6 +268,8 @@ class UserController extends RestController {
         $driver_id = $driver->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
         $isFree = $driver->field('isFree')->where('user_id=%s',$user_id)->select()['0']['isfree'];
         if ($isAccept=='true'){    #如果司机接收订单
+            $tranDb = new Model();
+            $tranDb->startTrans();
             if (intval($isFree)!=0) {   #如果司机空闲
                 $demand = M('transport_demands');
                 $maps['id'] = $transportDemand_id;
@@ -290,9 +287,9 @@ class UserController extends RestController {
                     $mapper['id'] = $transportDemand_id;
                     $result = $demand->where($mapper)->setField('status','已确认');
                     $update = $driver->where(array('user_id'=>$user_id))->setField('isFree',0);
-                    if ($orders->add() && $result) {
-                        $response['status'] = OK;
-                        $response['content'] ='您已成功添加订单';
+                    $order_id = $orders->add();
+                    if ($order_id && $result) {
+
                         //极光推送部分
                         //司机接单成功应该是给商户发消息
                         $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
@@ -306,6 +303,9 @@ class UserController extends RestController {
                         $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $transportDemand_id, $telePhone);#调用向商家推送信息函数
                         if($update && $result)
                         {
+                            $response['status'] = OK;
+                            $response['content'] ='您已成功添加订单';
+                            $response['order_id'] = $order_id;
                             $tranDb->commit();
                         }
                         else
@@ -337,9 +337,8 @@ class UserController extends RestController {
             if ($demand_ispoint == 1) {  #如果是指定的
                 $mapper['id'] = $transportDemand_id;
                 $result = $demand->where($mapper)->setField('status','已取消');//直接取消订单
+                if ($result) {
 
-                if (false!==$result) {
-                    # 更新成功
                     $response['status'] = OK;
                     $response['content'] = '您已成功拒绝订单';
                     $content = "您的订单已被拒绝，请您重新下单";
@@ -361,21 +360,19 @@ class UserController extends RestController {
             else{
                 $mapper['id'] = $transportDemand_id;
                 $driver = M('drivers');
-                #获取空闲司机列表
-                $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();
-                #随机生成一个数字
+                $restDrivers = $driver->field('id')->where(array('isFree'=>'1'))->select();#获取空闲司机列表
                 $count = count($restDrivers);
-                $index = rand(0,$count-1);
-                #选取司机id
-                $driver_id = $restDrivers[$index]['id'];
+                $index = rand(0,$count-1);#随机生成一个数字
+                $driver_id = $restDrivers[$index]['id']; #选取司机id
                 $data['driver_id'] = $driver_id;
-                $result = $demand->where(array('id'=>$transportDemand_id))->setField($data);
+                $data['updated_at'] = date('Y-m-d H:i:s');
+                $result = $demand->where(array('id'=>$transportDemand_id))->save($data);
                 if (intval($result)!=0) {
                     # 更新成功
                     $response['status'] = OK;
                     $response['content'] = '拒绝成功，并将订单传递给其他空闲司机';
                 }
-                else{
+                else {
                     $response['status'] = ERROR;
                     $response['content'] = '更新失败';
                 }
@@ -391,7 +388,7 @@ class UserController extends RestController {
     {
         $token = I('post.token');
         $token_data = $this->validate_token($token);
-        $condition['id'] = I('post.id');//查询条件
+        $condition['id'] = I('post.order_id');//查询条件  得到order_id
         $data['driver_ok'] = 1;
         $data['updated_at'] = date('Y-m-d H:i:s');
         $Order = M('transport_orders');
@@ -405,16 +402,15 @@ class UserController extends RestController {
 
 
             $JPush = new JPushController();
-//
-////            $condition3['user_id'] = $user_id;
+
             $transportDemand_id = $Order->where($condition)->getField('transportDemand_id');
             $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
                 ->getField('merchant_id');      //得到商户的id
             $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
-            //echo $user_id;
+
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
-            #司机的电话号码
-            $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
+
+            $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];            #司机的电话号码
             $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认',$transportDemand_id, $telePhone); //推送
 
             $result['status'] = 'OK';
@@ -637,9 +633,11 @@ class UserController extends RestController {
         $token = generate_token();
         if(!move_uploaded_file($_FILES[$avatar_name]['tmp_name'],"./upload/".$token.".png" ))
         {
-            $result['status'] = "ERROR";
-            $result['content'] = "图片上传失败";
-            $this->response($result, 'json');
+//            $result['status'] = "ERROR";
+//            $result['content'] = "图片上传失败";
+//            $this->response($result, 'json');
+            $avatar_data = false;
+            return $avatar_data;
         }
         $client = OSSClient::factory(array(
             'AccessKeyId' => 'PdUWUlXoZ0iS05hF',
