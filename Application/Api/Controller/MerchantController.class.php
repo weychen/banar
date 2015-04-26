@@ -219,12 +219,12 @@ class MerchantController extends RestController {
                 ->getField('registrationID');
 //            echo $driver_registration_id;
             $JPush = new JPushController();
-//            $user_data = M('users')->where(array('id' => $user_id))->getField('mobile, avatar, name');
+            $user_data = M('users')->where(array('id' => $user_id))->getField('mobile, avatar, name');
             $extra['demand_id'] = $id;
-//            $extra['mobile'] = $user_data['mobile'];
-//            $extra['avatar'] = $user_data['avatar'];
-//            $extra['name'] = $user_data['name'];
-//            $JPush->sendToDriverByRegistrationID("010df7479ef",'订单已经确认',$extra); //极光推送
+            $extra['mobile'] = $user_data['mobile'];
+            $extra['avatar'] = $user_data['avatar'];
+            $extra['name'] = $user_data['name'];
+            $JPush->sendToDriverByRegistrationID($driver_registration_id,'订单已经确认',$extra); //极光推送
 
         }else{
 
@@ -391,7 +391,6 @@ class MerchantController extends RestController {
         $condition['token'] = $token; // 查询条件
         $token_data = M('tokens')->field('userType,user_id,updated_at')
             ->where($condition)->select()[0];   //得到token 的数据
-
         if(!$token_data) {
             //如果token 错误，则返回错误信息
             $result['status'] = 'ERROR';

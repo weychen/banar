@@ -1,0 +1,26 @@
+[ 2015-04-26T20:42:17+08:00 ] ::1 /banar/Api/transportDemand/addTransportDemand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+SQL: SHOW COLUMNS FROM `lb_tokens` [ RunTime:0.0023s ]
+SQL: SELECT `userType`,`user_id`,`updated_at` FROM `lb_tokens` WHERE `token` = '2a96694d684e3c3b26b2accd19d199b2'  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `lb_tokens` WHERE `token` = '2a96694d684e3c3b26b2accd19d199b2'  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lb_merchants` [ RunTime:0.0039s ]
+SQL: SELECT `id` FROM `lb_merchants` WHERE `user_id` = 41 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lb_transport_demands` [ RunTime:0.0025s ]
+SQL: INSERT INTO `lb_transport_demands` (`cate_id`,`driver_id`,`ispoint`,`merchant_id`,`created_at`,`updated_at`,`status`) VALUES ('1','33','1','8','2015-04-26 20:42:16','2015-04-26 20:42:16','未确认') [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `lb_drivers` [ RunTime:0.0054s ]
+SQL: SELECT `user_id` FROM `lb_drivers` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lb_j_push_users` [ RunTime:0.0011s ]
+SQL: SELECT `registrationID` FROM `lb_j_push_users` WHERE `user_id` = 36 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `lb_users` [ RunTime:0.0011s ]
+SQL: SELECT `mobile`,`avatar`,`name` FROM `lb_users` WHERE `id` = 41  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: mobile /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 224 行.
+NOTIC: [8] Undefined index: avatar /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 225 行.
+NOTIC: [8] Undefined index: name /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php 第 226 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:394) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 177 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/joy/www/banar/Application/Api/Controller/MerchantController.class.php:394) /Users/joy/www/banar/ThinkPHP/Library/Think/Controller/RestController.class.php 第 179 行.
+
