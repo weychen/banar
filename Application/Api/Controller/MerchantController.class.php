@@ -224,7 +224,7 @@ class MerchantController extends RestController {
             $extra['mobile'] = $user_data['mobile'];
             $extra['avatar'] = $user_data['avatar'];
             $extra['name'] = $user_data['name'];
-            $JPush->sendToDriverByRegistrationID($driver_registration_id,'订单已经确认',$extra); //极光推送
+            $JPush->sendToDriverByRegistrationID($driver_registration_id,'',$extra); //极光推送
 
         }else{
 
@@ -233,6 +233,7 @@ class MerchantController extends RestController {
         }
         $this->response($result,'json');
     }
+
     /*
     *取消订单（如何保证操作安全）
     */
@@ -305,10 +306,22 @@ class MerchantController extends RestController {
             {
                 $result['status'] = 'OK';
                 $result['content'] = $data;
+
+                $JPush = new JPushController();
+                $user_data = M('users')->where(array('id' => $user_id))->getField('mobile, avatar, name');
+                $extra['demand_id'] = $id;
+                $extra['mobile'] = $user_data['mobile'];
+                $extra['avatar'] = $user_data['avatar'];
+                $extra['name'] = $user_data['name'];
+                $driver_registration_id = M('j_push_users')->where(array('user_id' => $driver_id))
+                    ->getField('registrationID');
+                $JPush->sendToDriverByRegistrationID($driver_registration_id,'',$extra); //极光推送
             }else{
                 $result['status'] = 'ERROR';
                 $result['content'] = '添加失败';
             }
+
+
         }else{
             $result['status'] = 'ERROR';
             $result['content'] = '没有空闲司机，请换个车型';

@@ -49,7 +49,7 @@ class JPushController extends RestController{
         $client = new JPushClient("52850fe9e445eaf69bbb1b13", "79dfe4dd25a796b74fbb4af8");
         $response = $client->push()->setPlatform(M\all)
             ->setAudience(M\audience(M\registration_id(array($registration_id))))
-            ->setNotification(M\notification($content))
+            //->setNotification(M\notification($content))
             ->setMessage(M\message($content, null, null, array(
                 'extra' =>$extra))
                 )
