@@ -145,7 +145,7 @@ class UserController extends RestController {
         $tokenData = M('tokens')->field('userType,user_id')
             ->where($condition)->select()[0];
         $data = M('users')->field('id, name, avatar')
-            ->where(array('id' => $tokenData['user_id']))->select();
+            ->where(array('id' => $tokenData['user_id']))->select()[0];
         $result['status'] = 'OK';
         $result['content'] = $data;
         $this->response($result,'json');
@@ -301,15 +301,16 @@ class UserController extends RestController {
                         #司机的电话号码
                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
                         $extra['transportDemand_id'] = $transportDemand_id;
-                        $extra['telePhone'] = $telePhone;
+//                        $extra['telePhone'] = $telePhone;
                         $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $extra);#调用向商家推送信息函数
                         if($update && $result)
                         {
                             $response['status'] = OK;
-                            $response['content'] ='您已成功添加订单';
-                            $response['order_id'] = $order_id;
+                            $return_data['order_id'] = $order_id;
                             $name = M('users')->where(array('id' => $user_id))->getField('name');
-                            $response['driver_name'] = $name;
+                            $return_data['mobile'] = $telePhone;
+                            $return_data['driver_name'] = $name;
+                            $response['content'] = $return_data;
                             $tranDb->commit();
                         }
                         else
@@ -389,6 +390,9 @@ class UserController extends RestController {
 
     /**
      * 完成订单
+     * 推送：司机名 司机电话 司机头像
+     * 返回：商户的电话 商户的姓名 商户头像
+     *
      */
     public function completeOrder_driver()
     {
@@ -406,22 +410,25 @@ class UserController extends RestController {
             $condition2['id'] = $driver_id;     //查询司机的条件
             M('drivers')->where($condition2)->save($driver_data);
 
-
+            $driver_user_id = $token_data['user_id'];
+            $driver__user_data = M('users')->where(array('id' => $driver_user_id))->select()[0];
             $JPush = new JPushController();
-
             $transportDemand_id = $Order->where($condition)->getField('transportDemand_id');
             $merchant_id = M('transport_demands')->where(array('id'=>$transportDemand_id))
                 ->getField('merchant_id');      //得到商户的id
-            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的user_id
-
+            $user_id = M('merchants')->where(array('id' => $merchant_id))->getField('user_id'); // 得到商户的信息
             $registration_id = M('j_push_users')->where(array('user_id'=>$user_id))->getField('registrationID'); //得到registrationid
 
-            $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];            #司机的电话号码
+            $merchant_user_data = M('users')->field('name,mobile,avatar')->where(array('id' => $user_id))->select()[0];
+//            $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];            #司机的电话号码
             $extra['transportDemand_id'] = $transportDemand_id;
-            $extra['telePhone'] = $telePhone;
+            $extra['telePhone'] = $driver__user_data['mobile'];
+            $extra['name'] = $driver__user_data['name'];
+            $extra['avatar'] = $driver__user_data['avatar'];
             $JPush->sendToMerchantByRegistrationID($registration_id,'司机已经确认订单，请您及时确认',$extra); //推送
 
             $result['status'] = 'OK';
+            $result['content'] = $merchant_user_data;
             $this->response($result,'json');
         }
 
@@ -483,56 +490,44 @@ class UserController extends RestController {
         $response['content'];
         $token = I('token');
         $token_data = $this->validate_token($token);
-        if (!empty($token)) {   //检查token是否为空
-            $Token = M('tokens');
-            $map['token'] = $token;
-            $user_data = $Token->field('user_id,usertype')->where($map)->select();
-            $user_id = $user_data['0']['user_id'];
-            $user_type = $user_data['0']['usertype'];
-            if (!empty($user_id)) {     //检查token是否正确，以此判断是否登陆
-                if ($user_type == "driver") {
-                    $driver = M('drivers');
-                    $maps['user_id'] = $user_id;
-                    $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
-                    // dump($driver_id);
-                    $Order = M('transport_orders');
-                    // $status = "未完成";
-                    $mapper['lb_transport_orders.driver_id'] = $driver_id;    //查找该driver_id的未完成订单
-                    $mapper['lb_transport_orders.status'] = '未完成';
-                    $response['content'] = $Order
-                    ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
-                    ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
-                    ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
-                    ->join('lb_users ON lb_merchants.user_id = lb_users.id')
-                    ->field(array('lb_transport_demands.merchant_id'=>'merchant_id',
-                        'lb_users.name'=>'merchant_name',
-                        'lb_users.mobile'=>'merchant_mobile',
-                        'lb_transport_demands.cate_id'=>'cate_id',
-                        'lb_cates.name'=>'cate_name',
-                        'lb_transport_demands.id'=>'demand_id',
-                        'lb_transport_orders.id'))
-                    ->where($mapper)
-                    ->select();
-                    // dump($response);
-                    $response['status'] = OK;
-                }
-            }
-            else{
-                $response['status'] = NOT_LOGGED_IN;
-            }
-        }
-        else{
-            $response['content'] = '空token';
-        }
 
-            $this->response($response,'json');
+        $user_id = $token_data['user_id'];
+        $user_type = $token_data['usertype'];
+
+        if ($user_type == "driver") {
+            $driver = M('drivers');
+            $maps['user_id'] = $user_id;
+            $driver_id = $driver->field('id')->where($maps)->select()['0']['id'];
+            // dump($driver_id);
+            $Order = M('transport_orders');
+            // $status = "未完成";
+            $mapper['lb_transport_orders.driver_id'] = $driver_id;    //查找该driver_id的未完成订单
+            $mapper['lb_transport_orders.status'] = '未完成';
+            $response['content'] = $Order
+                ->join('lb_transport_demands ON lb_transport_orders.transportDemand_id = lb_transport_demands.id')
+                ->join('lb_cates ON lb_transport_demands.cate_id = lb_cates.id')
+                ->join('lb_merchants ON lb_transport_demands.merchant_id = lb_merchants.id')
+                ->join('lb_users ON lb_merchants.user_id = lb_users.id')
+                ->field(array('lb_transport_demands.merchant_id'=>'merchant_id',
+                    'lb_users.name'=>'merchant_name',
+                    'lb_users.mobile'=>'merchant_mobile',
+                    'lb_transport_demands.cate_id'=>'cate_id',
+                    'lb_cates.name'=>'cate_name',
+                    'lb_transport_demands.id'=>'demand_id',
+                    'lb_transport_orders.id'))
+                ->where($mapper)
+                ->select();
+            // dump($response);
+            $response['status'] = OK;
+        }
+        $this->response($response,'json');
     }
 
 
     /**
      * 判断司机是否在地理围栏里面
      *
-     * 还需要将token 的验证模块加进来
+     *
      */
     public function driverIsInMarket()
     {
