@@ -216,6 +216,7 @@ return array(
              *  }
              */
             array('transportDemand/addTransportDemand','Merchant/postATransportDemand', array('method => POST')),
+
             /*
              * 商户接口
              *      商户发起用车请求，自动分配司机
