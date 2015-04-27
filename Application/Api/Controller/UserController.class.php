@@ -47,7 +47,7 @@ class UserController extends RestController {
         );
 
         if(get_user('mobile',$user_data['mobile'])){
-            $result['content']['error'] = '该手机号码已经注册';
+            $result['content'] = '该手机号码已经注册';
             $this->response($result,'json');
         }
         $user = D('users');
