@@ -217,7 +217,8 @@ class UserController extends RestController {
                 ->field(array('lb_users.name'=>'merchant_name',
                     'lb_users.avatar'=>'merchant_avatar',
                     'lb_cates.name'=>'cate_name',
-                    'lb_transport_orders.created_at'=>'time'))
+                    'lb_transport_orders.created_at'=>'time',
+                    'lb_transport_orders.transportDemand_id'=>'demand_id',))#需要添加demand_id
                 ->where('lb_transport_orders.driver_id=%s',$driver_id)
                 ->select();
             $response['status'] = OK;
@@ -228,7 +229,7 @@ class UserController extends RestController {
 
             $Merchant = M('merchants');
             $merchant_id = (int)$Merchant->field('id')->where('user_id=%s',$user_id)->select()['0']['id'];
-            $response['content'] = M("transport_demands")
+            $data = M("transport_demands")
                 ->join('lb_transport_orders ON lb_transport_demands.id = lb_transport_orders.transportDemand_id')
                 ->join('lb_drivers ON lb_transport_orders.driver_id = lb_drivers.id')
                 ->join('lb_users ON lb_drivers.user_id = lb_users.id')
@@ -237,11 +238,13 @@ class UserController extends RestController {
                     'lb_transport_orders.id'=>'order_id',
                     'lb_transport_orders.status'=>'order_status',
                     'lb_users.mobile'=>'driver_mobile',
+                    'lb_users.id'=>'driver_id',#需要添加driver_id
                     'lb_users.name'=>'driver_name'))
                 ->where('lb_transport_demands.merchant_id=%s',$merchant_id)
                 ->select();
-            $response['status'] = OK;
 
+            $response['content'] = $data;
+            $response['status'] = OK;
         }
 
         $this->response($response,'json');
@@ -249,7 +252,7 @@ class UserController extends RestController {
 
 
     /*
-        接单
+     * 接单
      */
     public function takeoverByTransportDemandId()
     {
