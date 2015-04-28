@@ -304,7 +304,7 @@ class UserController extends RestController {
                         #司机的电话号码
                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
                         $extra['transportDemand_id'] = $transportDemand_id;
-//                        $extra['telePhone'] = $telePhone;
+                        $extra['is_accept'] = '1';//接收
                         $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $extra);#调用向商家推送信息函数
                         if($update && $result)
                         {
@@ -360,6 +360,7 @@ class UserController extends RestController {
                     $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
                     $extra['transportDemand_id'] = $transportDemand_id;
                     $extra['telePhone'] = $telePhone;
+                    $extra['is_accept'] = '0';//接收
                     $JPUSH->sendToMerchantByRegistrationID($registration_id,$content,$extra);#调用向商家推送信息函数
                 }
                 else{   #更新失败
