@@ -217,7 +217,7 @@ class MerchantController extends RestController {
             $driver_user_id = M('drivers')->where(array('id' => $driver_id))->getField('user_id');
             $driver_registration_id = M('j_push_users')->where(array('user_id' => $driver_user_id))
                 ->getField('registrationID');
-            echo $driver_registration_id;
+            //echo $driver_registration_id;
             $JPush = new JPushController();
             $user_data = M('users')->where(array('id' => $user_id))->getField('mobile, avatar, name');
             $extra['demand_id'] = $id;
@@ -283,7 +283,6 @@ class MerchantController extends RestController {
      // $restDrivers = M('drivers')->where(array('isFree'=>'1', 'cate_id' => $cate_id))->select();
         #随机生成一个数字
         $count = count($restDrivers);
-        echo "count = ".$count;
         if($count > 0 )
         {
             $index = rand(0,$count-1);
@@ -314,7 +313,6 @@ class MerchantController extends RestController {
                 $extra['name'] = $user_data['name'];
                 $driver_registration_id = M('j_push_users')->where(array('user_id' => $driver_id))
                     ->getField('registrationID');
-                echo "registration_id = ".$driver_registration_id;
                 $JPush->sendToDriverByRegistrationID($driver_registration_id,'',$extra); //极光推送
             }else{
                 $result['status'] = 'ERROR';
