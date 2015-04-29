@@ -9,7 +9,7 @@ return array(
              * 公用接口
              *      1.获取车型
              * 状态:
-             *  已完成 weychen
+             *  已完成 weychenjie
              * 测试状态
              *      已通过 weychen
              * $_GET:

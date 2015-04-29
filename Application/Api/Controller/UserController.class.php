@@ -305,6 +305,7 @@ class UserController extends RestController {
                         $telePhone = M('users')->field('mobile')->where(array('id'=>$user_id))->select()[0]['mobile'];
                         $extra['transportDemand_id'] = $transportDemand_id;
                         $extra['is_accept'] = '1';//接收
+                        $extra['mobile'] = $telePhone;
                         $JPUSH->sendToMerchantByRegistrationID($registration_id,$content, $extra);#调用向商家推送信息函数
                         if($update && $result)
                         {
