@@ -486,7 +486,7 @@ class UserController extends RestController {
         $this->response($response,'json');
     }
     /*
-    查询当前需要处理的订单
+     * 查询当前需要处理的订单
      */
     public function getAllTransportOrder()
     {
@@ -518,7 +518,7 @@ class UserController extends RestController {
                     'lb_transport_demands.cate_id'=>'cate_id',
                     'lb_cates.name'=>'cate_name',
                     'lb_transport_demands.id'=>'demand_id',
-                    'lb_transport_orders.id'))
+                    'lb_transport_orders.id'=>'order_id'))
                 ->where($mapper)
                 ->select();
             // dump($response);
