@@ -31,6 +31,8 @@ class MerchantController extends RestController {
         $avatar_data = $this->put_pic_to_oss('avatar');
         if(!$avatar_data) {
             $data['error'] = '司机头像上传失败';
+            $result['content'] = $data;
+            $this->response($result,'json');
         }
 
         $user_data = array(

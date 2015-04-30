@@ -35,6 +35,8 @@ class UserController extends RestController {
         $avatar_data = $this->put_pic_to_oss('avatar');
         if(!$avatar_data) {
             $data['error'] = '司机头像上传失败';
+            $result['content'] = $data;
+            $this->response($result,'json');
         }
 
         $user_data = array(
@@ -47,6 +49,7 @@ class UserController extends RestController {
         );
 
         if(get_user('mobile',$user_data['mobile'])){
+            $result['status'] = ERROR;
             $result['content'] = '该手机号码已经注册';
             $this->response($result,'json');
         }
@@ -67,6 +70,8 @@ class UserController extends RestController {
         $truck_avatar_data = $this->put_pic_to_oss('truck_avatar');
         if(!$truck_avatar_data) {
             $data['error'] = '车辆图片上传失败';
+            $result['content'] = $data;
+            $this->response($result,'json');
         }
         $truck_data = array(
             'driver_id' => $driver_id,
