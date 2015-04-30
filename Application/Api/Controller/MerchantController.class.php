@@ -30,8 +30,8 @@ class MerchantController extends RestController {
         $data = array();
         $avatar_data = $this->put_pic_to_oss('avatar');
         if(!$avatar_data) {
-            $data['error'] = '司机头像上传失败';
-            $result['content'] = $data;
+            $result['status'] = ERROR;
+            $result['content'] = '司机头像上传失败';
             $this->response($result,'json');
         }
 
@@ -47,7 +47,7 @@ class MerchantController extends RestController {
         //判断该用户是否已经被注册
         if(get_user('mobile',$user_data['mobile'])){
             $result['status'] = 'ERROR';
-            $result['content']['error'] = '该手机号码已经注册';
+            $result['content'] = '该手机号码已经注册';
             $this->response($result,'json');
         }
         $user = D('users');
